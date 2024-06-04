@@ -1,0 +1,4 @@
+- source: project
+  netlify:
+    - id: 6000fd97-51a8-47f1-9d57-f1a683cced22
+      url: 'https://zegpi.com'
