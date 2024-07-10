@@ -1,0 +1,8 @@
+---
+title: "About"
+image: perfil.jpg
+about: 
+  template: jolla
+---
+
+This page is going to be in English (about page).

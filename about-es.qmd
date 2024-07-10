@@ -1,0 +1,12 @@
+---
+title: "About"
+image: perfil.jpg
+about: 
+  template: jolla
+---
+
+Esta página será el "about", pero en español.
+
+```{r}
+1 + 1
+```

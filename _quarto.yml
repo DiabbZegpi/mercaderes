@@ -2,26 +2,49 @@ project:
   type: website
 
 website:
+  page-navigation: true
   title: "Diabb Zegpi"
   site-url: https://zegpi.com/
+  google-analytics: "G-63PKLV6G58"
   description: "Blog personal de Diabb Zegpi, donde leerás sobre aplicaciones de ciencia de datos."
-  navbar:
+  page-footer:
+    left: "Website made with [Quarto](https://quarto.org/), by Diabb Zegpi. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     right:
-      - text: Blog
-        href: blog.qmd
       - icon: github
         href: https://github.com/DiabbZegpi
+      - icon: linkedin
+        href: https://www.linkedin.com/in/diabbzegpi
+      - icon: envelope
+        href: diabbluis@gmail.com
       - icon: twitter
         href: https://x.com/Diabb6
+  navbar:
+    right:
+      - text: About
+        menu:
+          - text: Español
+            href: about-es.qmd
+          - text: English
+            href: about-en.qmd
+      - text: Blog
+        href: index.qmd
+
 
 format:
   html:
-    theme: cosmo
-    css: styles.css
+    smooth-scroll: true
+    theme:
+      - pulse
+      - custom.css
+    link-external-icon: false
+    link-external-newwindow: true
+    citations-hover: true
+    footnotes-hover: true
     toc: true
+    code-link: true
 
 execute:
-  freeze: auto
+  freeze: true
 
 comments:
   giscus:

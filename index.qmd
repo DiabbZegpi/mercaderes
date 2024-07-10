@@ -1,9 +1,12 @@
 ---
-title: "About"
+title: "test"
+listing:
+  contents: posts
+  sort: "date desc"
+  type: default
+  categories: true
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: true
 ---
-
-About this site. This site is intended to present an introduction to myself and the "mercaderes" project.
-
-```{r}
-1 + 1
-```
