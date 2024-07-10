@@ -23,3 +23,6 @@ format:
 execute:
   freeze: auto
 
+comments:
+  giscus:
+    repo: DiabbZegpi/mercaderes
