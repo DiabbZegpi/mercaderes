@@ -1,8 +1,8 @@
 {
-  "hash": "6504da53268e0cd6e2f8b0dfcd22ae9f",
+  "hash": "fd403a1642c5f1dd492362771c5f1513",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"mercaderes\"\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n\n\nTesting the staging branch in Netlify.\n\nTesting Netlify's Lighthouse.",
+    "markdown": "---\ntitle: \"About\"\n---\n\n\nAbout this site. This site is intended to present an introduction to myself and the \"mercaderes\" project.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 2\n```\n\n\n:::\n:::\n",
     "supporting": [
       "index_files"
     ],
