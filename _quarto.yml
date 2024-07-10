@@ -26,15 +26,17 @@ website:
             href: about-es.qmd
           - text: English
             href: about-en.qmd
-      - text: Blog
+      - text: Datos y Leyendas
         href: index.qmd
+      - icon: rss
+        href: index.xml
 
 
 format:
   html:
     smooth-scroll: true
     theme:
-      - pulse
+      - Sandstone
       - custom.css
     link-external-icon: false
     link-external-newwindow: true

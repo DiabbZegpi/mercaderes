@@ -1,12 +1,23 @@
 ---
-title: "test"
+title: "Datos y Leyendas"
 listing:
-  contents: posts
+  contents: posts/**/*.qmd
   sort: "date desc"
   type: default
   categories: true
   sort-ui: false
   filter-ui: false
+  fields: [date, title, reading-time, description, categories]
+  feed: true
 page-layout: full
-title-block-banner: true
+title-block-banner: false
+comments: false
+toc: false
 ---
+
+### Suscribirse 
+Aplicaciones de datos e inteligencia artificial al juego número 1 del reino.
+
+<iframe src="https://embeds.beehiiv.com/62b4864e-8eb4-4956-afc7-94a2507d9db2?slim=true" data-test-id="beehiiv-embed" height="52" frameborder="0" scrolling="no" style="margin: 0; border-radius: 0px !important; background-color: transparent;"></iframe>
+<br>
+<hr>
