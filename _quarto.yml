@@ -37,7 +37,7 @@ format:
     smooth-scroll: true
     theme:
       - Sandstone
-      - custom.css
+      - custom.scss
     link-external-icon: false
     link-external-newwindow: true
     citations-hover: true
@@ -51,3 +51,6 @@ execute:
 comments:
   giscus:
     repo: DiabbZegpi/mercaderes
+
+resources:
+  - "fonts/*"
