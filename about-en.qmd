@@ -6,4 +6,5 @@ about:
   template: jolla
 ---
 
-This page is going to be in English (about page).
+
+I am an Industrial Engineer with a Master's Degree in Data Science and I am also a competitive chess player. In my daily job I perform statistical forecasting with machine learning to improve the supply chain of a multinational snack company. In my free time, I enjoy fantasizing about the card game Myths and Legends, the #1 game in The Realm.

@@ -1,13 +1,9 @@
 ---
-title: "Sobre mi"
+title: "Sobre mí"
 image: perfil.jpg
 comments: false
 about: 
   template: jolla
 ---
 
-Esta página será el "about", pero en español.
-
-```{r}
-1 + 1
-```
+Soy un Ingeniero Industrial con Magíster en Data Science y también soy jugador competitivo de ajedrez. En mi trabajo diario realizo pronósticos estadísticos con aprendizaje automático para mejorar la cadena de suministro de una empresa multinacional de snacks. En mi tiempo libre, disfruto fantaseando con el juego de cartas Mitos y Leyendas, el Juego nº1 Del Reino.
