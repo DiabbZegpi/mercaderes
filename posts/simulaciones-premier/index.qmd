@@ -3,5 +3,7 @@ title: "Simulando el Premier de Primer Bloque"
 date: "07-10-2024"
 categories: ["simulación", "Torneo Premier"]
 description: "Al torneo Premier se presentaron decenas de jugadores olímpicos, consiguiendo ganar el torneo. ¿Qué pasaría si se repitiera el Premier unas 10000 veces?"
+image: premier.png
 ---
 
+El pasado Sábado 06 de Julio se celebró el [Torneo Premier de Primer Bloque 2024](https://blog.myl.cl/torneo-premier-pb-sabado-06-de-julio-de-2024/), en el que se batieron a duelo más de 360 jugadores, entre los que estaban los mejores del país, destacando Jean Valdivieso (olímpico), campeón del torneo, y Álvaro Pérez (titán), subcampeón y campeón nacional. Bastante se ha hablado de la asombrosa coincidencia (¿?) que ambos finalistas del campeonato nacional se reencontraran en la final del segundo torneo más importante que va del año, pero aquí daremos una lectura diferente a los resultados del Premier, una lectura estadística 😎.
