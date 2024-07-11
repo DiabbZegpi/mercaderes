@@ -20,3 +20,10 @@ format:
   html:
     include-after-body: ../footer.html
 
+
+execute:
+  warning: false
+  message: false
+
+editor_options:
+  chunk_output_type: console
