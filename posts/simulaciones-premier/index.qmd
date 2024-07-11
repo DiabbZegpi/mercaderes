@@ -1,0 +1,7 @@
+---
+title: "Simulando el Premier de Primer Bloque"
+date: "07-10-2024"
+categories: ["simulación", "Torneo Premier"]
+description: "Al torneo Premier se presentaron decenas de jugadores olímpicos, consiguiendo ganar el torneo. ¿Qué pasaría si se repitiera el Premier unas 10000 veces?"
+---
+
