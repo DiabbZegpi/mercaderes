@@ -329,7 +329,7 @@ to_champ |>
   )
 ```
 
-El grosor de las líneas en el eje horizontal indican vagamente si cierto número de jugadores con la misma raza es algo frecuente de ver, por ejemplo, en 10000 simulaciones ni una sola vez hubo 20 ni más de 21 jugadores con la misma raza en el top 32. Lo último que hay por explicar es el error estándar, que es un indicador de la incertidumbre del cálculo de $\beta_1$ y se expresa como una delgada sombra gris en torno a la línea <span style="color: #E64833;">rojiza</span> del modelo logístico, denotando que cabe poca duda que los parámetros del modelo se ajusten a la hipótesis propuesta.
+El grosor de las líneas en el eje horizontal indican vagamente si cierto número de jugadores con la misma raza es algo frecuente de ver, por ejemplo, en 10000 simulaciones ni una sola vez hubo 20 ni más de 21 jugadores con la misma raza en el top 32. Lo último que hay por explicar es el error estándar, que es un indicador de la incertidumbre del cálculo de $\beta_1$ y se expresa como una delgada sombra gris en torno a la **<span style="color: #E64833;">línea rojiza</span>** del modelo logístico, denotando que cabe poca duda que los parámetros del modelo se ajusten a la hipótesis propuesta.
 
 Y así, con una sola herramienta, el modelo logístico, podemos hacer predicciones para saber qué razas ganarán este o cualquier otro torneo. 
 
