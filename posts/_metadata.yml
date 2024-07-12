@@ -7,9 +7,6 @@ freeze: true
 # Enable banner style title blocks
 title-block-banner: false
 
-# Author name of all blog posts
-author: 'Diabb Zegpi'
-
 # Table of content settings
 toc: true
 toc-depth: 3
@@ -19,11 +16,16 @@ page-layout: article
 format:
   html:
     include-after-body: ../footer.html
+    fig-format: svg
 
 
 execute:
   warning: false
   message: false
+  echo: false
 
 editor_options:
   chunk_output_type: console
+
+fig-width: 9
+fig-align: center
