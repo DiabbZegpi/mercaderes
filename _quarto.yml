@@ -7,6 +7,7 @@ website:
   page-navigation: true
   title: "Diabb Zegpi"
   site-url: https://zegpi.com/
+  favicon: dyl.ico
   google-analytics: "G-63PKLV6G58"
   description: "Blog personal de Diabb Zegpi, donde leerás sobre aplicaciones de ciencia de datos."
   page-footer:
