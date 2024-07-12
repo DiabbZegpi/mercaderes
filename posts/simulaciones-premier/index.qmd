@@ -7,3 +7,332 @@ image: premier.png
 ---
 
 El pasado Sábado 06 de Julio se celebró el [Torneo Premier de Primer Bloque 2024](https://blog.myl.cl/torneo-premier-pb-sabado-06-de-julio-de-2024/), en el que se batieron a duelo más de 360 jugadores, entre los que estaban los mejores del país, destacando Jean Valdivieso (olímpico), campeón del torneo, y Álvaro Pérez (titán), subcampeón y campeón nacional. Bastante se ha hablado de la asombrosa coincidencia (¿?) que ambos finalistas del campeonato nacional se reencontraran en la final del segundo torneo más importante que va del año, pero aquí daremos una lectura diferente a los resultados del Premier, una lectura estadística 😎.
+
+```{r packages}
+library(tidyverse)
+```
+
+```{r wd}
+#| eval: false
+setwd(paste0(getwd(), "/posts/simulaciones-premier"))
+```
+
+```{r ggplot-theme}
+theme_set(theme_minimal(base_size = 18, base_family = "Roboto"))
+```
+
+```{r import-data}
+champions <- read_csv("champions.csv")
+final_table <- read_csv("final_table.csv")
+top_32 <- read_csv("top_32.csv")
+players <- read_csv("players.csv")
+```
+
+```{r ediciones}
+edition <- c(
+  rep("Espada Sagrada", 3),
+  rep("Helénica", 3),
+  rep("Hijos de Daana", 3),
+  rep("Dominios de Ra", 3)
+)
+
+raza <- unique(players$raza)
+
+edition_df <- tibble(raza, edition)
+```
+
+## Popularidad de razas
+
+Es claro para todos que el Premier fue dominado por la participación de la raza olimpico, seguida desde lejos por el titán y el faerie (goblin), mientras que los perdedores en popularidad son las razas "verdes y amarillas".
+
+```{r}
+#| fig-cap: "Fuente de los datos: [mazos.cl](https://www.youtube.com/watch?v=SNa8hcqj40c&ab_channel=MazosCL)."
+#| cap-location: margin
+
+participation <- 
+  players |>
+  count(raza) |> 
+  left_join(edition_df, join_by(raza)) |> 
+  mutate(
+    raza = fct_reorder(raza, n),
+    edition = fct_relevel(edition, "Espada Sagrada", "Helénica", "Hijos de Daana", "Dominios de Ra"),
+    pct = paste0(round(100 * n / sum(n), 1), "%")
+  )
+
+participation |> 
+  ggplot(aes(n, raza, fill = edition)) +
+  geom_col(alpha = 0.8) +
+  geom_text(aes(
+    label = pct,
+    color = n > 20,
+    hjust = if_else(n > 20, 1.2, -0.2)
+  ), size = 8, fontface = "bold", family = "Roboto",
+  show.legend = FALSE) +
+  scale_fill_manual(values = c("dodgerblue2", "firebrick4", "darkgreen", "gold3")) +
+  scale_color_manual(values = c("black", "white")) +
+  labs(
+    x = "n° de jugadores",
+    y = NULL,
+    fill = NULL
+  ) +
+  theme(
+    panel.grid.minor = element_blank(),
+    panel.grid.major.y = element_blank(),
+    legend.text = element_text(size = 16),
+    legend.spacing.y = unit(2, "cm")
+  )
+```
+
+La evidente popularidad del olímpico se puede atribuir a los recientes [kits raciales](https://casamyl.cl/collections/preventa-primer-bloque), que beneficiaron la raza con 3 buenas cartas nuevas, y al estilo de juego con Afrodita, un aliado de la época Salo que abre la posibilidad de tener turnos muy poderosos o muy malos.
+
+::: columns
+::: {.column width="57%"}
+![Cartas nuevas de Kit Racial Olímpico](olimpicos.png)
+:::
+
+::: {.column width="8%"}
+:::
+
+::: {.column width="35%"}
+![Afrodita](afrodita.png)
+:::
+:::
+
+La raza olímpicos fue tan popular que me genera la duda: ¿acaso el olímpico ganó porque "atacó en manada" o porque es una raza muy fuerte? Después de todo, por muy mala que sea una raza, si 1 de cada 4 jugadores es olímpico entonces de vez en cuando se espera que ganen, ¿o no? Me decidí a investigar en esta última línea y diseñé un estudio de simulación, en donde **repito el Premier 10.000 veces!!**.
+
+## Simulación
+
+El objetivo del estudio es descubrir con qué frecuencia se repite la final del Premier de Primer Bloque, en otras palabras, encontrar *la probabilidad* de que el olímpico y el titán disputen la corona del torneo. Como método de simulación apliqué [Montecarlo](https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo), un método usado para aproximar parámetros de procesos complejos, como la probabilidad de victoria olímpica en el Premier. Hubiera sido ideal desarrollar la simulación de forma fiel a las bases, pero estas escatiman en detalles, por ejemplo no es claro cuál es el orden inicial de los jugadores en la etapa suiza. Para complementar los huecos usé mi conocimiento del Juego Organizado y del [Sistema Suizo](https://es.wikipedia.org/wiki/Sistema_suizo) de torneos, con el que estoy familiarizado por el ajedrez competitivo.
+
+::: column-margin
+El sistema suizo se diferencia del knockout en que cada jugador juega un número fijo de enfrentamientos. En la primera ronda los enfrentamientos pueden ser aleatorios o regidos por un criterio, como ranking nacional. A partir de la segunda ronda, los jugadores que ganaron sus enfrentamientos se enfrentan entre sí y lo mismo aplica para quienes empatan y pierden. A modo ilustrativo, en la ronda 3 del Premier el sistema suizo emparejará en la medida de lo posible a los jugadores con 6 puntos enter sí, después a los que tienen 4, 3 y así hasta emparejar a todos los jugadores. Si la cantidad de jugadores es impar, al jugador con menos puntaje se le empareja con *Bye*, lo que implica una victoria por la diferencia máxima a favor del jugador.
+:::
+
+#### El proceso de simulación consta de estas etapas:
+
+1.  Crear una lista de 376 jugadores con la misma distribución de razas del Premier (99 olímpicos, 51 titanes, etc.).
+
+2.  Para cada una de las 10.000 simulaciones:
+
+```{=html}
+<!-- -->
+```
+i.  Crear 2 zonas de juego, A y B, cada una con la mitad de jugadores seleccionados al azar.
+
+ii. Jugar un torneo suizo de 5 rondas en cada zona. Los enfrentamientos se juegan al mejor de 3, pudiendo ser los resultados 1-0, 1-1, 2-0, 2-1. Se asignan 3 puntos por ganar un enfrentamiento individual, 1 punto por empatar y 0 puntos por perder.
+
+iii. Escoger a los 16 mejores puntajes por zona y unirlos en un torneo Knockout o de eliminación directa, en donde el primer lugar de la zona A juega contra el último lugar de la zona B, el segundo de la zona A juega contra el penúltimo de la zona B, etc.
+
+iv. De los 32 jugadores iniciales, quedará solamente 1, el campeón. Se toma nota de su raza y finaliza el torneo.
+
+v.  Repetir.
+
+![Formato Knockout](knockout.jpg)
+
+3.  Después de 10.000 simulaciones de torneo habrá 10.000 razas campeonas. Se usan los datos sintéticos generados para estimar probabilidades de eventos.
+
+Para desarrollar la simulación usé el lenguaje de programación `R`; puedes ver y descargar el código [desde su repositorio en github](https://github.com/DiabbZegpi/mercaderes/blob/master/posts/simulaciones-premier/simulations.R).
+
+## Titanomaquia
+
+El análisis que sigue debe entenderse bajo la premisa de qué pasaría si todas las razas tuvieran chances equivalentes de derrotarse entre sí.
+
+#### ¿Qué tan probable es una final de Olímpico vs Titán?
+
+La final del Premier de PB nos presenta una [Titanomaquia](https://es.wikipedia.org/wiki/Titanomaquia) épica para disputar al ganador del torneo, entre Jean *Zeus* Valdivieso y Álvaro *Cronos* Pérez, en la que el Panteón griego resultó victorioso. Pero, si repitiéramos el Premier 10.000 veces, ¿con qué frecuencia presenciaríamos la Titanomaquia?
+
+```{r}
+#| fig-width: 10
+#| fig-height: 10
+finals <- 
+  final_table |> 
+  filter(round == 5) |> 
+  select(simul, winner, loser,simul) |> 
+  left_join(players |> select(id, raza), join_by(winner == id)) |> 
+  rename(raza_winner = raza) |> 
+  left_join(players |> select(id, raza), join_by(loser == id)) |> 
+  rename(raza_loser = raza) |> 
+  count(raza_winner, raza_loser)
+
+paste_razas <- function(x, y) {
+  paste(sort(c(x, y)), collapse = " ")
+}
+
+raza_fct <- 
+  finals |> 
+  count(raza_winner, wt = n) |> 
+  mutate(raza = fct_reorder(raza_winner, n)) |> 
+  pull(raza)
+
+finals |>
+  complete(raza_winner, raza_loser, fill = list(n = 0)) |>
+  rowwise() |> 
+  mutate(flag = paste_razas(raza_winner, raza_loser)) |> 
+  ungroup() |> 
+  group_by(flag) |> 
+  mutate(nn = sum(n)) |> 
+  ungroup() |> 
+  mutate(
+    raza_winner = fct_relevel(raza_winner, levels(raza_fct)),
+    raza_loser = fct_relevel(raza_loser, levels(raza_fct)),
+  ) |> 
+  arrange(raza_winner, raza_loser) |> 
+  distinct(flag, .keep_all = TRUE) |>
+  ggplot(aes(raza_winner, fct_rev(raza_loser), fill = nn)) +
+  geom_tile() +
+  geom_text(aes(label = nn, color = between(nn, 120, 800)), size = 6) +
+  coord_fixed(expand = FALSE) +
+  scale_fill_distiller(name = "n° de finales", palette = "PuOr", na.value = "white", direction = -1, guide = "none") +
+  scale_color_manual(values = c("white", "black"), guide = "none") +
+  theme_void(base_size = 18, base_family = "Roboto") +
+  theme(
+    axis.text = element_text(),
+    axis.text.x = element_text(angle = 45, hjust = 1, vjust = 1, margin = margin(t = 3)),
+    axis.text.y = element_text(hjust = 1, margin = margin(r = 5)),
+    axis.title = element_text(size = 24),
+    legend.position = c(0.8, 0.8),
+    legend.text = element_text(size = 18),
+    legend.title = element_text(margin = margin(b = 10))
+  ) +
+  labs(
+    x = NULL,
+    y = NULL
+  ) 
+
+```
+
+```{r}
+olimpico_titan <- 
+  finals |> 
+  filter(
+    (raza_winner == "Olímpico" | raza_loser == "Olímpico"),
+    (raza_winner == "Titán" | raza_loser == "Titán")
+  ) |> 
+  summarize(n = sum(n)) |> 
+  pull(n)
+
+olimpico <- 
+  finals |> 
+  filter(if_any(starts_with("raza"), ~ .x == "Olímpico")) |> 
+  summarize(n = sum(n)) |> 
+  pull(n)
+
+olimpico_champ <- 
+  champions |> 
+  count(race) |> 
+  filter(race == "Olímpico") |> 
+  pull(n)
+```
+
+Asombrosamente, la final entre olímpicos y titanes ocurre `r olimpico_titan` veces, que equivale al `r round(olimpico_titan/10000, 4) * 100`% de las simulaciones. Esto parece muy poco en comparación a la cantidad de veces que el olímpico llega a la final, que es `r olimpico` o `r round(olimpico / 10000, 4) * 100`%, que asumiendo una probabilidad de victoria de 50% contra cualquier raza, nos da un total de `r round(olimpico_champ / 10000, 4) * 100`% de probabilidad de ser campeón, lo que es más que 1 de cada 3.
+
+## De Top 32 a campeón
+
+Es obvio que si el top 32 de jugadores en la etapa suiza juegan todos con la misma raza, está garantizado que esa raza sea campeona. Análogamente, si hay una raza que no pasa al top 32, entonces es imposible que resulte ser campeona.
+
+Mientras más jugadores jueguen con la misma raza, mejores son las posibilidades de que esta raza sea campeona, ¿no es así?, pero, ¿cuánto mejora la probabilidad de ganar el torneo con cada jugador adicional de la misma raza que pasa al top?
+
+Para contestar a esta pregunta utilizo el modelo estadístico denominado [regresión logística](https://es.wikipedia.org/wiki/Regresi%C3%B3n_log%C3%ADstica), el que realiza un análisis del tipo predictivo asociando una variable independiente o predictora (# de representantes de una raza) con una variable dependiente o respuesta (ganó o no ganó el torneo). Finalmente, el modelo logístico tiene la forma
+
+$$
+\frac{P(\text{ganar el torneo})}{1-P(\text{ganar el torneo})} = e^{\beta_0 + \beta_1 x},
+$$
+
+donde el numerador $P(\text{ganar el torneo})$ es la probabilidad de una raza de ganar el torneo, mientras que el denominador es su recíproco, la probabilidad que tiene la raza de no ganar el torneo. A esta razón o fracción se le conoce como *odds ratio*. Por otra parte, $x$ es la **cantidad de jugadores de una raza determinada que entraron al top 32**; $e$ es la función exponencial; $\beta_0$ es el intercepto del modelo y $\beta_1$ es el efecto que tiene $x$ sobre el odds ratio. El intercepto se interpreta como lo que pasa si ningún jugador de una raza determinada pasa al top 32, lo que implica que ésa raza tiene una probabilidad de 0% de ganar. Las interpretaciones de $\beta_1$ y del error estándar las dejaremos para más adelante.
+
+```{r}
+to_champ <- 
+  top_32 |> 
+  count(simul, raza) |> 
+  complete(simul, raza, fill = list(n = 0)) |> 
+  left_join(
+    champions |> 
+      mutate(simul = row_number()) |> 
+      select(-champ) |> 
+      rename(champ = race),
+    join_by(simul)
+  ) |> 
+  mutate(champ_bool = as.numeric(raza == champ)) |> 
+  select(-simul)
+  
+library(gt)
+
+model_results <- 
+  glm(champ_bool ~ n, family = binomial, data = to_champ) |> 
+  broom::tidy() |> 
+  filter(term != "(Intercept)") |> 
+  transmute(
+    estimate,
+    odds_ratio = exp(estimate),
+    std.error
+  ) |> 
+  mutate(across(everything(), ~ round(.x, 4)))
+
+model_results |> 
+  gt() |> 
+  cols_label(
+    estimate ~ "\u03B2₁",
+    odds_ratio ~ "Odds Ratio",
+    std.error ~ "Error estándar"
+  ) |> 
+  tab_header(
+    title = md("**Resultados de regresión logística**"),
+    subtitle = md("Modelo ajustado a *10000 simulaciones*")
+  )
+  # mutate(
+  #   p_hat = n / sum(n),
+  #   odds = p_hat / (1 - p_hat),
+  #   odds_frac = MASS::fractions(round(odds, 3)) |> as.character(),
+  #   numerator = str_match(odds_frac, "\\d+?(?=/)")[, 1],
+  #   denominator = str_match(odds_frac, "/(\\d+)")[, 2]
+  # )
+```
+
+¡¿Cómo se lee esto?! Primero que todo, no reportamos el intercepto porque asumimos que es un valor muy negativo y no es interesante. Segundo, $\beta_1$ de 0.3385 es difícil de interpretar porque está en escala logarítmica. Por ello, también se reporta el cambio en odds ratio $e^{\beta_1}$ de 1.4029. Aquí va una explicación: por cada jugador adicional de una raza que pasa al top 32, el odds ratio (odds de ganar / odds de no ganar) cambia multiplicativamente en 1.4029.
+
+
+Ejemplo: digamos que Olímpico tiene una probabilidad de ganar el torneo de 33%, porque es un mazo muy fuerte y tiene 9 representantes en el top 32 (¡igual que en el Premier!). 
+
+$$
+\displaylines{
+P(\text{ganar el torneo})_{\text{olímpico}} = 0.3347, \\
+\text{Odds}_{\text{olímpico}} = \frac{0.3347}{1 - 0.3347} = 0.5032.
+}
+$$
+
+Si tan sólo 1 olímpico más hubiera pasado la top, entonces los odds aumentan multiplicativamente, de la forma
+
+$$
+\text{nuevos Odds}_{\text{olímpico}} = 0.5032 \times 1.4029 = 0.7059.
+$$
+
+Con un poco de álgebra podemos despejar la nueva probabilidad de que el campeón del torneo sea un olímpico, con 10 jugadores en el top en lugar de 9
+
+$$
+\text{nueva } P(\text{ganar el torneo})_{\text{olímpico}} = \frac{\text{nuevos Odds}_{\text{olímpico}}}{1 + \text{nuevos Odds}_{\text{olímpico}}} = 0.4138.
+$$
+
+Un sólo jugador aumentó la probabilidad de la raza en aproximadamente 8%, pero este cambio no es siempre igual, porque depende de la cantidad inicial de jugadores de la raza en el top. Podemos usar el modelo logístico para determinar la probabilidad de ganar el torneo para un número arbitrario de jugadores en el top.
+
+```{r}
+#| fig-width: 9
+#| fig-height: 9
+
+to_champ |> 
+  ggplot(aes(n, champ_bool)) +
+  geom_rug(alpha = 0.3) +
+  geom_smooth(formula = y ~ x, method = "glm", method.args = list(family = binomial), se = TRUE, color = "#E64833", linewidth = 1.5) +
+  scale_y_continuous(labels = scales::label_percent()) +
+  labs(
+    x = "Cantidad de jugadores de una misma raza en el top 32",
+    y = expression(P~"(ganar el torneo)")
+  )
+```
+
+El grosor de las líneas en el eje horizontal indican vagamente si cierto número de jugadores con la misma raza es algo frecuente de ver, por ejemplo, en 10000 simulaciones ni una sola vez hubo 20 ni más de 21 jugadores con la misma raza en el top 32. Lo último que hay por explicar es el error estándar, que es un indicador de la incertidumbre del cálculo de $\beta_1$ y se expresa como una delgada sombra gris en torno a la línea <span style="color: #E64833;">rojiza</span> del modelo logístico, denotando que cabe poca duda que los parámetros del modelo se ajusten a la hipótesis propuesta.
+
+Y así, con una sola herramienta, el modelo logístico, podemos hacer predicciones para saber qué razas ganarán este o cualquier otro torneo. 
+
+## Conclusión
+
+En general, las simulaciones son fieles al diseño de torneo y de enfrentamientos entre razas, es decir, había mucho faerie, titán y olímpico, por tanto, estas son las razas con mayor probabilidad de ganar. Incluso más interesante sería correr las mismas simulaciones pero teniendo en consideración los enfrentamientos favorables y desfavorables entre las 12 razas, algo que espero poder conseguir con un dataset más completo.
