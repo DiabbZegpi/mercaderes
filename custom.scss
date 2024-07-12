@@ -10,8 +10,19 @@ $quaternary: #90AEAD;
 
 
 .navbar {
-    background-color: $primary !important;
-    color: #fdfefe;
+  background-color: $primary !important;
+  color: #fdfefe;
+}
+
+.thumbnail-image {
+  max-width: 230px;
+  margin-top: 0em !important;
+}
+
+.navbar-logo {
+  height: 40px !important;
+  width: 40px !important;
+  max-height: 40px !important;
 }
 
 
