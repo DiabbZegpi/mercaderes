@@ -1,6 +1,6 @@
 ---
 title: "Simulando el Premier de Primer Bloque"
-date: "07-10-2024"
+date: "07-12-2024"
 categories: ["simulación", "Torneo Premier"]
 description: "Al torneo Premier se presentaron decenas de jugadores olímpicos, consiguiendo ganar el torneo. ¿Qué pasaría si se repitiera el Premier unas 10000 veces?"
 image: premier.png
@@ -43,7 +43,7 @@ edition_df <- tibble(raza, edition)
 
 ## Popularidad de razas
 
-Es claro para todos que el Premier fue dominado por la participación de la raza olimpico, seguida desde lejos por el titán y el faerie (goblin), mientras que los perdedores en popularidad son las razas "verdes y amarillas".
+Es claro para todos que el Premier fue dominado por la participación de la raza olímpico, seguida desde lejos por el titán y el faerie (goblin), mientras que los perdedores en popularidad son las razas "verdes y amarillas".
 
 ```{r}
 #| fig-cap: "Fuente de los datos: [mazos.cl](https://www.youtube.com/watch?v=SNa8hcqj40c&ab_channel=MazosCL)."
@@ -105,7 +105,7 @@ La raza olímpicos fue tan popular que me genera la duda: ¿acaso el olímpico g
 El objetivo del estudio es descubrir con qué frecuencia se repite la final del Premier de Primer Bloque, en otras palabras, encontrar *la probabilidad* de que el olímpico y el titán disputen la corona del torneo. Como método de simulación apliqué [Montecarlo](https://es.wikipedia.org/wiki/M%C3%A9todo_de_Montecarlo), un método usado para aproximar parámetros de procesos complejos, como la probabilidad de victoria olímpica en el Premier. Hubiera sido ideal desarrollar la simulación de forma fiel a las bases, pero estas escatiman en detalles, por ejemplo no es claro cuál es el orden inicial de los jugadores en la etapa suiza. Para complementar los huecos usé mi conocimiento del Juego Organizado y del [Sistema Suizo](https://es.wikipedia.org/wiki/Sistema_suizo) de torneos, con el que estoy familiarizado por el ajedrez competitivo.
 
 ::: column-margin
-El sistema suizo se diferencia del knockout en que cada jugador juega un número fijo de enfrentamientos. En la primera ronda los enfrentamientos pueden ser aleatorios o regidos por un criterio, como ranking nacional. A partir de la segunda ronda, los jugadores que ganaron sus enfrentamientos se enfrentan entre sí y lo mismo aplica para quienes empatan y pierden. A modo ilustrativo, en la ronda 3 del Premier el sistema suizo emparejará en la medida de lo posible a los jugadores con 6 puntos enter sí, después a los que tienen 4, 3 y así hasta emparejar a todos los jugadores. Si la cantidad de jugadores es impar, al jugador con menos puntaje se le empareja con *Bye*, lo que implica una victoria por la diferencia máxima a favor del jugador.
+El sistema suizo se diferencia del knockout en que cada jugador juega un número fijo de enfrentamientos. En la primera ronda los enfrentamientos pueden ser aleatorios o regidos por un criterio, como ranking nacional. A partir de la segunda ronda, los jugadores que ganaron sus enfrentamientos se enfrentan entre sí y lo mismo aplica para quienes empatan y pierden. A modo ilustrativo, en la ronda 3 del Premier el sistema suizo emparejará en la medida de lo posible a los jugadores con 6 puntos entre sí, después a los que tienen 4, 3 y así hasta emparejar a todos los jugadores. Si la cantidad de jugadores es impar, al jugador con menos puntaje se le empareja con *Bye*, lo que implica una victoria por la diferencia máxima a favor del jugador.
 :::
 
 #### El proceso de simulación consta de estas etapas:
@@ -300,7 +300,7 @@ P(\text{ganar el torneo})_{\text{olímpico}} = 0.3347, \\
 }
 $$
 
-Si tan sólo 1 olímpico más hubiera pasado la top, entonces los odds aumentan multiplicativamente, de la forma
+Si tan sólo 1 olímpico más hubiera pasado al top, entonces los odds aumentan multiplicativamente, de la forma
 
 $$
 \text{nuevos Odds}_{\text{olímpico}} = 0.5032 \times 1.4029 = 0.7059.
