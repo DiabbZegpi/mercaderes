@@ -1,13 +1,16 @@
 ---
 title: "Datos y Leyendas"
 listing:
-  feed: true
+  feed: 
+    items: 5
+    type: partial
+    language: es
   contents: posts/**/*.qmd
   sort: "date desc"
   type: default
   categories: true
   sort-ui: false
-  filter-ui: true
+  filter-ui: false
   fields: [image, date, title, reading-time, description, categories]
 page-layout: full
 title-block-banner: false
