@@ -33,7 +33,7 @@ website:
       - text: Datos y Leyendas
         href: index.qmd
       - icon: rss
-        href: _site/index.xml
+        href: index.xml
 
   comments:
     giscus:
