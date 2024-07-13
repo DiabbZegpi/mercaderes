@@ -6,7 +6,7 @@ lang: es
 website:
   page-navigation: true
   title: "Diabb Zegpi"
-  site-url: https://zegpi.com/
+  site-url: https://zegpi.com
   favicon: dyl-dark.ico
   google-analytics: "G-63PKLV6G58"
   description: "Blog personal de Diabb Zegpi, donde leerás sobre aplicaciones de ciencia de datos."
@@ -33,7 +33,12 @@ website:
       - text: Datos y Leyendas
         href: index.qmd
       - icon: rss
-        href: index.xml
+        href: _site/index.xml
+
+  comments:
+    giscus:
+      repo: DiabbZegpi/mercaderes
+      language: es
 
 
 format:
@@ -51,10 +56,6 @@ format:
 
 execute:
   freeze: true
-
-comments:
-  giscus:
-    repo: DiabbZegpi/mercaderes
 
 resources:
   - "fonts/*"
