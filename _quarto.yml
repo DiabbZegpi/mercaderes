@@ -33,7 +33,7 @@ website:
       - text: Datos y Leyendas
         href: index.qmd
       - icon: rss
-        href: index.xml
+        href: _site/index.xml
 
   comments:
     giscus:
@@ -55,7 +55,7 @@ format:
     code-link: true
 
 execute:
-  freeze: true
+  freeze: auto
 
 resources:
   - "fonts/*"
