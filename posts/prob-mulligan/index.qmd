@@ -1,0 +1,117 @@
+---
+title: "¡Me quedo! (parte 1)"
+date: "07-19-2024"
+categories: ["mulligan", "probabilidades"]
+description: "Robas la mano inicial y sólo tienes 1 oro, ¿es mala suerte?; ¿te quedas?"
+image: meme-vertical.png
+---
+
+En este segundo post diseccionaremos una de las decisiones más importantes en una partida de MyL, la primera decisión: **el mulligan**.
+
+#### ¿Qué es el mulligan?
+
+En juegos de cartas coleccionables o TCG (trading card games), mulligan es el proceso de ajustar la mano inicial de un jugador. El vasto panorama de los TCG da origen a variaciones en las reglas de mulligan, por ejemplo [las reglas de Pokémon](https://www.pokemon.com/es/jcc-pokemon/reglas) indican que si no inicias con un pokémon básico en la mano, entonces debes robar otra mano. Como castigo, tu oponente escoge si roba una carta adicional. En [Hearthstone](https://hearthstone.blizzard.com/es-es) no existe castigo por hacer mulligan, incluso puedes escoger si cambiar una, dos o todas las cartas de tu mano. En MyL sí existe el castigo, pero es diferente, porque en lugar de beneficiar directamente a tu oponente, se te perjudica con una carta menos cada vez que cambias de mano, cambiando una mano inicial de 8 cartas por otra de 7, después de 6, y así sucesivamente hasta estar conforme. En la práctica muchos estarán de acuerdo que robar 5 cartas o menos conlleva una desventaja casi imposible de remontar, asumiendo que el oponente se queda con 8 cartas.
+
+![Si un jugador opta por cambiar su mano inicial, robará una carta menos como castigo, hasta estar conforme con su mano.](mulligan-myl.png){fig-alt="mulligan en Mitos y Leyendas."}
+
+## El problema
+
+No vamos a discutir manos en las que robas 2-4 oros, 1 talismán y las demás cartas son aliados, porque con esas manos nos quedaríamos el 100% de las veces. Este post es para mejorar el mulligan de manos difíciles, como la que veremos a continuación.
+
+![](caso-1.png)
+
+Esta mano podría ocurrir si estuviésemos jugando con un mazo héroe tipo, o bien, con el mazo que Sergio Tapia ganó un torneo del canal [Rincón Mitero](https://www.youtube.com/watch?v=ojnire39jQE&ab_channel=RinconMitero). El problema es claro, contamos con 1 oro para jugar y 1 aliado que no roba cartas, por ende, si no robamos 1 oro al finalizar, no podremos seguir jugando cartas y cederemos mucha ventaja al oponente. Aunque tengamos Siete contra Tebas en la mano, es poco probable que podamos jugarlo en el primer turno para robar 1 carta.
+
+```{r}
+library(tidyverse)
+library(gt)
+
+tribble(
+  ~Oros, ~Aliados, ~Talismanes, ~Armas, ~Tótems,
+  18, 26, 6, 0, 0
+) |> 
+  gt() |> 
+  tab_header(
+    title = md("**Composición de Mazo Héroe de Sergio Tapia**"),
+    subtitle = md("Campeón de *Luna Carmesí PK2, Rincón Mitero*")
+  ) |> 
+  tab_options(column_labels.background.color = "#244855")
+```
+
+```{r}
+p_mortales <- round(choose(15, 1) * choose(34, 7) / choose(49, 8), 3) * 100
+p_sergio <- round(choose(17, 1) * choose(32, 7) / choose(49, 8), 3) * 100
+```
+
+
+La mayoría de los mortales jugamos con 16 oros, por lo que una mano con 1 sólo oro ocurriría el `r p_mortales`% de la veces o 1 en `r round(100/p_mortales, 0)` juegos. En cambio, Sergio juega con 18 oros, con lo que el porcentaje baja a `r p_sergio`%, es decir, 1 en cada `r round(100/p_sergio, 0)` juegos, aproximadamente ¿Cómo sé estos números? Lo sé porque conozco *la fórmula*.
+
+## La fórmula
+
+No te asustes con los símbolos que aquí verás, todos están en la calculadora de tu teléfono. Lo primero, cada mazo está compuesto por 50 cartas, a las que debemos descontar el oro inicial, quedando 49 cartas para robar la mano inicial. Ahora nos queda por definir el concepto de probabilidad.
+
+#### ¿De cuántas maneras se puede robar la mano inicial y cuál es su probabilidad?
+
+Comencemos con el **concepto de probabilidad**, que se define como la frecuencia relativa de ocurrencia de un evento (éxitos) si el ensayo que lo produce se repitiese múltiples veces. Por esto es que incluso eventos poco probables pueden ocurrir si la frecuencia del ensayo es suficientemente alta, como que Los Simpson predigan el futuro algunas veces (los éxitos) en 768 episodios y 19200 minutos de programa (los ensayos).
+
+Ahora a contestar la pregunta, ¿de cuántas maneras se puede robar la mano inicial? Esto es equivalente a contar de cuántas formas diferentes podemos robar 8 cartas de un mazo de 49. Para la primera carta tenemos 49 opciones y para la segunda 48, porque ya robamos 1. Extrapolando hasta robar 8 tenemos la expresión
+
+$$
+49 \times 48 \times 47 \times 46 \times 45 \times 44 \times 43 \times 42
+$$
+
+lo que es un número gigantesco, pero hay un problema. ¿Nos importa en qué orden robamos las 8 cartas? En realidad no. Por ello, debemos *escalar* por el orden, teniendo en cuenta que la primera carta que robamos puede ocupar 8 posiciones en  nuestra mano, la segunda 7, etc. La expresión escalada es la siguiente
+
+$$
+\frac{49 \times 48 \times 47 \times 46 \times 45 \times 44 \times 43 \times 42}{8 \times 7 \times 6 \times 5 \times 4 \times 3 \times 2 \times 1} = 450978066.
+$$
+
+¡450 millones de posibles manos! Espera, hay una manera más sencilla de calcular este número y es usando el operador *n choose k* o de combinatoria, y se lee "escoger k elementos de un grupo de n" o, en lenguaje mitero, robar k cartas de un mazo de n, y se representa así
+
+$$
+\binom{n}{k} = \frac{n!}{(n-1)! \times k!},
+$$
+
+donde $n$ es el número de cartas disponibles, $k$ es el número de cartas a robar y $n!$ es el factorial de $n$, por ejemplo, si $n=4$ entonces su factorial equivale a $4 \times 3 \times 2 \times 1 = 24$. En calculadoras científicas y algunos teléfonos, el operador de combinatoria figura con una letra $C$ mayúscula.
+
+#### ¿De cuántas maneras se puede robar una mano con 1 sólo oro?
+
+Usemos la combinatoria para computar la probabilidad de robar la mano descrita, comenzando por calcular el número de formas de robar exactamente 1 oro. Sabemos que en su mazo hay 17 oros (18 con el inicial), por tanto $n=17$. También sabemos que buscamos exactamente 1 oro, $k=1$. Con los datos mencionados calculamos la cantidad de maneras de robar 1 sólo oro
+
+$$
+\binom{17}{1}=\frac{17!}{(17-1)! \times 1!} = 17.
+$$
+
+::: {.column-margin}
+![](logico.png)
+:::
+
+Resulta que hay 17 maneras de robar 1 oro de un pool de 17 oros. Lógico. Resta robar las otras 7 cartas y asegurarnos que no sean oros, fijando $n = 49 - 17 = 32$ cartas que no son oro y $k = 7$ cartas por robar.
+
+$$
+\binom{32}{7} = \frac{32!}{(32 - 7)! \times 7!} = 3365856.
+$$
+
+Ahora sabemos que hay 17 maneras de robar 1 oro y más de 3 millones de formas de robar las otras 7 cartas, lo único que debemos hacer es multiplicar ambos números para saber de cuántas formas se puede robar la mano con 1 oro. Cada mano compuesta por 1 sólo oro es un éxito y el número total de éxitos es el número total de manos con 1 oro.
+
+$$
+\text{Éxitos} = 17 \times 3365856 = 57219552.
+$$
+
+Quién diría que con un mazo de 50 cartas compuesto por 17 oros más el inicial, se pueden robar 57 millones de manos diferentes que sólo contienen 1 oro. ¿Terminamos aquí? No. Este número es absurdo y no sabría cómo interpretarlo. Debemos traerlo a una escala manejable para poder hacer comparaciones. Lo traeremos al plano de las probabilidades y lo haremos de la misma manera que calculamos la probabilidad de obtener par al lanzar un dado de 6 caras: dividiendo el número de éxitos por el número de eventos totales (3 dividido 6 para el dado). El cantidad total de eventos son todas las manos posibles, o sea que $n = 49$ y $k = 8$.
+
+$$
+\text {Manos posibles} = \binom{49}{8} = \frac{49!}{(49 - 8)! \times 8!} = 450978066
+$$
+
+y la probabilidad $\text P$ de obtener la mano con 1 oro es
+
+$$
+\text P = \frac{\text{Éxitos}}{\text{Manos posibles}} = \frac{57219552}{450978066} \sim 0.1268788
+$$
+
+o un 12.7%.
+
+## Resumiendo
+
+Ya te enseñé cómo calcular probabilidades de mulligan y lo practicamos con un caso que ocurre en 1 de cada 8 partidas, pero la pregunta persiste: ¿conviene hacer mulligan?. En el siguiente post continuaremos el desarrollo estadístico de la respuesta.
