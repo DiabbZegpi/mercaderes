@@ -1,10 +1,16 @@
 ---
 title: "Ranking de jugadores"
 date: "08-06-2024"
-categories: ["ranking", "sistema elo"]
+categories: ["ranking", "sistema elo", "probabilidades"]
 description: "Cómo saber quién es el mejor jugador de Mitos y Leyendas utilizando la ciencia."
 image: podio.png
 ---
+
+<style>
+  ul {
+    list-style-type: none;
+  }
+</style>
 
 Este es un post breve sobre un tema que revisitaremos en el futuro: el ranking de MyL.
 
@@ -18,11 +24,11 @@ Evidentemente todos estos jugadores son muy buenos, ¿pero qué tan buenos?, ¿a
 
 Pese a que el sistema de ranking TOR es útil para darnos una idea de quiénes son los mejores jugadores de la temporada, presenta múltiples falencias, entre ellas:
 
--   Difícil de interpretar: sabemos que tener cientos de puntos es un buen indicador de que el jugador en cuestión es fuerte, ¿pero cuánto más fuerte sería otro jugador con 50 puntos más?
+-   ❌ Difícil de interpretar: sabemos que tener cientos de puntos es un buen indicador de que el jugador en cuestión es fuerte, ¿pero cuánto más fuerte sería otro jugador con 50 puntos más?
 
--   No tiene en consideración las circunstancias en que se obtuvieron los puntos de liga: no valen lo mismo 12 puntos en la liga de Viernes en la noche con mis amigos que 12 puntos en un Premier de Primer Bloque.
+-   ❌ No tiene en consideración las circunstancias en que se obtuvieron los puntos de liga: no valen lo mismo 12 puntos en la liga de Viernes en la noche con mis amigos que 12 puntos en un Premier de Primer Bloque.
 
--   Es invariable al jugador que obtiene los puntos: el sistema tiene las mismas expectativas para un jugador con mucho ranking versus otro con poco o nada de ranking.
+-   ❌ Es invariable al jugador que obtiene los puntos: el sistema tiene las mismas expectativas para un jugador con mucho ranking versus otro con poco o nada de ranking.
 
 Por fortuna, existe un sistema de ranking que se apalanca de la ciencia estadística para dar solución a los problemas mencionados, que por lo demás ha sido probado en muchos deportes modernos, como el ajedrez, fútbol americano, pool, béisbol y al ranking de LLMs (*Large Language Models*, las famosas inteligencias artificiales).
 
@@ -81,10 +87,10 @@ Noten que los 34 puntos que perdió un jugador los ganó el otro.
 
 Para finalizar, un cuadro de comparación entre los sistemas de ranking.
 
-| TOR | Elo |
-|-----|-----|
-|favorece al más ganador|favorece al que gana a mejores jugadores|
-|se reinicia cada temporada|es imperecedero|
-|difícil de interpretar|interpretación exacta|
-|todas las victorias y derrotas son iguales|toma en consideración al jugador y su oponente|
-|se desconoce su respaldo científico|más de 60 años de vigencia|
+| TOR                                        | Elo                                            |
+|------------------------------------|------------------------------------|
+| favorece al más ganador                    | favorece al que gana a mejores jugadores       |
+| se reinicia cada temporada                 | es imperecedero                                |
+| difícil de interpretar                     | interpretación exacta                          |
+| todas las victorias y derrotas son iguales | toma en consideración al jugador y su oponente |
+| se desconoce su respaldo científico        | más de 60 años de vigencia                     |
