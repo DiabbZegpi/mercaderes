@@ -13,14 +13,21 @@ website:
   page-footer:
     left: "Website made with [Quarto](https://quarto.org/), by Diabb Zegpi. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     right:
+      - icon: whatsapp
+        href: https://wa.me/56978020601
+        target: _blank
       - icon: github
         href: https://github.com/DiabbZegpi
+        target: _blank
       - icon: linkedin
         href: https://www.linkedin.com/in/diabbzegpi
+        target: _blank
       - icon: envelope
         href: diabbluis@gmail.com
+        target: _blank
       - icon: twitter
         href: https://x.com/Diabb6
+        target: _blank
   navbar:
     logo: dyl-light.svg
     right:
@@ -32,6 +39,8 @@ website:
             href: about-en.qmd
       - text: Datos y Leyendas
         href: index.qmd
+      - text: Elo MyL (Beta cerrada)
+        href: elo-myl.qmd
       - icon: rss
         href: _site/index.xml
 
