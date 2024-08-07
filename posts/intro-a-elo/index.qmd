@@ -42,7 +42,7 @@ El sistema de ranking Elo fue diseñado por el Dr. Árpád Élő, un físico, as
 
 La puntuación Elo de un jugador se determina a partir de sus resultados contra otros jugadores. El truco consiste en comparar el resultado esperado de un enfrentamiento con su resultado real. Cuando un jugador gana un enfrentamiento, gana puntos de Elo, mientras que el jugador derrotado los pierde.
 
-Ejemplifiquemos: los jugadores $\text{A}$ y $\text{B}$ tienen rankings de 500 y 800, por lo que sabemos que $\text{B}$ es mejor que $\text{A}$. Obviamente, en una partida individual cualquier cosa puede pasar, como un mulligan a 5 y no robar oros, pero **en promedio *esperamos*** que el mejor jugador gane más veces de las que gana el peor jugador. Así, si el jugador $\text{B}$ gana, se le premia con más puntos de ranking que si hubiera ganado $\text{A}$, ¿cuántos puntos? Esto lo da la fórmula logística:
+Ejemplifiquemos: los jugadores $\text{A}$ y $\text{B}$ tienen rankings de 800 y 500, respectivamente, por lo que sabemos que $\text{A}$ es mejor que $\text{B}$. Obviamente, en una partida individual cualquier cosa puede pasar, como un mulligan a 5 y no robar oros, pero **en promedio *esperamos*** que el mejor jugador gane más veces de las que gana el peor jugador. Así, si el jugador $\text{B}$ gana, se le premia con más puntos de ranking que si hubiera ganado $\text{A}$, ¿cuántos puntos? Esto lo da la fórmula logística:
 
 $$
 \mathbb{E}_{\text{A}} = \frac{1}{1+10^{(R_{\text{B}} - R_{\text{A}})/400}},
