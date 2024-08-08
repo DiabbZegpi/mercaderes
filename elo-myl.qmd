@@ -1,0 +1,177 @@
+---
+title: "Elo MyL (Alpha)"
+page-layout: article
+title-block-banner: false
+comments: false
+toc: false
+execute:
+  warning: false
+  message: false
+  echo: false
+---
+
+```{=html}
+<style>
+  .center {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+  table {
+    width: 80%;
+}
+</style>
+```
+Ranking Elo de jugadores de Mitos y Leyendas, formato Racial-Edición de Primer Bloque. Actualmente nos encontramos en fase Alpha y los rankings actuales son meramente referenciales. Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
+
+Si deseas aprender cómo funciona el ranking, visita mi [blog post sobre Elo](/posts/intro-a-elo).
+
+<hr>
+
+```{r import-data}
+library(tidyverse)
+library(googlesheets4)
+library(gt)
+
+gs4_auth(
+  email = "diabbluis@gmail.com",
+  cache = ".gargle"
+)
+
+data_path <- "https://docs.google.com/spreadsheets/d/1dj8J1QKNHAEHMJP-TwFtFk-Gh0JXQ7Bayam6eXv2ai8/edit?gid=0#gid=0"
+rating_list_path <- "https://docs.google.com/spreadsheets/d/1Wh3PTzHAhoY7VKp-WfJgEF7IjWMYSdecgzIlwFnDA3E/edit?gid=0#gid=0"
+
+resultados <- read_sheet(data_path, "resultados", col_types = "ccDiccii")
+torneos <- read_sheet(data_path, "torneos", col_types = "cccDcc")
+jugadores <- read_sheet(data_path, "jugadores", col_types = "ccc")
+ranking <- read_sheet(rating_list_path, "ranking", col_types = "icd")
+```
+
+```{r posiciones}
+versiones <- 
+  ranking |> 
+  pull(version) |> 
+  unique() |> 
+  sort(decreasing = TRUE)
+
+version_actual <- versiones[1]
+version_anterior <- versiones[2]
+
+n_torneos <- length(unique(torneos$id))
+
+posiciones_anteriores <- 
+  ranking |> 
+  filter(version == version_anterior) |> 
+  mutate(rank = min_rank(-elo))
+
+posiciones_actuales <- 
+  ranking |> 
+  filter(version == version_actual) |> 
+  mutate(rank = min_rank(-elo))
+
+ranking_actualizado <- 
+  posiciones_actuales |> 
+  left_join(
+    posiciones_anteriores, 
+    by = join_by(jugador), 
+    suffix = c("_actual", "_anterior")
+  ) |> 
+  mutate(
+    elo_diff = elo_actual - elo_anterior,
+    rank_diff = -(rank_actual - rank_anterior)
+  ) |> 
+  left_join(jugadores, by = join_by(jugador == tor)) |> 
+  mutate(
+    # team = replace_na(team, ""),
+    team = str_to_title(team)
+  )
+```
+
+
+#### Lista de Elo MyL Primer Bloque formato Racial edición
+
+##### Actualizada con `r n_torneos` torneo al `r ymd(version_actual) |> format("%d de %B, %Y")`
+
+```{r table}
+ranking_actualizado |> 
+  arrange(rank_actual, rank_anterior) |> 
+  gt() |> 
+  opt_table_font(font = "Roboto") |> 
+  cols_hide(c(ends_with("_anterior"), version_actual, elo_diff, rank_diff)) |> 
+  cols_move(c( jugador, nombre, team, elo_actual), rank_actual) |> 
+  tab_spanner(
+    label = md("**Jugador**"),
+    columns = c(jugador, nombre, team)
+  ) |> 
+  cols_label(
+    rank_actual = md("**#**"),
+    jugador = md("**TOR**"),
+    nombre = md("**Nombre**"),
+    team = md("**Team**"),
+    elo_actual = md("**Elo**")
+  ) |> 
+  # tab_header(
+  #   title = "Lista de Elo MyL Primer Bloque formato Racial Edición",
+  #   subtitle = paste("Actualizada con", n_torneos, "torneo al", ymd(version_actual) |> format("%d de %B, %Y"))
+  # ) |> 
+  sub_missing(team) |> 
+  tab_options(
+    data_row.padding = px(4),
+    table.font.size = px(16),
+    heading.title.font.size = px(22),
+    heading.subtitle.font.size = px(18),
+    table.width = px(550),
+    table.align = "center"
+  ) |> 
+  cols_width(
+    rank_actual ~ px(40),
+    jugador ~ px(90),
+    nombre ~ px(200),
+    team ~ px(150),
+    elo_actual ~ px(70)
+  ) |> 
+  fmt_number(
+    elo_actual, 
+    decimals = 1, 
+    dec_mark = ".",
+    sep_mark = ""
+  ) |> 
+  data_color(
+    rows = rank_actual <= 3,
+    palette = "#ffd700",
+    na_color = "#ffd700"
+  ) |> 
+  data_color(
+    rows = between(rank_actual, 4, 10),
+    palette = "gray90",
+    na_color = "gray90"
+  ) |> 
+  tab_style(
+    style = cell_borders(
+      sides = c("top", "bottom"),
+      color = "gray80",
+      weight = px(1.5),
+      style = "solid"
+    ),
+    locations = cells_body()
+  ) |> 
+  tab_style(
+    style = cell_borders(
+      sides = c("bottom"),
+      color = "gray70",
+      weight = px(2),
+      style = "solid"
+    ),
+    locations = list(cells_column_labels())
+  ) |> 
+  opt_row_striping(row_striping = FALSE) |> 
+  opt_interactive(
+    use_pagination = TRUE,
+    use_sorting = TRUE,
+    use_search = TRUE,
+    use_text_wrapping = FALSE,
+    page_size_default = 25,
+    pagination_type = "simple"
+  ) 
+```
+
