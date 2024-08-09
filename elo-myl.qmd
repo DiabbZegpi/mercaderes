@@ -20,6 +20,10 @@ execute:
   table {
     width: 80%;
 }
+
+  input.rt-search {
+  
+}
 </style>
 ```
 Ranking Elo de jugadores de Mitos y Leyendas, formato Racial-Edición de Primer Bloque. Actualmente nos encontramos en fase Alpha y los rankings actuales son meramente referenciales. Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
@@ -82,53 +86,131 @@ ranking_actualizado <-
   ) |> 
   left_join(jugadores, by = join_by(jugador == tor)) |> 
   mutate(
-    # team = replace_na(team, ""),
-    team = str_to_title(team)
+    team = replace_na(team, ""),
+    team = str_to_title(team),
+    nombre = str_to_title(nombre),
+    rank_diff = replace_na(rank_diff, 0)
   )
+```
+
+
+```{r}
+resultados_longer <- resultados |>
+  group_by(torneo, ronda) |> 
+  mutate(mesa = row_number()) |> 
+  ungroup() |> 
+  pivot_longer(jugador1:jugador2, names_to = "posicion_j", values_to = "jugador") |> 
+  pivot_longer(puntos1:puntos2, names_to = "posicion_p", values_to = "puntos") |> 
+  filter(str_sub(posicion_j, -1) == str_sub(posicion_p, -1)) |>
+  select(torneo, ronda, mesa, jugador, puntos)
+  
+resultados_razas <- 
+  resultados_longer |> 
+  left_join(torneos |> select(id, jugador, raza), by = join_by(torneo == id, jugador)) |> 
+  mutate(raza = str_to_title(raza))
+
+wr_jugador <- 
+  resultados_razas |> 
+  group_by(torneo, ronda, mesa) |> 
+  mutate(
+    puntos = if_else(jugador == "bye", NA, puntos),
+    puntos_totales = sum(puntos)
+  ) |>
+  filter(!is.na(puntos_totales)) |> 
+  ungroup() |> 
+  group_by(jugador) |> 
+  summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
+ 
+raza_favorita <- 
+  torneos |> 
+  mutate(
+    raza = str_to_title(raza),
+    raza = replace_na(raza, "")
+  ) |> 
+  group_by(jugador, fecha, raza) |> 
+  mutate(n = n()) |> 
+  slice_max(n, with_ties = TRUE) |> 
+  ungroup() |> 
+  group_by(jugador) |> 
+  slice_max(fecha) |> 
+  select(jugador, raza) 
+
+
+wr_teams <- 
+  resultados_razas |> 
+  left_join(jugadores |> select(tor, team), by = join_by(jugador == tor)) |> 
+  mutate(team = str_to_title(team)) |> 
+  filter(!is.na(team)) |>
+  group_by(torneo, ronda, mesa) |>
+  mutate(puntos_totales = sum(puntos)) |> 
+  group_by(team, .add = TRUE) |> 
+  mutate(team_match = n() == 2) |> 
+  filter(!team_match) |> 
+  ungroup() |> 
+  group_by(team) |> 
+  summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
+
+jugadores_activos <- 
+  resultados_razas |> 
+  left_join(jugadores |> select(tor, team), by = join_by(jugador == tor)) |> 
+  mutate(team = str_to_title(team)) |> 
+  distinct(team, jugador) |> 
+  count(team, name = "jugadores_activos")
+  
+elo_medio_team <- 
+  ranking_actualizado |> 
+  filter(team != "") |> 
+  group_by(team) |> 
+  summarize(elo_medio = mean(elo_actual, na.rm = TRUE), .groups = "drop")
+  
+
+tabla_teams <- 
+  ranking_actualizado |> 
+  slice_max(elo_actual, by = team) |> 
+  select(nombre, elo_actual, team) |> 
+  filter(team != "") |> 
+  left_join(wr_teams, by = join_by(team)) |> 
+  left_join(jugadores_activos, by = join_by(team)) |> 
+  left_join(elo_medio_team, by = join_by(team)) |> 
+  arrange(desc(elo_medio), desc(jugadores_activos), desc(wr)) |> 
+  mutate(rank_actual = row_number()) |> 
+  relocate(rank_actual, team, wr, elo_medio, jugadores_activos, nombre, elo_actual)
+  
 ```
 
 
 #### Lista de Elo MyL Primer Bloque formato Racial edición
 
-##### Actualizada con `r n_torneos` torneo al `r ymd(version_actual) |> format("%d de %B, %Y")`
+##### Actualizada con `r n_torneos` torneos al `r ymd(version_actual) |> format("%d de %B, %Y")`
+
+::: {.panel-tabset}
+
+## Jugadores
 
 ```{r table}
+#| column: body-outset
+
 ranking_actualizado |> 
+  left_join(raza_favorita, by = join_by(jugador)) |> 
+  left_join(wr_jugador, by = join_by(jugador)) |> 
   arrange(rank_actual, rank_anterior) |> 
   gt() |> 
   opt_table_font(font = "Roboto") |> 
-  cols_hide(c(ends_with("_anterior"), version_actual, elo_diff, rank_diff)) |> 
-  cols_move(c( jugador, nombre, team, elo_actual), rank_actual) |> 
-  tab_spanner(
-    label = md("**Jugador**"),
-    columns = c(jugador, nombre, team)
-  ) |> 
-  cols_label(
-    rank_actual = md("**#**"),
-    jugador = md("**TOR**"),
-    nombre = md("**Nombre**"),
-    team = md("**Team**"),
-    elo_actual = md("**Elo**")
-  ) |> 
-  # tab_header(
-  #   title = "Lista de Elo MyL Primer Bloque formato Racial Edición",
-  #   subtitle = paste("Actualizada con", n_torneos, "torneo al", ymd(version_actual) |> format("%d de %B, %Y"))
-  # ) |> 
-  sub_missing(team) |> 
+  cols_hide(c(ends_with("_anterior"), version_actual, elo_diff)) |> 
+  cols_move(c(jugador, nombre, raza, team, wr, elo_actual), rank_actual) |> 
   tab_options(
-    data_row.padding = px(4),
+    data_row.padding = px(6),
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(550),
+    table.width = px(850),
     table.align = "center"
   ) |> 
-  cols_width(
-    rank_actual ~ px(40),
-    jugador ~ px(90),
-    nombre ~ px(200),
-    team ~ px(150),
-    elo_actual ~ px(70)
+  fmt_percent(
+    wr,
+    decimals = 1,
+    dec_mark = ".",
+    sep_mark = ""
   ) |> 
   fmt_number(
     elo_actual, 
@@ -136,42 +218,133 @@ ranking_actualizado |>
     dec_mark = ".",
     sep_mark = ""
   ) |> 
-  data_color(
-    rows = rank_actual <= 3,
-    palette = "#ffd700",
-    na_color = "#ffd700"
+  cols_add(dir = case_when(
+    rank_diff == 0 | is.na(rank_diff) ~ "minus",
+    rank_diff > 0 ~ "arrow-up",
+    rank_diff < 0 ~ "arrow-down"
+  )) |>  
+  fmt_icon(dir, fill_color = list(
+    "minus" = "gray40",
+    "arrow-up" = "forestgreen",
+    "arrow-down" = "red")
   ) |> 
-  data_color(
-    rows = between(rank_actual, 4, 10),
-    palette = "gray90",
-    na_color = "gray90"
+  cols_label(
+    rank_actual = md("**#**"),
+    rank_diff ~ "",
+    dir ~ "",
+    jugador = md("**TOR**"),
+    nombre = md("**Nombre**"),
+    raza = md("**Raza favorita**"),
+    team = md("**Team**"),
+    wr = md("**Win rate**"),
+    elo_actual = md("**Elo**")
+  ) |> 
+  cols_move(c(rank_diff, dir), after = rank_actual) |> 
+  cols_width(
+    rank_actual ~ px(40),
+    rank_diff ~ px(40),
+    dir ~ px(20),
+    jugador ~ px(90),
+    nombre ~ px(200),
+    raza ~ px(120),
+    team ~ px(150),
+    wr ~ px(80),
+    elo_actual ~ px(70)
   ) |> 
   tab_style(
-    style = cell_borders(
-      sides = c("top", "bottom"),
-      color = "gray80",
-      weight = px(1.5),
-      style = "solid"
-    ),
-    locations = cells_body()
-  ) |> 
-  tab_style(
-    style = cell_borders(
-      sides = c("bottom"),
-      color = "gray70",
-      weight = px(2),
-      style = "solid"
-    ),
-    locations = list(cells_column_labels())
-  ) |> 
-  opt_row_striping(row_striping = FALSE) |> 
+    locations = cells_body(columns = c(rank_actual, wr, elo_actual)),
+    style = cell_text(weight = "bold")
+  ) |>
+  data_color(
+    columns = c(wr, elo_actual), 
+    palette = c("red", "forestgreen"),
+    apply_to = "text"
+  ) |>
+  opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
     use_pagination = TRUE,
     use_sorting = TRUE,
     use_search = TRUE,
+    use_resizers = TRUE,
+    use_highlight = TRUE,
     use_text_wrapping = FALSE,
-    page_size_default = 25,
+    page_size_default = 10,
     pagination_type = "simple"
-  ) 
+  )
 ```
+
+## Teams
+
+```{r}
+#| column: body-outset
+
+tabla_teams |> 
+  arrange(desc(elo_medio), desc(wr)) |> 
+  gt() |> 
+  opt_table_font(font = "Roboto") |> 
+  tab_options(
+    data_row.padding = px(6),
+    table.font.size = px(16),
+    heading.title.font.size = px(22),
+    heading.subtitle.font.size = px(18),
+    table.width = px(800),
+    table.align = "center"
+  ) |> 
+  fmt_percent(
+    wr,
+    decimals = 1,
+    dec_mark = ".",
+    sep_mark = ""
+  ) |> 
+  fmt_number(
+    c(elo_medio, elo_actual), 
+    decimals = 1, 
+    dec_mark = ".",
+    sep_mark = ""
+  ) |> 
+  cols_label(
+    rank_actual = md("**#**"),
+    # rank_diff ~ "",
+    # dir ~ "",
+    team = md("**Nombre**"),
+    jugadores_activos = md("**Miembros activos**"),
+    elo_medio = md("**Elo promedio**"),
+    wr = md("**Win rate**"),
+    nombre = md("**Mejor jugador**"),
+    elo_actual = md("**Elo mejor jugador**")
+  ) |> 
+  cols_width(
+    rank_actual ~ px(40),
+    # rank_diff ~ px(40),
+    # dir ~ px(20),
+    team ~ px(150),
+    jugadores_activos ~ px(100),
+    elo_medio ~ px(100),
+    wr ~ px(80),
+    nombre ~ px(200),
+    elo_actual ~ px(120)
+  ) |> 
+  tab_style(
+    locations = cells_body(columns = c(rank_actual, wr, elo_medio, elo_actual)),
+    style = cell_text(weight = "bold")
+  ) |> 
+  data_color(
+    columns = c(wr, elo_medio, elo_actual), 
+    palette = c("red", "forestgreen"),
+    apply_to = "text"
+  ) |> 
+  opt_row_striping(row_striping = FALSE) |>
+  opt_interactive(
+    use_pagination = TRUE,
+    use_sorting = TRUE,
+    use_search = TRUE,
+    use_resizers = TRUE,
+    use_highlight = TRUE,
+    page_size_default = 20,
+    pagination_type = "simple"
+  )
+```
+
+
+:::
 
