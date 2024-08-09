@@ -336,3 +336,4 @@ Y así, con una sola herramienta, el modelo logístico, podemos hacer prediccion
 ## Conclusión
 
 En general, las simulaciones son fieles al diseño de torneo y de enfrentamientos entre razas, es decir, había mucho faerie, titán y olímpico, por tanto, estas son las razas con mayor probabilidad de ganar. Incluso más interesante sería correr las mismas simulaciones pero teniendo en consideración los enfrentamientos favorables y desfavorables entre las 12 razas, algo que espero poder conseguir con un dataset más completo.
+
