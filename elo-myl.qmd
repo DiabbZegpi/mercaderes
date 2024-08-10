@@ -204,11 +204,12 @@ ranking_actualizado |>
   arrange(rank_actual, rank_anterior) |> 
   mutate(
     rank_diff = if_else(rank_diff == 0, NA, rank_diff),
+    rank_diff_abs = abs(rank_diff),
     elo_diff = if_else(elo_diff == 0, NA, elo_diff)
   ) |> 
   gt() |> 
   opt_table_font(font = "Roboto") |> 
-  cols_hide(c(ends_with("_anterior"), version_actual)) |> 
+  cols_hide(c(ends_with("_anterior"), version_actual, rank_diff)) |> 
   cols_move(c(nombre, jugador, raza, team, wr, elo_actual, elo_diff), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
@@ -250,7 +251,7 @@ ranking_actualizado |>
   ) |> 
   cols_label(
     rank_actual = md("**#**"),
-    rank_diff ~ "",
+    rank_diff_abs ~ "",
     dir ~ "",
     jugador = md("**TOR**"),
     nombre = md("**Nombre**"),
@@ -260,10 +261,10 @@ ranking_actualizado |>
     elo_actual = md("**Elo**"),
     elo_diff = md("**+/-**")
   ) |> 
-  cols_move(c(dir, rank_diff), after = rank_actual) |> 
+  cols_move(c(dir, rank_diff_abs), after = rank_actual) |> 
   cols_width(
     rank_actual ~ px(40),
-    rank_diff ~ px(40),
+    rank_diff_abs ~ px(40),
     dir ~ px(20),
     jugador ~ px(90),
     nombre ~ px(200),
@@ -290,7 +291,7 @@ ranking_actualizado |>
     apply_to = "text",
     method = "numeric"
   ) |> 
-  cols_align("left", c(rank_diff, elo_diff)) |> 
+  cols_align("left", c(rank_diff_abs, elo_diff)) |> 
   cols_align("right", dir) |> 
   # opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
