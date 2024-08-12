@@ -221,7 +221,7 @@ ranking_actualizado |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(850),
+    table.width = px(860),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -279,7 +279,7 @@ ranking_actualizado |>
     team ~ px(120),
     wr ~ px(80),
     elo_actual ~ px(80),
-    elo_diff ~ px(60)
+    elo_diff ~ px(70)
   ) |> 
   tab_style(
     locations = cells_body(columns = c(rank_actual, elo_actual)),
