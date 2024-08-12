@@ -50,6 +50,11 @@ resultados <- read_sheet(data_path, "resultados", col_types = "ccDiccii")
 torneos <- read_sheet(data_path, "torneos", col_types = "cccDcc")
 jugadores <- read_sheet(data_path, "jugadores", col_types = "ccc")
 ranking <- read_sheet(rating_list_path, "ranking", col_types = "icd")
+torneos_computados <- read_sheet(rating_list_path, "torneos computados", col_types = "cD")
+
+# Filtros
+torneos <- torneos |> filter(id %in% torneos_computados$id)
+resultados <- resultados |> filter(torneo %in% torneos_computados$id)
 ```
 
 ```{r posiciones}
@@ -207,7 +212,7 @@ ranking_actualizado |>
     rank_diff_abs = abs(rank_diff),
     elo_diff = if_else(elo_diff == 0, NA, elo_diff)
   ) |> 
-  gt() |> 
+  gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   cols_hide(c(ends_with("_anterior"), version_actual, rank_diff)) |> 
   cols_move(c(nombre, jugador, raza, team, wr, elo_actual, elo_diff), rank_actual) |>
@@ -217,7 +222,7 @@ ranking_actualizado |>
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
     table.width = px(850),
-    table.align = "center"
+    table.align = "center",
   ) |> 
   fmt_percent(
     wr,
@@ -229,7 +234,8 @@ ranking_actualizado |>
     elo_actual, 
     decimals = 1, 
     dec_mark = ".",
-    sep_mark = ""
+    # sep_mark = "", 
+    use_seps = FALSE, 
   ) |>
   fmt_number(
     elo_diff, 
@@ -251,8 +257,9 @@ ranking_actualizado |>
   ) |> 
   cols_label(
     rank_actual = md("**#**"),
-    rank_diff_abs ~ "",
-    dir ~ "",
+    rank_diff_abs = "",
+    # dir ~ "",
+    dir = "",
     jugador = md("**TOR**"),
     nombre = md("**Nombre**"),
     raza = md("**Raza favorita**"),
@@ -271,7 +278,7 @@ ranking_actualizado |>
     raza ~ px(120),
     team ~ px(120),
     wr ~ px(80),
-    elo_actual ~ px(70),
+    elo_actual ~ px(80),
     elo_diff ~ px(60)
   ) |> 
   tab_style(
@@ -298,7 +305,6 @@ ranking_actualizado |>
     use_pagination = TRUE,
     use_sorting = TRUE,
     use_search = TRUE,
-    use_resizers = TRUE,
     use_highlight = TRUE,
     use_text_wrapping = FALSE,
     page_size_default = 10,
@@ -313,7 +319,7 @@ ranking_actualizado |>
 
 tabla_teams |> 
   arrange(desc(elo_medio), desc(wr)) |> 
-  gt() |> 
+  gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   tab_options(
     data_row.padding = px(6),
@@ -333,7 +339,8 @@ tabla_teams |>
     c(elo_medio, elo_actual), 
     decimals = 1, 
     dec_mark = ".",
-    sep_mark = ""
+    # sep_mark = "",
+    use_seps = FALSE
   ) |> 
   sub_missing(wr, missing_text = "") |> 
   cols_label(
@@ -375,7 +382,6 @@ tabla_teams |>
     use_pagination = TRUE,
     use_sorting = TRUE,
     use_search = TRUE,
-    use_resizers = TRUE,
     use_highlight = TRUE,
     page_size_default = 20,
     pagination_type = "simple"
