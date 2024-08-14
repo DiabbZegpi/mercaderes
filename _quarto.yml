@@ -58,6 +58,7 @@ format:
       - custom.scss
     link-external-icon: false
     link-external-newwindow: true
+    linkcolor: "#E64833"
     citations-hover: true
     footnotes-hover: true
     toc: true
