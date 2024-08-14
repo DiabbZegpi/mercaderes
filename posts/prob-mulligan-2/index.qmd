@@ -1,0 +1,95 @@
+---
+title: "¡Me quedo! (parte 2)"
+date: "14-06-2024"
+categories: ["probabilidades", "mulligan"]
+description: "Si quieres ser un jugador de alto nivel debes saber estas probabilidades de memoria"
+image: thumbnail-2.jpg
+---
+
+Continuando el post sobre las [matemáticas detrás del mulligan (¡Me quedo! parte 1)](/posts/prob-mulligan/index.qmd), aquí construiremos una tabla de estrategia básica de manos que seguramente has robado y seguirás robando en el formato **Racial Edición de Primer Bloque**.
+
+## Estrategia básica en Blackjack
+
+![Tabla de estrategia básica de Blackjack. Fuente: Ken Smith, jugador experto de Blackjack y autor de libros para mejorar en el juego.](basic-strategy.jpg){width="40%"}
+
+¿Has jugado Blackjack o has visto películas de casino?; ¿sabes por qué algunos jugadores aprenden a contar cartas o cómo lo hacen? En principio, la casa siempre gana, lo que no es cliché, porque el casino tiene la ventaja en (casi) todos los juegos. La clave para derrotar al casino en Blackjack es usar la estadística para voltear las probabilidades a favor del jugador.
+
+En la década de 1960, [Edward Thorp](https://es.wikipedia.org/wiki/Edward_O._Thorp), matemático estadounidense, derrotó a los casinos en el Blackjack con un método basado en estadística, escribiendo a posteriori el libro *Beat the Dealer*, en donde explica cómo cualquier jugador puede replicar su hazaña con tan solo entrenamiento. La base de su método es la **"estrategia básica"**, una tarjeta tricolor con las mejores decisiones que el jugador puede tomar una vez que el croupier muestra su carta. Lo que el jugador debe hacer es memorizar esta tarjeta y así optimizar su toma de decisiones para maximizar sus ganancias (pedir carta, plantarse, retirarse, doblarse o separar). Cabe destacar que la estrategia básica es sólo 1 de los 4 requisitos que un jugador debe dominar antes de aclamar que su juego es perfecto.
+
+Inicié el proyecto Datos y Leyendas inspirado en la estrategia básica de Blackjack, queriendo adaptarla al mulligan de Mitos y Leyendas porque, pese a la vasta cantidad de cartas diferentes de los mazos competitivos e innumerables situaciones únicas que ocurren en los duelos entre distintos jugadores, la decisión de mulligan sigue siendo transversal, repitiéndose las condiciones iniciales con alta frecuencia.
+
+## ¿Me quedo?
+
+A diferencia de Edward Thorp, tengo en mi poder una computadora mucho más potente que la IBM 704 que usó para computar las probabilidades de Blackjack, con lo que podemos dar respuesta a todo tipo de preguntas de mulligan. Comencemos por una pregunta simple.
+
+### Condiciones iniciales
+
+Con el objetivo de simplificar el análisis y que éste sea afín con la mayoría de los mazos, asumiremos las siguientes condiciones:
+
+-   El mazo contiene **16 oros** en total (oro inicial + 15).
+
+-   Asumiremos que no recibimos daño en el primer turno.
+
+-   Una buena mano de mulligan contiene **entre 2 y 4 oros**.
+
+Evidentemente, los criterios que definan "una buena mano" varían según el jugador, composición del mazo y el oponente, pero pienso que más de 1 oro y menos de 5 es una situación que siempre es deseable. Las conclusiones obtenidas se mantienen incluso si recibimos daño en el primer turno, puesto que el daño recibido es aleatorio y *en promedio* no cambiará la *distribución de probabilidad* del robo. Por otra parte, los resultados serán más sensibles a la variación en la cantidad total de oros en el mazo.
+
+### 1 oro, 1 robo simple
+
+![](1oro-1robo.png){fig-alt="Manos frecuentes con los mazos faerie, héroe y faraón"}
+
+Esta es una mano que es más frecuente jugando con héroe y faraón que con faerie, porque los mazos pueden llevar 3 copias de Orión y Amosis I, respectivamente, mientras que la Bruja Anís solamente está permitida por 1 copia según el [banlist actualizado el 29 de julio de 2024](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/). Aquí no contamos a Tom Thumb o Urisk como robos simples. Específicamente, la probabilidad de robar una mano con 1 oro y 1 robo simple es 7.3% con héroe y faraón (1 en 14) y 3.7% con faerie (1 en 27).
+
+Si jugáramos la carta de robo e incluyendo la finalización, podríamos robar 0, 1 o 2 oros en el primer turno, por ende nos preguntamos **qué es mayor**, la probabilidad de **robar al menos 1 oro** o la probabilidad de robar una **mejor mano de 7 cartas**.
+
++-------------------------+--------------------------------------+----------------------------------------------+-----------------+
+| Frecuencia              | Probabilidad de robar al menos 1 oro | Probabilidad de mejorar la mano con mulligan | ¿Mulligan a 7?  |
++=========================+======================================+==============================================+=================+
+| 7.3% con héroe y faraón | 57.2%                                | 68.1%                                        | **Sí, pero...** |
+|                         |                                      |                                              |                 |
+| 3.7% con Bruja Anís     |                                      |                                              |                 |
++-------------------------+--------------------------------------+----------------------------------------------+-----------------+
+
+Manteniendo la mano inicial, nuestras chances de robar un oro son un poco mejores que lanzar una moneda, siendo muy tentador cambiar de mano. **Atención:** este cálculo no tiene en consideración que en la próxima mano tengamos 1 aliado para jugar en el primer turno, factor que hay que ponderar al tomar la decisión de mulligan. Este cálculo se puede hacer siempre que se tengan en consideración la cantidad de aliados en el mazo.
+
+### 1 oro, Tom Thumb y Rhiannon
+
+![](tom-thumb-rhiannon.png){fig-alt="Tom Thumb y Rhiannon son cartas de robo explosivo"}
+
+Tom Thumb y Rhiannon son dos cartas que permiten inicios mucho más explosivos que las nombradas anteriormente, porque conceden la posibilidad de mirar las 3 cartas superiores del mazo castillo y, si hay algún oro, podemos robarlo, barajando o enviando al cementerio las cartas no escogidas. Intuitivamente, la probabilidad de quedarnos de robar al menos 1 oro debe ser mayor, porque en lugar de ver 2 cartas terminaremos viendo 4.
+
++------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+------------------------+
+| Frecuencia | Probabilidad de robar al menos 1 oro                                                          | Probabilidad de mejorar la mano con mulligan | ¿Mulligan a 7?         |
++============+===============================================================================================+==============================================+========================+
+| 7.3%       | Tom Thumb: 82.2% si salen aliados en las 3 cartas; 81.9% si no salen aliados en las 3 cartas. | 68.1%                                        | **Definitivamente no** |
+|            |                                                                                               |                                              |                        |
+|            | Rhiannon: 82.2%.                                                                              |                                              |                        |
++------------+-----------------------------------------------------------------------------------------------+----------------------------------------------+------------------------+
+
+La probabilidad de robar **al menos 1 oro** con Tom Thumb y Rhiannon son tan grandes que solamente **fallan** en menos que **1 de cada 5 partidas**, sin mencionar que ya contaríamos con un aliado en juego y la mano repleta de otras cartas útiles.
+
+### 1 oro, Urisk
+
+![](urisk.png){fig-alt="Ramificaciones de jugar Urisk"}
+
+Urisk puede ser más complicada de evaluar, porque implica descartar y la posibilidad robar otra carta de robo simple u otro Urisk, es decir, tiene muchas ramificaciones. Por supuesto, es preferible aspirar a una mano excelente y por ello descartar a robar una mano nueva y aleatoria de 7 cartas. Calculamos la probabilidad de robar al menos 1 oro como el complemento (lo que le falta para llegar a 100%) de la probabilidad de no robar oros:
+
+$$
+\mathbb{P} = 1 - \frac{\binom{41-16}{3}}{\binom{41}{3}} = 0.784
+$$
+
+Un 78.4%. Con esta información ya es suficiente para **decidir quedarnos con la mano**. Si a esto le agregamos que podríamos robar Tom Thumb, Bruja Anís, Goblin o Elfo Oscuro, la probabilidad de robar al menos 1 oro solamente puede aumentar.
+
+### 1 oro, Tuatha de Danaan
+
+![](tuatha.png){fig-alt="Tuatha de Dannan roba 2 cartas y sale del juego"}
+
+El efecto de Tuatha de Danaan sobre la mano del jugador es similar al que tiene Urisk, con 3 diferencias sobre el juego:
+
+-   El jugador termina su turno con 8 - 1 + 2 + 1 + 1 = 11 cartas en mano, contra 10 de Urisk.
+
+-   El oponente no roba, lo que a menudo será un punto a favor.
+
+-   El jugador tendrá sus 2 oros pagados.
+
+Luego de las diferencias, la probabilidad de robar al menos 1 oro es la misma, de 78.4%, pero pasaremos el primer turno el 100% de las veces. Comenzar con Rhiannon es mucho mejor, pero **comenzar con Tuatha de Danaan sigue siendo mejor que hacer mulligan a 7 cartas**, considerando que existen aliados para recuperar la mesa entregada, como Aine y Eriu.
