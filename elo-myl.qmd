@@ -276,8 +276,8 @@ ranking_actualizado |>
     jugador ~ px(90),
     nombre ~ px(200),
     raza ~ px(120),
-    team ~ px(120),
-    wr ~ px(80),
+    team ~ px(115),
+    wr ~ px(85),
     elo_actual ~ px(80),
     elo_diff ~ px(70)
   ) |> 
@@ -326,7 +326,7 @@ tabla_teams |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(750),
+    table.width = px(860),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -348,8 +348,8 @@ tabla_teams |>
     # rank_diff ~ "",
     # dir ~ "",
     team = md("**Nombre**"),
-    jugadores_activos = md("**Miembros activos**"),
-    elo_medio = md("**Elo promedio**"),
+    jugadores_activos = md("**Miembros**"),
+    elo_medio = md("**Elo medio**"),
     wr = md("**Win rate**"),
     nombre = md("**Mejor jugador**"),
     elo_actual = md("**Elo mejor jugador**")
@@ -361,9 +361,9 @@ tabla_teams |>
     team ~ px(120),
     jugadores_activos ~ px(100),
     elo_medio ~ px(100),
-    wr ~ px(80),
-    nombre ~ px(200),
-    elo_actual ~ px(100)
+    wr ~ px(85),
+    nombre ~ px(260),
+    elo_actual ~ px(150)
   ) |> 
   tab_style(
     locations = cells_body(columns = c(rank_actual, elo_medio)),
@@ -383,6 +383,7 @@ tabla_teams |>
     use_sorting = TRUE,
     use_search = TRUE,
     use_highlight = TRUE,
+    use_text_wrapping = FALSE,
     page_size_default = 20,
     pagination_type = "simple"
   )
