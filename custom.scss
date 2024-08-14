@@ -28,13 +28,13 @@ $quaternary: #90AEAD;
 
 /*-- Define fonts --*/
 $font-family-base: "Roboto";
+$font-family-sans-serif: "Roboto";
+$bs-body-font-family: "Roboto";
+$web-font-path: "";
+
+/*-- scss:rules --*/
 
 @import url("fonts/css/roboto.css");
 
 
 
-
-
-
-
-/*-- scss:rules --*/
