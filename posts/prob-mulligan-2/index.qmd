@@ -8,6 +8,8 @@ image: thumbnail-2.jpg
 
 Continuando el post sobre las [matemáticas detrás del mulligan (¡Me quedo! parte 1)](/posts/prob-mulligan/index.qmd), aquí construiremos una tabla de estrategia básica de manos que seguramente has robado y seguirás robando en el formato **Racial Edición de Primer Bloque**.
 
+Gracias a [Dojo Mitero](https://www.youtube.com/@Dojomitero) por apoyar este post con ideas de manos iniciales. Si te gustaría analizar estadísticamente alguna de tus ideas, [envíame un mensaje por WhatsApp](https://wa.me/56978020601) y serás mencionado por tu aporte.
+
 ## Estrategia básica en Blackjack
 
 ![Tabla de estrategia básica de Blackjack. Fuente: Ken Smith, jugador experto de Blackjack y autor de libros para mejorar en el juego.](basic-strategy.jpg){width="40%"}
