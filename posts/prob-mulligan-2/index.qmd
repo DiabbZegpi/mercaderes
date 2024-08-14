@@ -1,6 +1,6 @@
 ---
 title: "¡Me quedo! (parte 2)"
-date: "14-06-2024"
+date: "08-14-2024"
 categories: ["probabilidades", "mulligan"]
 description: "Si quieres ser un jugador de alto nivel debes saber estas probabilidades de memoria"
 image: thumbnail-2.jpg
