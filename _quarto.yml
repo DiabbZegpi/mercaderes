@@ -7,9 +7,11 @@ website:
   page-navigation: true
   title: "Diabb Zegpi"
   site-url: https://zegpi.com
+  open-graph: true
+  image: zeus.jpg
   favicon: dyl-dark.ico
   google-analytics: "G-63PKLV6G58"
-  description: "Blog personal de Diabb Zegpi, donde leerás sobre aplicaciones de ciencia de datos."
+  description: "Aplicaciones de datos e inteligencia artificial al juego número 1 del reino"
   page-footer:
     left: "Website made with [Quarto](https://quarto.org/), by Diabb Zegpi. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     right:
@@ -64,7 +66,6 @@ format:
     footnotes-hover: true
     toc: true
     code-link: true
-    include-in-header: header-img.html
 
 execute:
   freeze: auto
