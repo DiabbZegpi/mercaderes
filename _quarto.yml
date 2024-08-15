@@ -64,6 +64,7 @@ format:
     footnotes-hover: true
     toc: true
     code-link: true
+    include-in-header: header-img.html
 
 execute:
   freeze: auto
