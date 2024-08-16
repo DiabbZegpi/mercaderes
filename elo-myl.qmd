@@ -65,7 +65,7 @@ versiones <-
   sort(decreasing = TRUE)
 
 version_actual <- versiones[1]
-version_anterior <- versiones[2]
+version_anterior <- versiones[3]
 
 n_torneos <- length(unique(torneos$id))
 
@@ -98,7 +98,6 @@ ranking_actualizado <-
     rank_diff = replace_na(rank_diff, 0)
   )
 ```
-
 
 ```{r}
 resultados_longer <- resultados |>
@@ -191,13 +190,11 @@ tabla_teams <-
   
 ```
 
-
-#### Lista de Elo MyL Primer Bloque formato Racial edición
+#### Lista de Elo MyL v0.2.0 Primer Bloque formato Racial edición
 
 ##### Actualizada con `r n_torneos` torneos al `r ymd(version_actual) |> format("%d de %B, %Y")`
 
-::: {.panel-tabset}
-
+::: panel-tabset
 ## Jugadores
 
 ```{r table}
@@ -388,8 +385,4 @@ tabla_teams |>
     pagination_type = "simple"
   )
 ```
-
-
 :::
-
-
