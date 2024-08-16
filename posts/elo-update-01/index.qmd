@@ -1,0 +1,23 @@
+---
+title: "Algoritmo Elo MyL v0.2.0"
+date: "08-16-2024"
+categories: ["ranking", "sistema elo", "probabilidades"]
+description: "Nuevas funcionalidades y características de Elo MyL."
+image: dragon.jpg
+---
+
+A algunos jugadores les llamó la atención que en la actualización del 14 de agosto de la [lista Elo MyL](https://zegpi.com/elo-myl) un jugador haya bajado 102.4 (!) puntos de rating aún cuando tuvo un buen rendimiento en las ligas. La explicación de este resultado solamente abrió la puerta a más preguntas, siendo la más importante ¿cómo es posible perder Elo al ganar un match 2-1? Es claro que ésto no debería ocurrir, por ello es que aprovecho de anunciar la actualización del algoritmo de Elo MyL, tomando ideas de Magic Online y deportes como el béisbol y el fútbol americano, para dar nacimiento al primer algoritmo único de Elo para el juego Nro. 1 del Reino.
+
+## Resumen de la actualización 0.2.0
+
+Para quienes no desean bucear en los matices técnicos, estas son las modificaciones resumidas:
+
+-   **Antes**, la ganancia/pérdida de Elo se calculaba partida a partida, haciendo posible que un jugador 120 puntos más fuerte que otro perdiera Elo al ganar 2-1. **Ahora**, La ganancia/pérdida de Elo se determina con el resultado de un match. Así, **es imposible perder rating con el resultado 2-1**.
+
+-   El resultado **2-1 otorga/quita el 75% de los puntos que se otorgan/quitan con el resultado 2-0**. Esta proporción es el resultado de combinar las opiniones de los jugadores más experimentados en ligas de 2 comunidades online, junto con el análisis de mi base de datos de ligas, que indica que el 20-25% de los puntos totales son puntos en contra. La diferencia entre 2-1 y 2-0 fue inspirada por la implementación de Elo en la NFL, como explica Nate Silver en [esta entrevista](https://fivethirtyeight.com/features/introducing-nfl-elo-ratings/).
+
+-   **Antes**, una diferencia de 400 puntos de rating indicaba una probabilidad de ganar una partida de 91% para el jugador más fuerte, y una de 200 puntos indicaba 75%. Como un match tan favorable es poco probable que suceda en MyL, excepto contra jugadores nuevos, el rating de los jugadores estaba condenado a permanecer bajo los 2000 de Elo. **Ahora**, una diferencia de 200 puntos indica un 60% de probabilidad de ganar un match, lo que es más aplicable a nuestro juego y permite mayor variabilidad en la lista de Elo. Esta adaptación está inspirada en la implementación de Elo en [MTG Elo Project](https://www.mtgeloproject.net/faq.php).
+
+-   Como consecuencia del punto anterior, los ratings variarán **un poco más violentamente** durante las próximas semanas, hasta que consigan estabilizarse. ¿Cómo nos daremos cuenta de que la lista es estable? Los mejores jugadores estarán en el top, con pocas o ninguna excepción.
+
+Por último, quiero agradecer a las comunidades y jugadores que hacen posible este proyecto, participando en la estimación de Elo MyL y compartiendo sus opiniones constructivas. Gracias totales.
