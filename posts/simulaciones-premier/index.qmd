@@ -320,7 +320,7 @@ Un sólo jugador aumentó la probabilidad de la raza en aproximadamente 8%, pero
 
 to_champ |> 
   ggplot(aes(n, champ_bool)) +
-  geom_rug(alpha = 0.3) +
+  # geom_rug(alpha = 0.3) +
   geom_smooth(formula = y ~ x, method = "glm", method.args = list(family = binomial), se = TRUE, color = "#E64833", linewidth = 1.5) +
   scale_y_continuous(labels = scales::label_percent()) +
   labs(
@@ -329,7 +329,7 @@ to_champ |>
   )
 ```
 
-El grosor de las líneas en el eje horizontal indican vagamente si cierto número de jugadores con la misma raza es algo frecuente de ver, por ejemplo, en 10000 simulaciones ni una sola vez hubo 20 ni más de 21 jugadores con la misma raza en el top 32. Lo último que hay por explicar es el error estándar, que es un indicador de la incertidumbre del cálculo de $\beta_1$ y se expresa como una delgada sombra gris en torno a la **<span style="color: #E64833;">línea rojiza</span>** del modelo logístico, denotando que cabe poca duda que los parámetros del modelo se ajusten a la hipótesis propuesta.
+El error estándar, que es un indicador de la incertidumbre del cálculo de $\beta_1$ y se expresa como una delgada sombra gris en torno a la **<span style="color: #E64833;">línea rojiza</span>** del modelo logístico, denota que cabe poca duda que los parámetros del modelo se ajusten a la hipótesis propuesta.
 
 Y así, con una sola herramienta, el modelo logístico, podemos hacer predicciones para saber qué razas ganarán este o cualquier otro torneo. 
 
