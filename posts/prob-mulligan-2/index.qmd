@@ -38,7 +38,7 @@ Evidentemente, los criterios que definan "una buena mano" varían según el juga
 
 ### 1 oro, 1 robo simple
 
-![](1oro-1robo.png){fig-alt="Manos frecuentes con los mazos faerie, héroe y faraón"}
+![](1oro-1robo.jpg){fig-alt="Manos frecuentes con los mazos faerie, héroe y faraón"}
 
 Esta es una mano que es más frecuente jugando con héroe y faraón que con faerie, porque los mazos pueden llevar 3 copias de Orión y Amosis I, respectivamente, mientras que la Bruja Anís solamente está permitida por 1 copia según el [banlist actualizado el 29 de julio de 2024](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/). Aquí no contamos a Tom Thumb o Urisk como robos simples. Específicamente, la probabilidad de robar una mano con 1 oro y 1 robo simple es 7.3% con héroe y faraón (1 en 14) y 3.7% con faerie (1 en 27).
 
@@ -56,7 +56,7 @@ Manteniendo la mano inicial, nuestras chances de robar un oro son un poco mejore
 
 ### 1 oro, Tom Thumb y Rhiannon
 
-![](tom-thumb-rhiannon.png){fig-alt="Tom Thumb y Rhiannon son cartas de robo explosivo"}
+![](tom-thumb-rhiannon.jpg){fig-alt="Tom Thumb y Rhiannon son cartas de robo explosivo"}
 
 Tom Thumb y Rhiannon son dos cartas que permiten inicios mucho más explosivos que las nombradas anteriormente, porque conceden la posibilidad de mirar las 3 cartas superiores del mazo castillo y, si hay algún oro, podemos robarlo, barajando o enviando al cementerio las cartas no escogidas. Intuitivamente, la probabilidad de quedarnos de robar al menos 1 oro debe ser mayor, porque en lugar de ver 2 cartas terminaremos viendo 4.
 
@@ -72,7 +72,7 @@ La probabilidad de robar **al menos 1 oro** con Tom Thumb y Rhiannon son tan gra
 
 ### 1 oro, Urisk
 
-![](urisk.png){fig-alt="Ramificaciones de jugar Urisk"}
+![](urisk.jpg){fig-alt="Ramificaciones de jugar Urisk"}
 
 Urisk puede ser más complicada de evaluar, porque implica descartar y la posibilidad robar otra carta de robo simple u otro Urisk, es decir, tiene muchas ramificaciones. Por supuesto, es preferible aspirar a una mano excelente y por ello descartar a robar una mano nueva y aleatoria de 7 cartas. Calculamos la probabilidad de robar al menos 1 oro como el complemento (lo que le falta para llegar a 100%) de la probabilidad de no robar oros:
 
@@ -84,7 +84,7 @@ Un 78.4%. Con esta información ya es suficiente para **decidir quedarnos con la
 
 ### 1 oro, Tuatha de Danaan
 
-![](tuatha.png){fig-alt="Tuatha de Dannan roba 2 cartas y sale del juego"}
+![](tuatha.jpg){fig-alt="Tuatha de Dannan roba 2 cartas y sale del juego"}
 
 El efecto de Tuatha de Danaan sobre la mano del jugador es similar al que tiene Urisk, con 3 diferencias sobre el juego:
 

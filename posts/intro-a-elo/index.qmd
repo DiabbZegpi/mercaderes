@@ -3,7 +3,7 @@ title: "Ranking de jugadores"
 date: "08-06-2024"
 categories: ["ranking", "sistema elo", "probabilidades"]
 description: "Cómo saber quién es el mejor jugador de Mitos y Leyendas utilizando la ciencia."
-image: podio.png
+image: podio.jpg
 ---
 
 <style>
@@ -18,7 +18,7 @@ Este es un post breve sobre un tema que revisitaremos en el futuro: el ranking d
 
 Mitos y Leyendas ya cuenta con un ranking oficial, el [ranking TOR de puntos de liga](https://torneos.myl.cl/ranking/season/4/54/primera-temporada-primer-bloque-2024?page=1), que lista a los jugadores en orden descendiente según sus puntos de liga. El ranking TOR también muestra el rendimiento individual del jugador e incluso permite navegar por sus torneos jugados durante la temporada.
 
-![Los 15 jugadores más ganadores de la primera temporada de Primer Bloque año 2024. Lista actualizada al momento que se escribe este post.](ranking-tor.png)
+![Los 15 jugadores más ganadores de la primera temporada de Primer Bloque año 2024. Lista actualizada al momento que se escribe este post.](ranking-tor.jpg)
 
 Evidentemente todos estos jugadores son muy buenos, ¿pero qué tan buenos?, ¿acaso es mejor jugador el que tiene más puntos de liga o el que tiene mejor rendimiento, o una combinación de ambas?, o mejor aún: ¿qué tan lejos estoy de ser como ellos? El ranking TOR contesta la última pregunta con puntos de liga, los que volverán a 0 al inicio de la próxima semana, funcionando de forma parecida al ranking ATP del tenis.
 

@@ -3,7 +3,7 @@ title: "¡Me quedo! (parte 1)"
 date: "07-19-2024"
 categories: ["mulligan", "probabilidades"]
 description: "Robas la mano inicial y sólo tienes 1 oro, ¿es mala suerte?; ¿te quedas?"
-image: meme-vertical.png
+image: meme-vertical.jpg
 ---
 
 En este segundo post diseccionaremos una de las decisiones más importantes en una partida de MyL, la primera decisión: **el mulligan**.
@@ -12,13 +12,13 @@ En este segundo post diseccionaremos una de las decisiones más importantes en u
 
 En juegos de cartas coleccionables o TCG (trading card games), mulligan es el proceso de ajustar la mano inicial de un jugador. El vasto panorama de los TCG da origen a variaciones en las reglas de mulligan, por ejemplo [las reglas de Pokémon](https://www.pokemon.com/es/jcc-pokemon/reglas) indican que si no inicias con un pokémon básico en la mano, entonces debes robar otra mano. Como castigo, tu oponente escoge si roba una carta adicional. En [Hearthstone](https://hearthstone.blizzard.com/es-es) no existe castigo por hacer mulligan, incluso puedes escoger si cambiar una, dos o todas las cartas de tu mano. En MyL sí existe el castigo, pero es diferente, porque en lugar de beneficiar directamente a tu oponente, se te perjudica con una carta menos cada vez que cambias de mano, cambiando una mano inicial de 8 cartas por otra de 7, después de 6, y así sucesivamente hasta estar conforme. En la práctica muchos estarán de acuerdo que robar 5 cartas o menos conlleva una desventaja casi imposible de remontar, asumiendo que el oponente se queda con 8 cartas.
 
-![Si un jugador opta por cambiar su mano inicial, robará una carta menos como castigo, hasta estar conforme con su mano.](mulligan-myl.png){fig-alt="mulligan en Mitos y Leyendas."}
+![Si un jugador opta por cambiar su mano inicial, robará una carta menos como castigo, hasta estar conforme con su mano.](mulligan-myl.jpg){fig-alt="mulligan en Mitos y Leyendas."}
 
 ## El problema
 
 No vamos a discutir manos en las que robas 2-4 oros, 1 talismán y las demás cartas son aliados, porque con esas manos nos quedaríamos el 100% de las veces. Este post es para mejorar el mulligan de manos difíciles, como la que veremos a continuación.
 
-![](caso-1.png)
+![](caso-1.jpg)
 
 Esta mano podría ocurrir si estuviésemos jugando con un mazo héroe tipo, o bien, con el mazo que Sergio Tapia ganó un torneo del canal [Rincón Mitero](https://www.youtube.com/watch?v=ojnire39jQE&ab_channel=RinconMitero). El problema es claro, contamos con 1 oro para jugar y 1 aliado que no roba cartas, por ende, si no robamos 1 oro al finalizar, no podremos seguir jugando cartas y cederemos mucha ventaja al oponente. Aunque tengamos Siete contra Tebas en la mano, es poco probable que podamos jugarlo en el primer turno para robar 1 carta.
 
@@ -83,7 +83,7 @@ $$
 $$
 
 ::: {.column-margin}
-![](logico.png)
+![](logico.jpg)
 :::
 
 Resulta que hay 17 maneras de robar 1 oro de un pool de 17 oros. Lógico. Resta robar las otras 7 cartas y asegurarnos que no sean oros, fijando $n = 49 - 17 = 32$ cartas que no son oro y $k = 7$ cartas por robar.
