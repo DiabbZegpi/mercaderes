@@ -65,7 +65,7 @@ versiones <-
   sort(decreasing = TRUE)
 
 version_actual <- versiones[1]
-version_anterior <- versiones[3]
+version_anterior <- versiones[2]
 
 n_torneos <- length(unique(torneos$id))
 
@@ -133,13 +133,13 @@ raza_favorita <-
     raza = str_to_title(raza),
     raza = replace_na(raza, "")
   ) |> 
-  group_by(jugador, fecha, raza) |> 
+  group_by(jugador, raza) |> 
   mutate(n = n()) |> 
   slice_max(n, with_ties = TRUE) |> 
   ungroup() |> 
   group_by(jugador) |> 
-  slice_max(fecha) |> 
-  select(jugador, raza) 
+  slice_max(fecha, with_ties = FALSE) |> 
+  select(jugador, raza)
 
 
 wr_teams <- 
