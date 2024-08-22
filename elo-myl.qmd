@@ -135,6 +135,7 @@ raza_favorita <-
   ) |> 
   group_by(jugador, raza) |> 
   mutate(n = n()) |> 
+  ungroup(raza) |> 
   slice_max(n, with_ties = TRUE) |> 
   ungroup() |> 
   group_by(jugador) |> 
