@@ -3,6 +3,7 @@ title: "Tácticas y Leyendas #1"
 date: "08-22-2024"
 categories: ["puzle"]
 description: "Es turno del jugador activo, ¿serás capaz de encontrar la mejor jugada?"
+author: Diabb
 image: zeus.jpg
 ---
 
@@ -22,7 +23,7 @@ Presentando un concepto clásico en el ajedrez, pero nuevo en Mitos y Leyendas, 
 
 ## *"Arma de doble filo"*
 
-#### Dificultad ⭐⭐
+#### Dificultad ⭐⭐<span style="color: transparent; text-shadow: 0 0 0 gray;">⭐⭐⭐</span>
 
 ![](puzle-001.jpg)
 
