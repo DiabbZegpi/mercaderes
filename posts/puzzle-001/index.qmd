@@ -1,0 +1,31 @@
+---
+title: "Tácticas y Leyendas #1"
+date: "08-22-2024"
+categories: ["puzle"]
+description: "Es turno del jugador activo, ¿serás capaz de encontrar la mejor jugada?"
+image: zeus.jpg
+---
+
+Presentando un concepto clásico en el ajedrez, pero nuevo en Mitos y Leyendas, **¡Tácticas y Leyendas!** En este minijuego, tu deber es encontrar la mejor jugada, siguiendo las instrucciones y la imagen a continuación.
+
+## Instrucciones
+
+-   Es turno del **jugador activo**. ¡Ése eres tú!
+
+-   Ambos jugadores tienen **3 cartas en su mazo castillo**.
+
+-   Sabes cuáles cartas hay en tu mazo castillo, **pero no conoces el orden en que están**.
+
+-   <b style="color:#E64833;">Debes dar letal con 100% de certeza a tu oponente</b>. La solución es única y no puedes depender de tu suerte.
+
+-   El formato es Racial Edición. Toda la información restante puede ser inferida de la imagen.
+
+## *"Arma de doble filo"*
+
+#### Dificultad ⭐⭐
+
+![](puzle-001.jpg)
+
+### ¿Disfrutaste del puzle?
+
+Comparte el link de la página con tus amigos y comunidades.
