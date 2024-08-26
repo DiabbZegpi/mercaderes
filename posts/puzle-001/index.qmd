@@ -23,7 +23,7 @@ Presentando un concepto clásico en el ajedrez, pero nuevo en Mitos y Leyendas, 
 
 ## *"Arma de doble filo"*
 
-#### Dificultad ⭐⭐<span style="color: transparent; text-shadow: 0 0 0 gray;">⭐⭐⭐</span>
+#### Dificultad ⭐⭐[⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
 
 ![](puzle-001.jpg)
 
