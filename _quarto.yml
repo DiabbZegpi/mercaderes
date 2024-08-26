@@ -5,13 +5,13 @@ lang: es
 
 website:
   page-navigation: true
-  title: "Diabb Zegpi"
-  site-url: https://zegpi.com
+  title: "Datos y Leyendas"
+  site-url: https://datosyleyendas.com
   open-graph: true
   image: dragon.jpg
   favicon: dyl-dark.ico
   google-analytics: "G-63PKLV6G58"
-  description: "Aplicaciones de datos e inteligencia artificial al juego número 1 del reino"
+  description: "Aplicaciones de estadística e inteligencia artificial al juego número 1 del reino"
   page-footer:
     left: "Website made with [Quarto](https://quarto.org/), by Diabb Zegpi. License: [CC BY-SA 2.0](https://creativecommons.org/licenses/by-sa/2.0/)."
     right:
@@ -39,7 +39,7 @@ website:
             href: about-es.qmd
           - text: English
             href: about-en.qmd
-      - text: Datos y Leyendas
+      - text: Blog
         href: index.qmd
       - text: Elo MyL (Alpha)
         href: elo-myl.qmd
