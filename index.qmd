@@ -1,5 +1,5 @@
 ---
-title: "Datos y Leyendas"
+title: "Blog de Datos y Leyendas"
 listing:
   feed: 
     items: 5
