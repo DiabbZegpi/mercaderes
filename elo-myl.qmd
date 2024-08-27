@@ -268,10 +268,10 @@ ranking_actualizado |>
   ) |> 
   cols_move(c(dir, rank_diff_abs), after = rank_actual) |> 
   cols_width(
-    rank_actual ~ px(40),
+    rank_actual ~ px(50),
     rank_diff_abs ~ px(40),
     dir ~ px(20),
-    jugador ~ px(90),
+    jugador ~ px(80),
     nombre ~ px(200),
     raza ~ px(120),
     team ~ px(115),
