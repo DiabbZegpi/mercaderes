@@ -43,8 +43,6 @@ website:
         href: index.qmd
       - text: Elo MyL (Alpha)
         href: elo-myl.qmd
-      - icon: rss
-        href: _site/index.xml
 
   comments:
     giscus:
