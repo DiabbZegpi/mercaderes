@@ -1,0 +1,46 @@
+---
+title: "Tácticas y Leyendas #2"
+date: "08-23-2024"
+categories: ["puzle"]
+description: "Es turno del jugador activo, ¿serás capaz de encontrar la mejor jugada?"
+author: Diabb
+image: zeus.jpg
+---
+
+Presentando un concepto clásico en el ajedrez, pero nuevo en Mitos y Leyendas, **¡Tácticas y Leyendas!** En este minijuego, tu deber es encontrar la mejor jugada, siguiendo las instrucciones y la imagen a continuación.
+
+## Instrucciones
+
+-   Es turno del **jugador activo**. ¡Ése eres tú!
+
+-   El jugador activo tiene **2 cartas en su mazo castillo**, mientras que el oponente tiene **7 cartas en su mazo castillo**.
+
+-   Sabes cuáles cartas hay en tu mazo castillo, **pero no conoces el orden en que están**.
+
+-   <b style="color:#E64833;">Debes dar letal con 100% de certeza a tu oponente</b>. La solución es única y no puedes depender de tu suerte.
+
+-   El formato es Racial Edición. Toda la información restante puede ser inferida de la imagen.
+
+## *"Roba, roba, que algo queda"*
+
+#### Dificultad ⭐⭐⭐⭐⭐
+
+En este puzle, más difícil que el anterior. Debemos dar letal a un eterno armado con 1 Toro Apis y 1 carta en su mano. ¡Cuidado con suicidarse!, podría ser un Relámpago Arcano 😵.
+
+![](puzle-002.jpg){fig-alt="Puzle #2 de Tácticas y Leyendas" fig-align="center"}
+
+## Solución al puzle anterior *"arma de doble filo"*
+
+¡Atención! Si no te apetece ser víctima de un spoiler, haz click en la imagen a continuación e intenta resolver el puzle por ti mismo.
+
+[![](warning.jpg){fig-alt="url al puzle anterior" fig-align="center"}](../puzle-001/index.qmd)
+
+Con 3 cartas en el Mazo Castillo, basta con tener una copia de Jinetes de Fuego en el Cementerio para ganar la partida. Ésto se consigue **(1)** activando **Jeroglíficos** sobre **(2)** **Tuthu** del oponente, botamos 2 cartas y garantizamos que al menos 1 de ellas es Jinetes de Fuego. Finalmente, **(3)** jugamos **Jinetes de Fuego** desde el cementerio para ganar la partida. Las cartas en la mano oponente son irrelevantes.
+
+Ojo ⚠️, buscar Jinetes de Fuego con Piedra Roseta no es suficiente, porque solamente gana el 50% de las veces, sin perjuicio que después se podría volver a la jugada de la solución. Activar Grandes Faraones es mucho peor, aunque garantice tener Jinetes de Fuego en el Cementerio, porque el oponente activaría Tocador y ganaría la partida en el acto.
+
+![](solucion-001.jpg)
+
+### ¿Disfrutaste del puzle?
+
+Comparte el link de la página con tus amigos y comunidades.
