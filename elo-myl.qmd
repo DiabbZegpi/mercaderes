@@ -133,6 +133,7 @@ raza_favorita <-
     raza = str_to_title(raza),
     raza = replace_na(raza, "")
   ) |> 
+  slice_max(fecha, n = 5, by = jugador) |> 
   group_by(jugador, raza) |> 
   mutate(n = n()) |> 
   ungroup(raza) |> 
@@ -219,7 +220,7 @@ ranking_actualizado |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(860),
+    table.width = px(880),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -271,7 +272,7 @@ ranking_actualizado |>
     rank_actual ~ px(50),
     rank_diff_abs ~ px(40),
     dir ~ px(20),
-    jugador ~ px(80),
+    jugador ~ px(100),
     nombre ~ px(200),
     raza ~ px(120),
     team ~ px(115),
@@ -387,6 +388,8 @@ tabla_teams |>
   )
 ```
 :::
+
+
 
 
 
