@@ -1,0 +1,46 @@
+---
+title: "Tácticas y Leyendas #3"
+date: "09-23-2024"
+categories: ["puzle"]
+description: "Es turno del jugador activo, ¿serás capaz de encontrar la mejor jugada?"
+author: Arctic (Víctor)
+image: zeus.jpg
+---
+
+Presentando un concepto clásico en el ajedrez, pero nuevo en Mitos y Leyendas, **¡Tácticas y Leyendas!** En este minijuego, tu deber es encontrar la mejor jugada, siguiendo las instrucciones y la imagen a continuación.
+
+## Instrucciones
+
+-   Es turno del **jugador activo**. ¡Ése eres tú!
+
+-   El jugador activo tiene **5 cartas en su Mazo Castillo**, mientras que el oponente tiene **8 cartas en su Mazo Castillo**.
+
+-   **No conoces** las cartas que hay en tu Mazo Castillo.
+
+-   <b style="color:#E64833;">Debes dar letal con 100% de certeza a tu oponente</b>. La solución es única y no puedes depender de tu suerte.
+
+-   El formato es Racial Edición. Toda la información restante puede ser inferida de la imagen.
+
+## *"La séptima prueba"*
+
+#### Dificultad ⭐⭐⭐[⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+El oponente tiene 3 copias de Homúnculos en su mazo, por lo que debemos ser muy cuidadosos en derrotarle de un sólo golpe, o podría barajarlos cuando caigan a su Cementerio.
+
+![](puzle-003.jpg){fig-alt="Puzle #3 de Tácticas y Leyendas" fig-align="center"}
+
+## Solución al puzle anterior *"roba, roba, que algo queda"*
+
+¡Atención! Si no te apetece ser víctima de un spoiler, haz click en la imagen a continuación e intenta resolver el puzle por ti mismo.
+
+[![](warning.jpg){fig-alt="url al puzle anterior" fig-align="center"}](../puzle-002/index.qmd)
+
+Con tan sólo *2 cartas* en nuestro Mazo Castillo, debemos ser extra cuidadosos de no perder por **Relámpago Arcano**, por lo que jugadas como **Bola de Fuego**, **Incinerar** o la activación de **Carnwennan** deben ser cuidadosamente calculadas y descartadas.
+
+*La solución*: un ataque con ambos aliados sería bloqueado por **Ash**, reduciendo la fuerza del aliado no bloqueado en 1 con **Toro Apis**, causando 2 de daño en total. El resto del daño lo podemos causar obligando al rival a robar cartas con **Espada Larga** y **Una**. Entonces, lo primero es barajar una carta con el oro **Caballeros** (será útil tener 3 cartas en el mazo al momento de jugar **Una**). Segundo, portamos **Espada Larga** en el aliado oponente, obligándolo a robar 2, resultando en 3 cartas en mano y 5 en el mazo. Tercero, declaramos ataque. Cuarto, el oponente bloquea con su aliado y sede la prioridad en Guerra de Talismanes. Quinto, jugamos **Una**, descartamos 2 y robamos 2, el oponente descarta 3 y roba 3, le quedan 2 en el mazo. Finalmente, no importa si el oponente activa su **Toro Apis** o juega un talismán de coste 1 (como Adiós Belleza), seguirán pasando 2 de daño, perdiendo el duelo en el acto.
+
+![](solucion-002.jpg)
+
+### ¿Disfrutaste del puzle?
+
+Comparte el link de la página con tus amigos y comunidades.
