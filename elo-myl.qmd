@@ -192,7 +192,7 @@ tabla_teams <-
   
 ```
 
-#### Lista de [Elo MyL v0.2.0](%22/posts/elo-update-01/index.qmd%22) Primer Bloque formato Racial Edición
+#### Lista de [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
 
 ##### Actualizada con `r n_torneos` torneos al `r ymd(version_actual) |> format("%d de %B, %Y")`
 
