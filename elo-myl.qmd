@@ -38,23 +38,19 @@ library(tidyverse)
 library(googlesheets4)
 library(gt)
 
-gs4_auth(
-  email = "diabbluis@gmail.com",
-  cache = ".gargle"
-)
+gs4_auth(email = "diabbluis@gmail.com", cache = ".gargle")
 
-data_path <- "https://docs.google.com/spreadsheets/d/1dj8J1QKNHAEHMJP-TwFtFk-Gh0JXQ7Bayam6eXv2ai8/edit?gid=0#gid=0"
-rating_list_path <- "https://docs.google.com/spreadsheets/d/1Wh3PTzHAhoY7VKp-WfJgEF7IjWMYSdecgzIlwFnDA3E/edit?gid=0#gid=0"
+data_path <- "https://docs.google.com/spreadsheets/d/1ZErNDZVSbIP8ekj-mmTpdmJ_Gbpo8yQaN5HeLBlqblE/edit?gid=1605468956#gid=1605468956"
 
-resultados <- read_sheet(data_path, "resultados", col_types = "ccDiccii")
-torneos <- read_sheet(data_path, "torneos", col_types = "cccDcc")
+resultados <- read_sheet(data_path, "resultados", col_types = "ciccii")
+torneos <- read_sheet(data_path, "torneos", col_types = "ccDDcccccc")
 jugadores <- read_sheet(data_path, "jugadores", col_types = "ccc")
-ranking <- read_sheet(rating_list_path, "ranking", col_types = "icd")
-torneos_computados <- read_sheet(rating_list_path, "torneos computados", col_types = "cD")
+ranking <- read_sheet(data_path, "ranking", col_types = "Dcd")
+torneos_computados <- read_sheet(data_path, "torneos computados", col_types = "cD")
 
 # Filtros
-torneos <- torneos |> filter(id %in% torneos_computados$id)
-resultados <- resultados |> filter(torneo %in% torneos_computados$id)
+torneos <- torneos |> filter(id_torneo %in% torneos_computados$id_torneo)
+resultados <- resultados |> filter(id_torneo %in% torneos_computados$id_torneo)
 ```
 
 ```{r posiciones}
@@ -67,7 +63,7 @@ versiones <-
 version_actual <- versiones[1]
 version_anterior <- versiones[2]
 
-n_torneos <- length(unique(torneos$id))
+n_torneos <- length(unique(torneos$id_torneo))
 
 posiciones_anteriores <- 
   ranking |> 
@@ -83,14 +79,14 @@ ranking_actualizado <-
   posiciones_actuales |> 
   left_join(
     posiciones_anteriores, 
-    by = join_by(jugador), 
+    by = join_by(tor), 
     suffix = c("_actual", "_anterior")
   ) |> 
   mutate(
     elo_diff = elo_actual - elo_anterior,
     rank_diff = -(rank_actual - rank_anterior)
   ) |> 
-  left_join(jugadores, by = join_by(jugador == tor)) |> 
+  left_join(jugadores, by = join_by(tor)) |> 
   mutate(
     team = replace_na(team, ""),
     team = str_to_title(team),
@@ -101,30 +97,30 @@ ranking_actualizado <-
 
 ```{r}
 resultados_longer <- resultados |>
-  group_by(torneo, ronda) |> 
+  group_by(id_torneo, ronda) |>
   mutate(mesa = row_number()) |> 
   ungroup() |> 
-  pivot_longer(jugador1:jugador2, names_to = "posicion_j", values_to = "jugador") |> 
-  pivot_longer(puntos1:puntos2, names_to = "posicion_p", values_to = "puntos") |> 
+  pivot_longer(tor_a:tor_b, names_to = "posicion_j", values_to = "tor") |> 
+  pivot_longer(resultado_a:resultado_b, names_to = "posicion_p", values_to = "puntos") |> 
   filter(str_sub(posicion_j, -1) == str_sub(posicion_p, -1)) |>
-  select(torneo, ronda, mesa, jugador, puntos)
+  select(id_torneo, ronda, mesa, tor, puntos)
   
 resultados_razas <- 
   resultados_longer |> 
-  left_join(torneos |> select(id, jugador, raza), by = join_by(torneo == id, jugador)) |> 
+  left_join(torneos |> select(id_torneo, tor, raza), by = join_by(id_torneo, tor)) |> 
   mutate(raza = str_to_title(raza))
 
 wr_jugador <- 
   resultados_razas |>
   # Omitir mesas con bye
-  group_by(torneo, ronda, mesa) |> 
+  group_by(id_torneo, ronda, mesa) |> 
   mutate(
-    puntos = if_else(jugador == "bye", NA, puntos),
+    puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
     puntos_totales = sum(puntos)
   ) |>
   filter(!is.na(puntos_totales)) |> 
   ungroup() |> 
-  group_by(jugador) |> 
+  group_by(tor) |> 
   summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
  
 raza_favorita <- 
@@ -133,42 +129,40 @@ raza_favorita <-
     raza = str_to_title(raza),
     raza = replace_na(raza, "")
   ) |> 
-  slice_max(fecha, n = 5, by = jugador) |> 
-  group_by(jugador, raza) |> 
+  slice_max(semana, n = 5, by = tor) |> 
+  group_by(tor, raza) |> 
   mutate(n = n()) |> 
   ungroup(raza) |> 
   slice_max(n, with_ties = TRUE) |> 
   ungroup() |> 
-  group_by(jugador) |> 
-  slice_max(fecha, with_ties = FALSE) |> 
-  select(jugador, raza)
+  slice_max(fecha, by = tor, with_ties = FALSE) |> 
+  select(tor, raza)
 
 
 wr_teams <- 
   resultados_razas |> 
   # Omitir mesas con bye
-  group_by(torneo, ronda, mesa) |> 
+  group_by(id_torneo, ronda, mesa) |> 
   mutate(
-    puntos = if_else(jugador == "bye", NA, puntos),
+    puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
     puntos_totales = sum(puntos)
   ) |>
   filter(!is.na(puntos_totales)) |> 
-  left_join(jugadores |> select(tor, team), by = join_by(jugador == tor)) |> 
+  left_join(jugadores |> select(tor, team), by = join_by(tor)) |> 
   mutate(team = str_to_title(team)) |> 
   # Omitir mesas donde ambos jugadores son del mismo team
   group_by(team, .add = TRUE) |> 
   mutate(team_match = n() == 2) |> 
   filter(!team_match) |> 
-  ungroup() |> 
-  group_by(team) |> 
+  ungroup(id_torneo, ronda, mesa) |> 
   summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop") |> 
   filter(!is.na(team))
 
 jugadores_activos <- 
   resultados_razas |> 
-  left_join(jugadores |> select(tor, team), by = join_by(jugador == tor)) |> 
+  left_join(jugadores |> select(tor, team), by = join_by(tor)) |> 
   mutate(team = str_to_title(team)) |> 
-  distinct(team, jugador) |> 
+  distinct(team, tor) |> 
   count(team, name = "jugadores_activos")
   
 elo_medio_team <- 
@@ -194,7 +188,7 @@ tabla_teams <-
 
 #### Lista de [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
 
-##### Actualizada con `r n_torneos` torneos al `r ymd(version_actual) |> format("%d de %B, %Y")`
+##### Actualizada con `r n_torneos` torneos entre `r ymd(versiones[length(versiones)]) |> format("%d de %B del %Y")` y `r ymd(version_actual) |> format("%d de %B del %Y")`
 
 ::: panel-tabset
 ## Jugadores
@@ -203,8 +197,8 @@ tabla_teams <-
 #| column: body-outset
 
 ranking_actualizado |> 
-  left_join(raza_favorita, by = join_by(jugador)) |> 
-  left_join(wr_jugador, by = join_by(jugador)) |> 
+  left_join(raza_favorita, by = join_by(tor)) |> 
+  left_join(wr_jugador, by = join_by(tor)) |> 
   arrange(rank_actual, rank_anterior) |> 
   mutate(
     rank_diff = if_else(rank_diff == 0, NA, rank_diff),
@@ -214,13 +208,13 @@ ranking_actualizado |>
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   cols_hide(c(ends_with("_anterior"), version_actual, rank_diff)) |> 
-  cols_move(c(nombre, jugador, raza, team, wr, elo_actual, elo_diff), rank_actual) |>
+  cols_move(c(nombre, tor, raza, team, wr, elo_actual, elo_diff), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(880),
+    table.width = px(900),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -259,7 +253,7 @@ ranking_actualizado |>
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
-    jugador = md("**TOR**"),
+    tor = md("**TOR**"),
     nombre = md("**Nombre**"),
     raza = md("**Raza favorita**"),
     team = md("**Team**"),
@@ -269,10 +263,10 @@ ranking_actualizado |>
   ) |> 
   cols_move(c(dir, rank_diff_abs), after = rank_actual) |> 
   cols_width(
-    rank_actual ~ px(50),
-    rank_diff_abs ~ px(40),
+    rank_actual ~ px(55),
+    rank_diff_abs ~ px(55),
     dir ~ px(20),
-    jugador ~ px(100),
+    tor ~ px(100),
     nombre ~ px(200),
     raza ~ px(120),
     team ~ px(115),
@@ -307,7 +301,7 @@ ranking_actualizado |>
     use_highlight = TRUE,
     use_text_wrapping = FALSE,
     page_size_default = 10,
-    pagination_type = "simple"
+    pagination_type = "numbers"
   )
 ```
 
@@ -325,7 +319,7 @@ tabla_teams |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(860),
+    table.width = px(900),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -357,9 +351,9 @@ tabla_teams |>
     rank_actual ~ px(40),
     # rank_diff ~ px(40),
     # dir ~ px(20),
-    team ~ px(120),
-    jugadores_activos ~ px(100),
-    elo_medio ~ px(100),
+    team ~ px(180),
+    jugadores_activos ~ px(90),
+    elo_medio ~ px(90),
     wr ~ px(85),
     nombre ~ px(260),
     elo_actual ~ px(150)
@@ -374,8 +368,8 @@ tabla_teams |>
     apply_to = "text",
     domain = c(0, 1)
   ) |> 
-  cols_align("left", c(rank_actual, team, elo_medio, jugadores_activos, wr, elo_actual)) |>
-  cols_align("right", c(nombre)) |>
+  cols_align("left", c(rank_actual, team, elo_medio, wr, elo_actual)) |>
+  cols_align("right", c(nombre, jugadores_activos)) |>
   opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
     use_pagination = TRUE,
@@ -383,8 +377,8 @@ tabla_teams |>
     use_search = TRUE,
     use_highlight = TRUE,
     use_text_wrapping = FALSE,
-    page_size_default = 20,
-    pagination_type = "simple"
+    page_size_default = 10,
+    pagination_type = "numbers"
   )
 ```
 :::
