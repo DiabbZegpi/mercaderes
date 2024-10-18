@@ -1,0 +1,175 @@
+---
+title: "14 días de Elo MyL"
+date: "10-17-2024"
+categories: ["ranking", "Elo MyL", "sistema elo"]
+description: "¿Qué he aprendido con la implementación del sistema de ranking Elo a Mitos y Leyendas?"
+image: thumbnail.jpg
+---
+
+```{r}
+library(tidyverse)
+library(googlesheets4)
+gs4_deauth()
+gs4_auth(email = "diabbluis@gmail.com", cache = "../../.gargle")
+
+data_path <- "https://docs.google.com/spreadsheets/d/1ZErNDZVSbIP8ekj-mmTpdmJ_Gbpo8yQaN5HeLBlqblE/edit?gid=1605468956#gid=1605468956"
+
+torneos <- read_sheet(data_path, "torneos", col_types = "ccDDcccccc")
+ranking <- read_sheet(data_path, "ranking", col_types = "Dcd")
+```
+
+```{r}
+ban_list_updates <- as_date(c("2024-07-25", "2024-09-30"))
+
+ultima_version <- as_date("2024-10-17")
+ranking_current <- filter(ranking, version == ultima_version)
+
+torneos_banlist <- 
+  torneos |> 
+  mutate(
+    banlist = case_when(
+      between(fecha, ban_list_updates[1], ban_list_updates[2]) ~ "banlist 25 de julio",
+      fecha > ban_list_updates[2] ~ "banlist 30 de septiembre",
+      .default = NA
+    )
+  ) |> 
+  filter(!is.na(banlist))
+```
+
+Han transcurrido 2 semanas desde el lanzamiento oficial de Elo MyL, sistema que rankea a casi 4.000 jugadores de Primer Bloque a lo largo de Chile, utilizando una base de datos de más de 100.000 enfrentamiento de torneos. Este sistema nos da una idea de cuán buenos jugadores somos en comparación con nuestros amigos, con los jugadorse de nuestra tienda local y con las estrellas del bloque, quienes topean en la mayoría de torneos en que compiten.
+
+El día de hoy se reveló una nueva lista de Elo MyL, aumentando la base de jugadores en 300 miteros y moviendo el top de jugadores porque hubo 266 nuevos torneos computados. Además de lo mencionado, el 30 de septiembre se implementó un banlist nuevo, reemplazando al anterior del 25 de julio. Todo esto me ha puesto a pensar, ¿cómo adaptan los jugadores sus preferencias de acuerdo a los cambios en banlist? y ¿cómo cambian estas preferencias según qué tan fuertes son los jugadores? Elo MyL proporciona un dataset que ayuda a responder estas preguntas.
+
+## Rangos de jugadores
+
+```{r}
+jugador_medio <- round(mean(ranking_current$elo), 1)
+
+elo_pct <- function(.data = ranking_current, min_elo, max_elo) {
+  rows <- .data |> filter(between(elo, min_elo, max_elo)) |> nrow()
+  rows_total <- nrow(.data)
+  100 * round(rows / rows_total, 3)
+}
+
+pct_intermedios <- elo_pct(min_elo = 1300, max_elo = 1500)
+pct_novatos <- elo_pct(min_elo = 0, max_elo = 1299)
+pct_expertos <- elo_pct(min_elo = 1501, max_elo = 1750)
+pct_elite <- elo_pct(min_elo = 1751, max_elo = Inf)
+
+n_elite <- 
+  ranking_current |> 
+  filter(elo > 1750) |> 
+  nrow()
+```
+
+De acuerdo a la última actualización de Elo MyL (`r format(ultima_version, "%d de %B")`), el jugador promedio tiene `r jugador_medio` puntos de Elo, lo que es equivalente al rating inicial de todos los jugadores (1400 puntos). 100 puntos en torno al jugador promedio (1300 a 1500), se encuentra el `r pct_intermedios`% de los jugadores, a los que denomino jugadores de **nivel intermedio**. Más abajo que los intermedios, están los jugadores de **nivel novato**, los que representan al `r pct_novatos`% de la población. Por encima de los 1500 y hasta los 1750 de Elo están los jugadores de **nivel experto**, quienes son el `r pct_expertos`% de la población. Por último los jugadores de **nivel elite**, *la creme de la creme*, jugadores sobre 1750 puntos de Elo y quienes gozan de estar entre los mejores `r n_elite` del país, lo que equivale a estar en el top `r pct_elite`% de la población.
+
+![](rating-discrete.jpg)
+
+## Ediciones: Intermedios vs Expertos vs Elite
+
+Para analizar las preferencias de los jugadores excluiremos a los de nivel novato por dos razones: primero y más importante, se presume que sus mazos construidos son subóptimos y son jugadores explotables por los mejores jugadores; segundo, porque en nuestro corazón todos pensamos que no somos novatos 😅.
+
+Para tener en cuenta, los hitos destacados de la **banlist del 25 de julio** están la liberación de Sir Persival, ¡Desleal!, Linaje Celta, Tótem de la Serpiente, Martillo Pesado, Red de Plata (2 copias), Jinetes de Fuego y Nuh, mientras que se restringieron las cartas Dragones, Afrodita, Ofrendo a los Dioses, Helios, Leucrota, Hogar de Demonios y Papiros de Lahun. Después, la **banlist del 30 de septiembre** liberó a Yvain del León, Cathach, Bola de Fuego (2 copias), mientras que restringió a Aceite de Oliva (1), Antorcha Olímpica (1) y al infame Goblin Maligno (2).
+
+Comencemos por las ediciones: ¿qué apetece más al paladar de los jugadores según su nivel de juego?
+
+```{r}
+ediciones <- tibble(
+  edicion = rep(c("Espada Sagrada", "Helénica", "Hijos de Daana", "Dominios de Ra"), each = 3),
+  raza = c("Caballero", "Faerie", "Dragón", "Olímpico", "Titán", "Héroe", "Desafiante", "Defensor", "Sombra", "Faraón", "Sacerdote", "Eterno")
+) |> 
+  mutate(
+    edicion = fct_inorder(edicion),
+    raza = fct_inorder(raza)
+  )
+
+df <- 
+  torneos_banlist |> 
+  left_join(ranking_current |> select(tor, elo), by = join_by(tor)) |> 
+  left_join(ediciones, by = join_by(raza), keep = TRUE) |> 
+  select(-raza.x) |> 
+  rename(raza = raza.y) |> 
+  mutate(tier = case_when(
+    elo <= 1300 ~ "novato",
+    elo > 1300 & elo <= 1500 ~ "intermedio",
+    elo > 1500 & elo <= 1750 ~ "experto",
+    elo > 1750 ~ "elite"
+  ),
+    tier = fct_relevel(tier, c("novato", "intermedio", "experto", "elite"))
+  ) |> 
+  select(id_torneo, fecha, tor, raza, edicion, banlist, elo, tier) |> 
+  filter(!is.na(raza), tier != "novato")
+```
+
+```{r}
+df |> 
+  count(tier, banlist, edicion) |> 
+  group_by(banlist, tier) |> 
+  mutate(
+    pct = 100 * round(n / sum(n), 3),
+    pct_label = paste0(pct, "%"),
+    yloc = (replace_na(lag(cumsum(pct)), 0) + pct / 2) / 100
+  ) |> 
+  ungroup() |> 
+  ggplot(aes(x = tier, y = n, fill = fct_rev(edicion))) +
+  geom_col(position = position_fill(), color = "white") +
+  geom_text(aes(label = pct_label, y = yloc), size = 5) +
+  facet_wrap(~ banlist) +
+  theme_minimal(18, "Roboto") +
+  theme(
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text.y = element_blank(),
+    strip.text = element_text(face = "italic"),
+    axis.text.x = element_text(size = 14)
+  ) +
+  scale_fill_manual(values = c("gold3", "forestgreen", "firebrick3", "dodgerblue2"), name = NULL)
+```
+
+Dos cosas saltan inmediatamente a la vista: todos los niveles, sin importar el banlist, favorecen a Helénica; los jugadores de elite son quienes menos prefieren razas de Hijos de Daana. Curioso es que, pese a la restricción de Aceite de Oliva a 1 copia en la banlist del 30 de septiembre, las razas helénicas son más populares que en la banlist anterior. Es más, la banlist del 30 de septiembre solamente trajo beneficios para razas no-helénicas.
+
+Otro aspecto curioso es que tras la actualización del 30 de septiembre, las razas de Espada Sagrada no ganaron popularidad en ninguno de los niveles, más bien disminuyó en los niveles experto y elite, lo que parece contraintuitivo por la liberación del talismán Bola de Fuego y los aliados Yvain del León y Cathach.
+
+## Razas: intermedio vs elite
+
+Exploramos cómo los jugadores escogen sus ediciones dependiendo de su nivel, pero ¿cómo escogen sus razas? Por la cantidad de razas que existen, reduciremos las opciones a jugadores intermedios y expertos.
+
+```{r}
+raza_palette <- c(
+  "#1d4f5c", "#2b7d98", "#4297b8",
+  "#37121a", "#64191b", "#d42d0c",
+  "#2c3f26", "#23605c", "#44979f",
+  "#753a12", "#9e5d1d", "#d19b36"
+)
+
+time_pct <- 
+  df |> 
+  filter(tier %in% c("intermedio", "elite")) |> 
+  mutate(semana = floor_date(fecha, "week", week_start = 1)) |> 
+  filter(semana <= as_date("2024-10-07")) |> 
+  count(banlist, tier, raza, semana) |> 
+  group_by(banlist, tier, semana) |> 
+  mutate(pct = n / sum(n)) |> 
+  ungroup()
+
+time_pct |> 
+  ggplot(aes(x = semana, y = pct, fill = raza)) +
+  geom_area(position = position_fill()) +
+  facet_wrap(~ tier, ncol = 2) +
+  theme_minimal(18, "Roboto") +
+  theme(
+    panel.grid = element_blank(),
+    axis.title = element_blank(),
+    axis.text.y = element_blank(),
+    strip.text = element_text(face = "italic"),
+    axis.text.x = element_text(size = 14)
+  ) +
+  geom_vline(xintercept = ban_list_updates, linetype = "dashed") +
+  annotate("text", x = ban_list_updates[1] %m+% days(2), y = 1.2, label = "banlist 25 de julio", hjust = 0, size = 5) +
+  annotate("text", x = ban_list_updates[2] %m-% days(2), y = 1.1, label = "banlist 30 de septiembre", hjust = 1, size = 5) +
+  scale_fill_manual(values = raza_palette, name = NULL) +
+  scale_x_date(date_breaks = "month", date_labels = "%B")
+```
+
+El jugador intermedio tiene gustos variados, dando preferencia a Helénica, lo que es natural por la época del juego que estamos viviendo, pero dando oportunidades a las otras ediciones. Por el contrario, el jugador de elite juega mucho Helénica, algo de Dragón para contestar a los Héroes, mucho Sacerdote para contestar a los Titanes y nada más. En otras palabras, el jugador intermedio juega lo que le gusta, mientras que el jguador de elite juega lo que gana.
