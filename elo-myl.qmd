@@ -1,5 +1,5 @@
 ---
-title: "Elo MyL (Alpha)"
+title: "TOP 500 Elo MyL (Alpha)"
 page-layout: article
 title-block-banner: false
 comments: false
@@ -27,7 +27,8 @@ execute:
 }
 </style>
 ```
-Ranking Elo de jugadores de Mitos y Leyendas, formato Racial-Edición de Primer Bloque. Actualmente nos encontramos en fase Alpha y los rankings actuales son meramente referenciales. Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
+
+Ranking Elo de los 500 mejores jugadores de Mitos y Leyendas, formato Racial-Edición de Primer Bloque. Para ver o descargar la lista completa, visita [este link de google sheets](https://docs.google.com/spreadsheets/d/1kR45qa9CH3yiZpRMyTan1Hvmi3DgDkV-Uc2wrSGn1C4/edit?usp=sharing). Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
 
 Si deseas aprender cómo funciona el ranking, visita mi [blog post sobre Elo](/posts/intro-a-elo).
 
@@ -96,7 +97,8 @@ ranking_actualizado <-
 ```
 
 ```{r}
-resultados_longer <- resultados |>
+resultados_longer <- 
+  resultados |>
   group_by(id_torneo, ronda) |>
   mutate(mesa = row_number()) |> 
   ungroup() |> 
@@ -186,9 +188,9 @@ tabla_teams <-
   
 ```
 
-#### Lista de [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
+#### [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
 
-##### Actualizada con `r n_torneos` torneos entre `r ymd(versiones[length(versiones)]) |> format("%d de %B del %Y")` y `r ymd(version_actual) |> format("%d de %B del %Y")`
+##### Lista actualizada con `r n_torneos` torneos entre `r ymd(versiones[length(versiones)]) |> format("%d de %B del %Y")` y `r ymd(version_actual) |> format("%d de %B del %Y")`
 
 ::: panel-tabset
 ## Jugadores
@@ -200,6 +202,7 @@ ranking_actualizado |>
   left_join(raza_favorita, by = join_by(tor)) |> 
   left_join(wr_jugador, by = join_by(tor)) |> 
   arrange(rank_actual, rank_anterior) |> 
+  slice_max(elo_actual, n = 500, with_ties = FALSE) |> 
   mutate(
     rank_diff = if_else(rank_diff == 0, NA, rank_diff),
     rank_diff_abs = abs(rank_diff),
@@ -289,7 +292,7 @@ ranking_actualizado |>
     columns = c(elo_diff), 
     palette = c("red", "forestgreen"),
     apply_to = "text",
-    method = "numeric"
+    method = "quantile"
   ) |> 
   cols_align("left", c(rank_diff_abs, elo_diff)) |> 
   cols_align("right", dir) |> 
@@ -319,7 +322,7 @@ tabla_teams |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(900),
+    table.width = px(910),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -352,8 +355,8 @@ tabla_teams |>
     # rank_diff ~ px(40),
     # dir ~ px(20),
     team ~ px(180),
-    jugadores_activos ~ px(90),
-    elo_medio ~ px(90),
+    jugadores_activos ~ px(95),
+    elo_medio ~ px(95),
     wr ~ px(85),
     nombre ~ px(260),
     elo_actual ~ px(150)
@@ -381,9 +384,9 @@ tabla_teams |>
     pagination_type = "numbers"
   )
 ```
+
+
 :::
-
-
 
 
 
