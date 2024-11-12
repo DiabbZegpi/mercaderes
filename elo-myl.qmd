@@ -48,6 +48,7 @@ torneos <- read_sheet(data_path, "torneos", col_types = "ccDDcccccc")
 jugadores <- read_sheet(data_path, "jugadores", col_types = "ccc")
 ranking <- read_sheet(data_path, "ranking", col_types = "Dcd")
 torneos_computados <- read_sheet(data_path, "torneos computados", col_types = "cD")
+tiendas <- read_sheet(data_path, "tiendas", col_types = "ccccccccc")
 
 # Filtros
 torneos <- torneos |> filter(id_torneo %in% torneos_computados$id_torneo)
@@ -173,7 +174,6 @@ elo_medio_team <-
   group_by(team) |> 
   summarize(elo_medio = mean(elo_actual, na.rm = TRUE), .groups = "drop")
   
-
 tabla_teams <- 
   ranking_actualizado |> 
   slice_max(elo_actual, by = team) |> 
@@ -185,7 +185,15 @@ tabla_teams <-
   arrange(desc(elo_medio), desc(jugadores_activos), desc(wr)) |> 
   mutate(rank_actual = row_number()) |> 
   relocate(rank_actual, team, elo_medio, jugadores_activos, wr, nombre, elo_actual)
-  
+
+tabla_ciudad <- 
+  resultados_longer |> 
+  distinct(id_torneo, tor) |> 
+  left_join(torneos |> distinct(id_torneo, tienda), by = join_by(id_torneo)) |> 
+  left_join(tiendas |> select(nombre, ciudad), by = join_by(tienda == nombre), relationship = "many-to-one", multiple = "first") |> 
+  count(tor, ciudad, name = "n_tourneys") |> 
+  slice_max(n_tourneys, by = tor, with_ties = FALSE) |> 
+  select(tor, ciudad)
 ```
 
 #### [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
@@ -201,6 +209,7 @@ tabla_teams <-
 ranking_actualizado |> 
   left_join(raza_favorita, by = join_by(tor)) |> 
   left_join(wr_jugador, by = join_by(tor)) |> 
+  left_join(tabla_ciudad, by = join_by(tor)) |> 
   arrange(rank_actual, rank_anterior) |> 
   slice_max(elo_actual, n = 500, with_ties = FALSE) |> 
   mutate(
@@ -211,13 +220,13 @@ ranking_actualizado |>
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   cols_hide(c(ends_with("_anterior"), version_actual, rank_diff)) |> 
-  cols_move(c(nombre, tor, raza, team, wr, elo_actual, elo_diff), rank_actual) |>
+  cols_move(c(nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(900),
+    table.width = px(890),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -260,7 +269,8 @@ ranking_actualizado |>
     nombre = md("**Nombre**"),
     raza = md("**Raza favorita**"),
     team = md("**Team**"),
-    wr = md("**Win rate**"),
+    ciudad = md("**Ciudad**"),
+    wr = md("**WR**"),
     elo_actual = md("**Elo**"),
     elo_diff = md("**+/-**")
   ) |> 
@@ -273,7 +283,8 @@ ranking_actualizado |>
     nombre ~ px(200),
     raza ~ px(120),
     team ~ px(115),
-    wr ~ px(85),
+    ciudad ~ px(120),
+    wr ~ px(70),
     elo_actual ~ px(80),
     elo_diff ~ px(70)
   ) |> 
@@ -285,17 +296,21 @@ ranking_actualizado |>
     columns = c(wr),
     palette = c("red", "forestgreen"),
     apply_to = "text",
-    domain = c(0, 1),
-    method = "quantile"
+    domain = c(0.3, 0.9),
+    method = "quantile",
+    quantiles = 4,
+    na_color = "forestgreen"
   ) |>
   data_color(
     columns = c(elo_diff), 
     palette = c("red", "forestgreen"),
     apply_to = "text",
-    method = "quantile"
+    method = "quantile", 
+    quantiles = 8
   ) |> 
   cols_align("left", c(rank_diff_abs, elo_diff)) |> 
   cols_align("right", dir) |> 
+  cols_hide(team) |> 
   # opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
     use_pagination = TRUE,
@@ -322,7 +337,7 @@ tabla_teams |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(910),
+    table.width = px(895),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -346,7 +361,7 @@ tabla_teams |>
     team = md("**Nombre**"),
     jugadores_activos = md("**Miembros**"),
     elo_medio = md("**Elo medio**"),
-    wr = md("**Win rate**"),
+    wr = md("**WR**"),
     nombre = md("**Mejor jugador**"),
     elo_actual = md("**Elo mejor jugador**")
   ) |> 
@@ -357,7 +372,7 @@ tabla_teams |>
     team ~ px(180),
     jugadores_activos ~ px(95),
     elo_medio ~ px(95),
-    wr ~ px(85),
+    wr ~ px(70),
     nombre ~ px(260),
     elo_actual ~ px(150)
   ) |> 
@@ -386,7 +401,6 @@ tabla_teams |>
 ```
 
 :::
-
 
 
 
