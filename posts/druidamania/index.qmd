@@ -1,0 +1,197 @@
+---
+title: "Druidamanía"
+date: "11-13-2024"
+categories: ["druida", "probabilidades", "razas"]
+description: "La popularidad del druida se propaga por todo Chile, ¿pero es tan bueno como parece?"
+image: thug-gandalf.jpg
+---
+
+El día 30 de septiembre de 2024 los jugadores recibimos una actualización de banlist, la que serviría de preparativo para el lanzamiento del aniversario de Hijos de Daana del día 18 de octubre, que vendría sin cartas nuevas pero con más de 30 cartas modificadas. Toda la atención recayó sobre el nuevo arquetipo de raza defensor, los druidas. Posteriormente, el 5 de noviembre, Klu anunció una [actualización de banlist](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/) que limita, entre otras cosas, el uso de Ulster, un tótem que potencia la fuerza de los defensores. ¿Cómo afectaron los acontecimientos a la popularidad de la raza y qué tan fuerte es en el presente?
+
+```{r packages-import-data}
+library(tidyverse)
+library(googlesheets4)
+library(gt)
+
+gs4_auth(email = "diabbluis@gmail.com", cache = "../../.gargle")
+
+data_path <- "https://docs.google.com/spreadsheets/d/1ZErNDZVSbIP8ekj-mmTpdmJ_Gbpo8yQaN5HeLBlqblE/edit?gid=1605468956#gid=1605468956"
+
+resultados <- read_sheet(data_path, "resultados", col_types = "ciccii")
+torneos <- read_sheet(data_path, "torneos", col_types = "ccDDcccccc")
+ranking <- read_sheet(data_path, "ranking", col_types = "Dcd")
+tiendas <- read_sheet(data_path, "tiendas", col_types = "ccccccccc")
+```
+
+```{r data-prep}
+last_ranking_version <- "2024-11-12"
+lanzamiento_daana <- "2024-10-18"
+banlist_noviembre <- "2024-11-05"
+banlist_octubre <- "2024-09-30"
+ranking <- 
+  ranking |> 
+  filter(version == last_ranking_version) |> 
+  select(-version)
+
+torneos_razas <- 
+  torneos |> 
+  select(id_torneo, fecha, tienda, tor, raza) |> 
+  mutate(raza = str_replace(raza, " .+", ""))
+
+resultados_longer <- 
+  resultados |>
+  group_by(id_torneo, ronda) |>
+  mutate(mesa = row_number()) |> 
+  ungroup() |> 
+  pivot_longer(tor_a:tor_b, names_to = "posicion_j", values_to = "tor") |> 
+  pivot_longer(resultado_a:resultado_b, names_to = "posicion_p", values_to = "puntos") |> 
+  filter(str_sub(posicion_j, -1) == str_sub(posicion_p, -1)) |>
+  select(id_torneo, ronda, mesa, tor, puntos) |> 
+  left_join(torneos_razas, by = join_by(id_torneo, tor)) |> 
+  left_join(
+    tiendas |> select(nombre, region, ciudad), 
+    by = join_by(tienda == nombre),
+    relationship = "many-to-one",
+    multiple = "first"
+  ) |> 
+  left_join(ranking, by = join_by(tor)) |> 
+  mutate(index = case_when(
+    fecha > banlist_noviembre ~ "banlist noviembre",
+    fecha > lanzamiento_daana ~ "lanzamiento de Daana",
+    fecha > banlist_octubre ~ "banlist septiembre",
+    .default = NA
+  )) |> 
+  drop_na(index) |> 
+  mutate(index = fct_relevel(index, "banlist septiembre", "lanzamiento de Daana", "banlist noviembre"))
+```
+
+```{r theme}
+theme_set(theme_minimal(18, "Roboto"))
+theme_update(
+  panel.grid.minor = element_blank()  
+)
+```
+
+## Popularidad de la raza
+
+Primero que todo analizaremos la popularidad temporal del defensor: desde el banlist de septiembre (30-09-2024) hasta el aniversario de Daana (18-10-2024); desde el aniversario hasta el banlist de noviembre (05-11-2024); desde el último banlist hasta el 12 de noviembre.
+
+```{r popularidad}
+popularidad <- 
+  resultados_longer |> 
+  distinct(id_torneo, tor, .keep_all = TRUE) |> 
+  group_by(index, raza) |> 
+  summarize(n = n(), .groups = "drop_last") |> 
+  mutate(pct = n / sum(n)) |> 
+  filter(raza %in% c("Defensor", "Desafiante", "Sombra")) |> 
+  arrange(index, desc(raza)) |> 
+  mutate(
+    label = paste0(round(pct * 100, 1), "%"),
+    y_pos = -pct / 2 + cumsum(pct)
+  ) |> 
+  ungroup()
+
+popularidad_total <- 
+  popularidad |> 
+  count(index, wt = pct, name = "pct") |> 
+  mutate(label = paste0(round(pct * 100, 1), "%"))
+```
+
+```{r grafico-popularidad}
+#| fig-cap: "Popularidad de todas las razas de Daana desde el 30 de Septiembre al 12 de Noviembre. Pobre desafiante, sólo el 3.2% de los miteros lo prefieren."
+
+popularidad |> 
+  ggplot(aes(index, pct)) +
+  geom_col(aes(fill = raza), width = 0.8) +
+  geom_text(
+    aes(label = label, y = y_pos),
+    size = 7, color = "gray10"
+  ) +
+  geom_text(
+    data = popularidad_total,
+    aes(label = label), 
+    size = 10, color = "gray30", 
+    fontface = "bold", nudge_y = 0.02
+  ) +
+  scale_fill_brewer(palette = "BuGn") +
+  scale_x_discrete(labels = \(x) str_wrap(x, width = 10)) +
+  labs(x = NULL, y = NULL, title = "Popularidad relativa de las razas de Daana") +
+  theme(
+    panel.grid.major = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(margin = margin(t = -2)),
+    plot.title = element_text(face = "bold", color = "gray30", hjust = 0.5, margin = margin(b = 10)),
+    plot.title.position = "plot",
+    legend.text = element_text(size = 16)
+  )
+```
+
+La mayoría recordarán que antes del lanzamiento de Daana, las razas verdes carecían de fuertes exponentes en ligas. Desde entonces hasta la fecha, su popularidad se ha duplicado. Este auge se explica principalmente por la preferencia de los miteros por la raza defensor, atribuible casi todo a la nueva mecánica de druidas.
+
+## Fuerza druida
+
+Ya establecimos que la raza defensor es 3 veces más popular por el arquetipo druida, ¿pero es más fuerte que su contraparte aggro? Para averiguarlo, compararemos el win rate ($\text{WR}$) del defensor previo al lanzamiento de Daana con su $\text{WR}$ posterior al lanzamiento.
+
+Para más claridad, especificamos que el $\text{WR}$ lo calcularemos basándonos en partidas individuales, no matches:
+
+$$
+\text{WR}=\frac{\sum\text{partidas ganadas}}{\sum\text{partidas jugadas}},
+$$
+
+donde la sumatoria ocurre para todas las rondas de todos los torneos. Entonces, si visualizamos que el $\text{WR}$ del defensor aumenta después del lanzamiento de Daana, será seguro concluir que los druidas han traído nueva y mejor fuerza a una raza que se caracterizaba por jugar de manera ultra-agresiva.
+
+```{r wr-defensor}
+wr_defensor <- 
+  resultados_longer |> 
+  group_by(id_torneo, ronda, mesa) |> 
+  mutate(puntos_totales = sum(puntos)) |> 
+  group_by(raza, .add = TRUE) |> 
+  mutate(mirror_match = n() == 2) |> 
+  filter(!mirror_match) |> 
+  ungroup(id_torneo, ronda, mesa) |> 
+  group_by(index, .add = TRUE) |> 
+  summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop") |> 
+  filter(raza == "Defensor") |> 
+  mutate(label = paste0(round(wr * 100, 1), "%"))
+```
+
+```{r grafico-wr-defensor}
+#| fig-cap: "El aniversario de Daana dio nueva jugabilidad al defensor, dotándolo de nueva fuerza."
+
+wr_defensor |> 
+  ggplot(aes(index, wr)) +
+  geom_line(aes(group = 1), color = "#244855", linewidth = 2) +
+  geom_point(size = 6, color = "white") +
+  geom_point(size = 4, color = "#244855") +
+  geom_text(
+    aes(label = label), 
+    size = 8, color = "gray10", 
+    nudge_y = 0.02, hjust = 1
+  ) +
+  scale_x_discrete(labels = \(x) str_wrap(x, width = 10)) +
+  labs(x = NULL, y = NULL, title = "Evolución del WR de defensor") +
+  theme(
+    panel.grid.major = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(margin = margin(t = -2)),
+    plot.title = element_text(face = "bold", color = "gray30", hjust = 0.5, margin = margin(b = 10)),
+    plot.title.position = "plot"
+  ) +
+  coord_cartesian(xlim = c(0.7, 3), ylim = c(0.4, 0.6))
+```
+
+La mejora de la raza defensor es evidente, pues el lanzamiento de Daana le dio una nueva forma de jugar que además se demuestra fuerte, ganando casi 10 puntos porcentuales (pp). Luego, en noviembre se debilita al arquetipo con la salida de 1 Ulster, sin embargo, gana 2 pp. ¿A qué se atribuye esto? Dos hipótesis no excluyentes son:
+
+a.  Los jugadores ganaron experiencia con el arquetipo y la composición de las barajas está siendo optimizada.
+
+b.  Las restricciones al olímpico hicieron que ésta y, tal vez, otras razas mejoren su $\text{WR}$.
+
+## Conclusiones
+
+Los resultados de torneos indican que el mazo defensor ha ganado mucho terreno en la competencia, triplicando su popularidad después del lanzamiento de Daana, a la vez que mejoró su $\text{WR}$ en más de 12 pp. Es seguro asumir que gran parte del auge defensor proviene del nacimiento de la mecánica de druidas, además del nerfeo al olímpico, una raza que podía ganarle a todos y que oprimía el surgimiento de mecánicas novedosas.
+
+Para el futuro, quedan abiertas muchas preguntas y si este post es bien aceptado, podremos darles caza desde una perspectiva de ciencia de datos. Las preguntas más interesantes son:
+
+-   ¿Es el defensor igual de popular entre jugadores novatos y expertos?
+
+-   ¿Cuál es el $\text{WR}$ del defensor contra todas las razas?
