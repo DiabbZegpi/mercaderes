@@ -1,0 +1,55 @@
+---
+title: "Torneo Open Hijos de Druida"
+date: "11-24-2024"
+categories: ["druida", "competitivo", "open hijos de daana"]
+description: "La supremacía del druida yace en su dominio completo del campo de batalla - Sun Tzu."
+image: weevil_s.jpg
+---
+
+El **sábado 16 de noviembre** se llevó a cabo el [**Torneo Open del Aniversario de Hijos de Danna**](https://blog.myl.cl/torneo-open-hijos-de-daana/), una serie de 6 torneos suizos de **5 rondas cada uno, sin corte top** y en **formato racial edición**, en los que sólo estaba permitido jugar con las razas de Hijos de Danna. Además, el Open contó con un **banner especial** para la ocasión. En este post analizaremos brevemente los **6 torneos jugados** que conforman el Torneo Open de Hijos de Danna.
+
+## Arquetipos de mazos jugados y top 8
+
+Primero revisemos qué **arquetipos de mazos** fueron los elegidos por los jugadores para participar en este torneo.
+
+![](torneo-1.jpg){fig-alt="Distribución de razas del Torneo Open Aniversario Hijos de Daana." fig-align="center"}
+
+Si algo queda claro, es que los jugadores le dieron oportunidad a los **4 arquetipos de mazos** permitidos en el torneo: **Druida, Defensor, Desafiante y Sombra**. Evidentemente, el **Druida** fue el mazo con mayor participación. ¡Quién lo hubiese imaginado! *(guiño, guiño)*.
+
+Pero, ¿qué ocurrió durante el transcurso de este torneo e, incluso más importante, cuáles fueron los mazos que llegaron al **top 8**? Revisemos la siguiente imagen.
+
+![](top-8.jpg){fig-alt="Distribución de razas del Top 8 Open Hijos de Daana." fig-align="center"}
+
+Lo primero que notamos es que el mazo **Druida arrasó** en el torneo; no por nada los **6 jugadores** que lograron el **primer lugar** en sus respectivos torneos utilizaron dicho mazo.
+
+### **¿Qué pasó con las demás razas?**
+
+-   **Sombra**: Pasó de tener un **27.2% de participación inicial** en el torneo a solo un **4.2% en el top**. ¡Una disminución del **23%**!
+-   **Desafiante**: También disminuyó su presencia en el top respecto a la inscripción inicial, con una caída de aproximadamente un **12%**.
+-   **Defensor clásico**: Por otro lado, aumentó su participación en el top, creciendo cerca de un **3%**.
+
+## **Druida vs El Mundo**
+
+Está claro que el **Druida** fue el mazo dominante en este torneo, pero, ¿cómo fueron sus enfrentamientos contra las demás razas? Lo veremos en la siguiente imagen.
+
+![](druida_oad_edit-1.jpg){fig-alt="El druida lo gana todo." fig-align="center"}
+
+El **Win Rate** del Druida en este torneo fue **aplastante**. Para ponerlo en contexto: - Es [**más probable tener obesidad en Chile**](https://inta.uchile.cl/especiales/2021/dia-mundial-da-la-obesidad#:~:text=En%20Chile%2C%20la%20tendencia%20no,un%203.2%25%20tiene%20obesidad%20m%C3%B3rbida.) que ver a un mazo Sombra ganar contra un Druida *(quizás como buenos mitoteros no parece tan rara esta probabilidad)*. - Otro ejemplo más claro: es **más probable ganar el dado en 2 rondas consecutivas** que ver un mazo Sombra vencer a un Druida.
+
+Por su parte:
+
+-   El **Desafiante** tiene un Win Rate similar al Sombra frente al Druida.
+
+-   El **Defensor** tiene un match desfavorable, pero no cae al nivel de los otros dos arquetipos.
+
+## **¿Qué les falta a Sombra y Desafiante para ser razas más competitivas?**
+
+Ésta es la pregunta que dejamos planteada. Es evidente que la edición **Aniversario de Hijos de Danna** benefició enormemente a una raza en desmedro de las otras.
+
+::: callout-tip
+## Reflexión clave: ¿Qué tipo y cuántas cartas necesitan éstas razas para ser competitivas?
+
+Quizás sólo queda aplicar la gran **Weevil** con nuestros cartones de **Sombra** y **Desafiante**.
+:::
+
+![](weevil_s.jpg){fig-alt="Weevil descarta a los desafiante y sombra." fig-align="center"}
