@@ -41,7 +41,7 @@ website:
             href: about-en.qmd
       - text: Blog
         href: index.qmd
-      - text: Elo MyL (Alpha)
+      - text: Elo MyL
         href: elo-myl.qmd
 
   comments:
