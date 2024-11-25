@@ -53,6 +53,14 @@ tiendas <- read_sheet(data_path, "tiendas", col_types = "ccccccccc")
 # Filtros
 torneos <- torneos |> filter(id_torneo %in% torneos_computados$id_torneo)
 resultados <- resultados |> filter(id_torneo %in% torneos_computados$id_torneo)
+
+# Separar sub-razas druida, goblin y minotauro
+torneos <- 
+  torneos |> 
+  mutate(
+    raza = str_remove(raza, ".+ / "),
+    raza = str_to_title(raza)
+  )
 ```
 
 ```{r posiciones}
@@ -110,21 +118,46 @@ resultados_longer <-
   
 resultados_razas <- 
   resultados_longer |> 
-  left_join(torneos |> select(id_torneo, tor, raza), by = join_by(id_torneo, tor)) |> 
-  mutate(raza = str_to_title(raza))
+  left_join(
+    torneos |> select(id_torneo, tor, raza), 
+    by = join_by(id_torneo, tor)
+  )
+
+# wr_jugador <- 
+#   resultados_razas |>
+#   # Omitir mesas con bye
+#   group_by(id_torneo, ronda, mesa) |> 
+#   mutate(
+#     puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
+#     puntos_totales = sum(puntos)
+#   ) |>
+#   filter(!is.na(puntos_totales)) |> 
+#   ungroup() |> 
+#   group_by(tor) |> 
+#   summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
 
 wr_jugador <- 
-  resultados_razas |>
-  # Omitir mesas con bye
+  resultados_razas |> 
   group_by(id_torneo, ronda, mesa) |> 
   mutate(
     puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
-    puntos_totales = sum(puntos)
-  ) |>
+    puntos_totales = sum(puntos),
+    puntos_oponente = puntos_totales - puntos,
+    resultado_match = case_when(
+      puntos > puntos_oponente ~ 1,
+      puntos == puntos_oponente ~ 0.5,
+      puntos < puntos_oponente ~ 0
+    )
+  ) |> 
   filter(!is.na(puntos_totales)) |> 
   ungroup() |> 
   group_by(tor) |> 
-  summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
+  summarize(
+    n_matches = n(),
+    wr = sum(resultado_match) / n_matches,
+    .groups = "drop"
+  ) |> 
+  select(tor, wr)
  
 raza_favorita <- 
   torneos |> 
@@ -148,7 +181,13 @@ wr_teams <-
   group_by(id_torneo, ronda, mesa) |> 
   mutate(
     puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
-    puntos_totales = sum(puntos)
+    puntos_totales = sum(puntos),
+    puntos_oponente = puntos_totales - puntos,
+    resultado_match = case_when(
+      puntos > puntos_oponente ~ 1,
+      puntos == puntos_oponente ~ 0.5,
+      puntos < puntos_oponente ~ 0
+    )
   ) |>
   filter(!is.na(puntos_totales)) |> 
   left_join(jugadores |> select(tor, team), by = join_by(tor)) |> 
@@ -158,8 +197,13 @@ wr_teams <-
   mutate(team_match = n() == 2) |> 
   filter(!team_match) |> 
   ungroup(id_torneo, ronda, mesa) |> 
-  summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop") |> 
-  filter(!is.na(team))
+  summarize(
+    n_matches = n(),
+    wr = sum(resultado_match) / n_matches, 
+    .groups = "drop"
+  ) |> 
+  filter(!is.na(team)) |> 
+  select(team, wr)
 
 jugadores_activos <- 
   resultados_razas |> 
@@ -296,9 +340,9 @@ ranking_actualizado |>
     columns = c(wr),
     palette = c("red", "forestgreen"),
     apply_to = "text",
-    domain = c(0.3, 0.9),
+    domain = c(0.2, 1),
     method = "quantile",
-    quantiles = 4,
+    quantiles = 8,
     na_color = "forestgreen"
   ) |>
   data_color(
