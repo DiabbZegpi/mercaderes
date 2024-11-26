@@ -1,0 +1,35 @@
+---
+title: "Matchaups por Razas en Racial Edición"
+date: today
+categories: ["matchups", "competitivo", "meta"]
+description: "Quién le gana a quién en Primer Bloque Racial Edición"
+image: ejemplo_dragon2.jpg
+---
+
+## ¿Cómo leer los Matchups para una raza?
+
+A continuación, mostramos un ejemplo de cómo interpretar los **matchups** para la raza **Dragón**:
+
+![El matchup se lee de izquierda a derecha.](ejemplo_dragon2.jpg){fig-align="center" fig-alt="Ejemplo matchup dragón."}
+
+En éste ejemplo de la raza **Dragón**, observamos lo siguiente: - Contra **Caballero**, el color beige indica que el matchup es **"Neutro"**. Lo mismo ocurre con el matchup **Dragón vs Héroe**.
+
+-   Contra **Faerie**, el color verde muestra que Dragón tiene un matchup **"Favorable"**.
+
+-   Finalmente, contra **Olímpico** y **Titán**, el color rosado señala que Dragón enfrenta un matchup **"Levemente Desfavorable"**.
+
+## Matchups para el Banner Actual (05/11/24 al 25/11/24)
+
+### Consideraciones:
+
+Aunque en el **TOR** existen arquetipos como **Goblin / Faerie** y **Minotauro / Titán**, éstos fueron agregados a sus respectivas razas debido a la falta de datos suficientes para analizarlos de manera independiente.
+
+![Todos los matchups de Primer Bloque Racial Edición.](25-11-24_2.jpg){fig-alt="Todos los matchups de Primer Bloque Racial Edición." fig-align="center"}
+
+## Palabras Finales
+
+Es evidente que no sólo es una percepción que el mazo **Druida** domina el **meta actual**, sino que los datos obtenidos de los torneos **confirman su supremacía**. Con un desempeño destacado en múltiples matchups, Druida se posiciona como la mejor opción en el formato actual y sin un counter claro.
+
+Por último, te invitamos a leer nuestro artículo sobre el [**Torneo Open de Hijos de Danna**](https://datosyleyendas.com/posts/hijos-de-druida/), donde exploramos lo ocurrido en ese evento.
+
+¡Nos encantaría conocer tu opinión sobre el estado actual del **meta** y los datos mostrados! 🚀
