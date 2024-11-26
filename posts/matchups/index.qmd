@@ -1,5 +1,5 @@
 ---
-title: "Matchaups por Razas en Racial Edición"
+title: "Matchups por Razas en Racial Edición"
 date: today
 categories: ["matchups", "competitivo", "meta"]
 description: "Quién le gana a quién en Primer Bloque Racial Edición"
