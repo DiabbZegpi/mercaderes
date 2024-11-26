@@ -59,7 +59,8 @@ torneos <-
   torneos |> 
   mutate(
     raza = str_remove(raza, ".+ / "),
-    raza = str_to_title(raza)
+    raza = str_to_title(raza),
+    raza = replace_na(raza, "")
   )
 ```
 
@@ -161,11 +162,11 @@ wr_jugador <-
  
 raza_favorita <- 
   torneos |> 
-  mutate(
-    raza = str_to_title(raza),
-    raza = replace_na(raza, "")
-  ) |> 
-  slice_max(semana, n = 5, by = tor) |> 
+  # mutate(
+  #   raza = str_to_title(raza),
+  #   raza = replace_na(raza, "")
+  # ) |> 
+  slice_max(fecha, n = 5, by = tor) |> 
   group_by(tor, raza) |> 
   mutate(n = n()) |> 
   ungroup(raza) |> 
@@ -173,7 +174,6 @@ raza_favorita <-
   ungroup() |> 
   slice_max(fecha, by = tor, with_ties = FALSE) |> 
   select(tor, raza)
-
 
 wr_teams <- 
   resultados_razas |> 
@@ -445,6 +445,5 @@ tabla_teams |>
 ```
 
 :::
-
 
 
