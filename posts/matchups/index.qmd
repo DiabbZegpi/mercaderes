@@ -1,6 +1,6 @@
 ---
 title: "Matchups por Razas en Racial Edición"
-date: today
+date: "2024-11-26"
 categories: ["matchups", "competitivo", "meta"]
 description: "Quién le gana a quién en Primer Bloque Racial Edición"
 image: ejemplo_dragon2.jpg
@@ -24,7 +24,7 @@ En éste ejemplo de la raza **Dragón**, observamos lo siguiente: - Contra **Cab
 
 Aunque en el **TOR** existen arquetipos como **Goblin / Faerie** y **Minotauro / Titán**, éstos fueron agregados a sus respectivas razas debido a la falta de datos suficientes para analizarlos de manera independiente.
 
-![Todos los matchups de Primer Bloque Racial Edición.](25-11-24_2.jpg){fig-alt="Todos los matchups de Primer Bloque Racial Edición." fig-align="center"}
+![Todos los matchups de Primer Bloque Racial Edición.](25-11-24_3.jpg){fig-alt="Todos los matchups de Primer Bloque Racial Edición." fig-align="center"}
 
 ## Palabras Finales
 
