@@ -25,6 +25,12 @@ $quaternary: #90AEAD;
   max-height: 40px !important;
 }
 
+abbr {
+  text-decoration: none !important;
+  font-weight: bold;
+  color: black !important;
+}
+
 
 /*-- Define fonts --*/
 $font-family-base: "Roboto";
