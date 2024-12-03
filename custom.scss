@@ -15,8 +15,17 @@ $quaternary: #90AEAD;
 }
 
 .thumbnail-image {
-  max-width: 230px;
-  margin-top: 0em !important;
+  /*max-width: 230px;
+  margin-top: 0em !important;*/
+}
+
+.quarto-grid-item.card {
+  transition: box-shadow 0.2s;
+  border-radius: 8px;
+}
+
+.quarto-grid-item.card:hover {
+  box-shadow: 2px 2px 2px 1px #244855aa
 }
 
 .navbar-logo {
