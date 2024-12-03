@@ -1,5 +1,5 @@
 ---
-title: "TOP 500 Elo MyL (Alpha)"
+title: "TOP 500 Elo MyL"
 page-layout: article
 title-block-banner: false
 comments: false
@@ -305,18 +305,18 @@ ranking_actualizado |>
     "arrow-down" = "red")
   ) |> 
   cols_label(
-    rank_actual = md("**#**"),
+    rank_actual = gt::html(gtExtras::with_tooltip("#", "Ranking y puestos subidos o bajados")),
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
     tor = md("**TOR**"),
     nombre = md("**Nombre**"),
-    raza = md("**Raza favorita**"),
+    raza = gt::html(gtExtras::with_tooltip("Raza favorita", "Raza más jugada en los últimos 5 torneos o ligas")),
     team = md("**Team**"),
-    ciudad = md("**Ciudad**"),
-    wr = md("**WR**"),
+    ciudad = gt::html(gtExtras::with_tooltip("Comuna", "Comuna en la que más ha jugado")),
+    wr = gt::html(gtExtras::with_tooltip("WR", "Matches ganados dividido por matches jugados")),
     elo_actual = md("**Elo**"),
-    elo_diff = md("**+/-**")
+    elo_diff = gt::html(gtExtras::with_tooltip("+/-", "Puntos ganados o perdidos"))
   ) |> 
   cols_move(c(dir, rank_diff_abs), after = rank_actual) |> 
   cols_width(
