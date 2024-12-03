@@ -18,6 +18,9 @@ website:
       - icon: whatsapp
         href: https://wa.me/56978020601
         target: _blank
+      - icon: instagram
+        href: https://www.instagram.com/datosyleyendas/
+        target: _blank
       - icon: github
         href: https://github.com/DiabbZegpi
         target: _blank
