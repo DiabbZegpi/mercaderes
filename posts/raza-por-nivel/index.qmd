@@ -6,9 +6,9 @@ description: "Soy un jugador intermedio, manqueo y a veces topeo en liga, ¿qué
 image: thumbnail.jpg
 ---
 
-Nuestro [último post sobre el Win Rate (WR) o matchups](https://datosyleyendas.com/posts/matchups/) generó mucha discusión en las comunidades, cosa que agradecemos. Uno de los puntos de discusión más interesantes es que el WR "**depende del piloto 🏎️**". La verdad es que sí, nuestra gráfica muestra una estimación promedio de la población de miteros, resultando muy útil para **hacerse una idea general del metagame** y tomar decisiones rápidas, como qué raza llevar a un torneo regional, pero recuerden que no es un esquema rígido.
+Nuestro [último post sobre el Win Rate (WR) o matchups](https://datosyleyendas.com/posts/matchups/) generó mucha discusión en las comunidades, cosa que agradecemos. Uno de los puntos de discusión más interesantes es que el WR "**depende del piloto 🏎️**". La verdad es que sí, nuestra gráfica muestra una **estimación promedio de la población de miteros**, resultando muy útil para **hacerse una idea general del metagame**, pero no es un esquema rígido.
 
-Hacer una gráfica personalizada por jugador es muy difícil, pero hemos hecho un intento por acercarla al mitero de a pie, apalancándonos del \[maravilloso ranking Elo MyL\](<https://datosyleyendas.com/elo-myl>). **Dividimos a la población de jugadores en 4 niveles**:
+Hacer una gráfica personalizada por jugador es muy difícil, pero hemos hecho un esfuerzo por acercarla a las comunidades, apalancándonos del [maravilloso ranking Elo MyL](https://datosyleyendas.com/elo-myl). **Dividimos a la población de jugadores en 4 niveles**:
 
 -   Novatos 🧑‍🎓: son jugadores con elo **igual o menor a 1350**, el 25% más bajo de la población.
 
