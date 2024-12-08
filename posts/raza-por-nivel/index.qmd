@@ -1,0 +1,31 @@
+---
+title: "¿Qué raza me conviene jugar según mi nivel?"
+date: today
+categories: ["win rate", "competitivo", "meta"]
+description: "Soy un jugador intermedio, cometo missplay y a veces topeo en liga, ¿qué raza debería jugar?"
+image: thumbnail.jpg
+---
+
+Nuestro [último post sobre el Win Rate (WR) o matchups](https://datosyleyendas.com/posts/matchups/) generó mucha discusión en las comunidades, cosa que agradecemos. Uno de los puntos más interesantes es "muy bonito todo, **pero depende del piloto 🏎️**". La verdad es que sí, nuestra gráfica muestra una estimación promedio de la población de miteros, resultando muy útil para **hacerse una idea general del metagame** y tomar decisiones rápidas, como qué raza llevar a un torneo regional, pero recuerden que no es un esquema rígido.
+
+Hacer una gráfica personalizada por jugador es muy difícil, pero hemos hecho un intento por acercarla al mitero de a pie, apalancándonos del \[maravilloso ranking Elo MyL\](<https://datosyleyendas.com/elo-myl>). **Dividimos a la población de jugadores en 4 niveles**:
+
+-   Novatos 🧑‍🎓: son jugadores con elo **igual o menor a 1350**, el 25% más bajo de la población.
+
+-   Intermedios 🥊: jugadores **entre 1351 y 1427** de elo, tienen menos elo que el 50% de la población.
+
+-   Avanzados 😎: van **desde 1428 hasta 1550** de elo. Estos jugadores ya comienzan a entrar entre los 500 mejores jugadores del bloque.
+
+-   Expertos 🧠: **desde 1551 de elo en adelante**, son el 25% de la población con más elo y ocupan todos los puestos altos del ranking.
+
+## Mejores 3 razas por nivel
+
+Si no sabes cuánto elo tienes, puedes buscar tu **código TOR** en [Elo MyL](https://datosyleyendas.com/elo-myl). Si no te encuentras en la lista, ¡descuida!, ahí sólo están los 500 mejores jugadores de primer bloque, por lo que tendrás que buscar tu código TOR en [la lista completa de jugadores de Elo MyL](https://docs.google.com/spreadsheets/d/1kR45qa9CH3yiZpRMyTan1Hvmi3DgDkV-Uc2wrSGn1C4/edit?gid=1129691467#gid=1129691467).
+
+![Win Rate de las mejores 3 razas por cada nivel de jugadores en Elo MyL. Cada tramo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror.](razas-por-nivel.jpg){fig-alt="Win Rate de las mejores 3 razas por cada nivel de jugadores. Cada tramo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror." fig-align="center"}
+
+## Palabras finales
+
+Es asombroso como el **Druida** es la baraja más fuerte a lo largo de todos los niveles, aún a una semana de la [última actualización de la banlist de primer bloque](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/) (⚠️Fergus $\times$ 1) ¿Será suficiente con este ban para emparejar la fuerza de las razas y terminar con la **supremacía Druida** 🥇?
+
+Por último, ¿qué razas creen que son las peores en todos los niveles de elo? Compartan su opinión por nuestras redes sociales y en las comunidades de MyL, seguro se asombrarán en saber que **la peor raza en las manos de un experto es equivalente a la mejor raza en las manos de un jugador intermedio** 🤯.
