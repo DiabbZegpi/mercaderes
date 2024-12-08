@@ -2,11 +2,11 @@
 title: "¿Qué raza me conviene jugar según mi nivel?"
 date: today
 categories: ["win rate", "competitivo", "meta"]
-description: "Soy un jugador intermedio, cometo missplay y a veces topeo en liga, ¿qué raza debería jugar?"
+description: "Soy un jugador intermedio, manqueo y a veces topeo en liga, ¿qué raza debería jugar?"
 image: thumbnail.jpg
 ---
 
-Nuestro [último post sobre el Win Rate (WR) o matchups](https://datosyleyendas.com/posts/matchups/) generó mucha discusión en las comunidades, cosa que agradecemos. Uno de los puntos más interesantes es "muy bonito todo, **pero depende del piloto 🏎️**". La verdad es que sí, nuestra gráfica muestra una estimación promedio de la población de miteros, resultando muy útil para **hacerse una idea general del metagame** y tomar decisiones rápidas, como qué raza llevar a un torneo regional, pero recuerden que no es un esquema rígido.
+Nuestro [último post sobre el Win Rate (WR) o matchups](https://datosyleyendas.com/posts/matchups/) generó mucha discusión en las comunidades, cosa que agradecemos. Uno de los puntos de discusión más interesantes es que el WR "**depende del piloto 🏎️**". La verdad es que sí, nuestra gráfica muestra una estimación promedio de la población de miteros, resultando muy útil para **hacerse una idea general del metagame** y tomar decisiones rápidas, como qué raza llevar a un torneo regional, pero recuerden que no es un esquema rígido.
 
 Hacer una gráfica personalizada por jugador es muy difícil, pero hemos hecho un intento por acercarla al mitero de a pie, apalancándonos del \[maravilloso ranking Elo MyL\](<https://datosyleyendas.com/elo-myl>). **Dividimos a la población de jugadores en 4 niveles**:
 
@@ -18,11 +18,13 @@ Hacer una gráfica personalizada por jugador es muy difícil, pero hemos hecho u
 
 -   Expertos 🧠: **desde 1551 de elo en adelante**, son el 25% de la población con más elo y ocupan todos los puestos altos del ranking.
 
+Solamente consideramos razas con **al menos 100 matches** de historia, sin contemplar mirror match.
+
 ## Mejores 3 razas por nivel
 
 Si no sabes cuánto elo tienes, puedes buscar tu **código TOR** en [Elo MyL](https://datosyleyendas.com/elo-myl). Si no te encuentras en la lista, ¡descuida!, ahí sólo están los 500 mejores jugadores de primer bloque, por lo que tendrás que buscar tu código TOR en [la lista completa de jugadores de Elo MyL](https://docs.google.com/spreadsheets/d/1kR45qa9CH3yiZpRMyTan1Hvmi3DgDkV-Uc2wrSGn1C4/edit?gid=1129691467#gid=1129691467).
 
-![Win Rate de las mejores 3 razas por cada nivel de jugadores en Elo MyL. Cada tramo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror.](razas-por-nivel.jpg){fig-alt="Win Rate de las mejores 3 razas por cada nivel de jugadores. Cada tramo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror." fig-align="center"}
+![Cada tramo de elo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror.](razas-por-nivel.jpg){fig-alt="Win Rate de las mejores 3 razas por cada nivel de jugadores. Cada tramo representa a un 25% de la población de miteros; cada Win Rate es calculado con un mínimo de 100 matches que no sean mirror." fig-align="center"}
 
 ## Palabras finales
 
