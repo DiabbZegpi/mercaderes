@@ -8,7 +8,6 @@ data_path <- "https://docs.google.com/spreadsheets/d/1ZErNDZVSbIP8ekj-mmTpdmJ_Gb
 
 resultados <- read_sheet(data_path, "resultados", col_types = "ciccii")
 torneos <- read_sheet(data_path, "torneos", col_types = "ccDDcccccc")
-jugadores <- read_sheet(data_path, "jugadores", col_types = "ccc")
 ranking <- read_sheet(data_path, "ranking", col_types = "Dcd")
 torneos_computados <- read_sheet(data_path, "torneos computados", col_types = "cD")
 
@@ -38,7 +37,8 @@ df <-
     relationship = "many-to-one",
     suffix = c("_a", "_b")
   ) |>
-  filter(fecha > "2024-11-05") |>
+  # Filtrar fecha y quitar el Torneo Regional de Chillán
+  filter(fecha > "2024-11-05", id_torneo != "241130PB28154") |>
   left_join(
     ranking,
     by = join_by(tor_a == tor, closest(fecha <= version)),
@@ -73,8 +73,8 @@ rs <-
     nivel = fct_relevel(nivel, c("experto", "avanzado", "intermedio", "novato"))
   ) |>
   group_by(nivel, raza = raza_a) |>
-  summarize(wr = mean(match), sample = n(), .groups = "drop") |>
-  filter(sample >= 100)
+  summarize(wr = mean(match), sample_size = n(), .groups = "drop") |>
+  filter(sample_size >= 100)
 
 rs |>
   filter(raza != "Defensor") |>
@@ -82,7 +82,8 @@ rs |>
 
 rs |>
   # filter(raza != "Defensor") |>
-  slice_min(wr, by = nivel, n = 3, with_ties = FALSE)
+  slice_min(wr, by = nivel, n = 3, with_ties = FALSE) |>
+  arrange(nivel, desc(wr))
 
 
 
