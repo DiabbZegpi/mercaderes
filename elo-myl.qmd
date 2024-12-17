@@ -167,6 +167,7 @@ raza_favorita <-
   #   raza = replace_na(raza, "")
   # ) |> 
   slice_max(fecha, n = 5, by = tor) |> 
+  filter(fecha >= version_actual %m-% months(1)) |> 
   group_by(tor, raza) |> 
   mutate(n = n()) |> 
   ungroup(raza) |> 
@@ -305,18 +306,18 @@ ranking_actualizado |>
     "arrow-down" = "red")
   ) |> 
   cols_label(
-    rank_actual = gt::html(gtExtras::with_tooltip("#", "Ranking y puestos subidos o bajados")),
+    rank_actual = gt::html(gtExtras::with_tooltip("#", "Ranking y puestos subidos o bajados desde la actualización anterior")),
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
     tor = md("**TOR**"),
     nombre = md("**Nombre**"),
-    raza = gt::html(gtExtras::with_tooltip("Raza favorita", "Raza más jugada en los últimos 5 torneos o ligas")),
+    raza = gt::html(gtExtras::with_tooltip("Raza favorita", "Raza más jugada en los últimos 5 torneos o ligas del último mes")),
     team = md("**Team**"),
     ciudad = gt::html(gtExtras::with_tooltip("Comuna", "Comuna en la que más ha jugado")),
     wr = gt::html(gtExtras::with_tooltip("WR", "Matches ganados dividido por matches jugados")),
     elo_actual = md("**Elo**"),
-    elo_diff = gt::html(gtExtras::with_tooltip("+/-", "Puntos ganados o perdidos"))
+    elo_diff = gt::html(gtExtras::with_tooltip("+/-", "Puntos ganados o perdidos desde la actualización anterior"))
   ) |> 
   cols_move(c(dir, rank_diff_abs), after = rank_actual) |> 
   cols_width(
