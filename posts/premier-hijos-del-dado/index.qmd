@@ -1,0 +1,35 @@
+---
+title: "Premier Hijos del Dado"
+date: today
+categories: ["premier", "competitivo", "hijos de daana"]
+description: '¿Cuánto afecta "el dado" al resultado de un match?'
+image: thumbnail.jpg
+---
+
+Acaba de terminar el [Premier de Hijos de Daana](https://blog.myl.cl/torneo-premier-hijos-de-daana-sabado-14-de-diciembre-2024/) y queríamos aprovechar la ocasión para usar [la data del live oficial](https://www.youtube.com/watch?v=3c_I_9UxQ_4&t=17319s&ab_channel=MitosyLeyendas) para determinar cuán importante es ganar el dado en un meta de razas limitadas. Ojo 👀 estos resultados no aplican obligatoriamente al formato Racial Edición, pero son útiles para hacernos una idea en un torneo sumamente competitivo.
+
+Las variables que analizamos en este post son:
+
+-   Ganar/perder el dado 🎲
+
+-   Raza del jugador y del oponente 🐲
+
+-   Fuerza de los jugadores 💪 medida por su Elo
+
+## ¿Ganar el dado es lo que más importa?
+
+**Sí**. Aunque no es el único de los factores que influye en el resultado de una partida, es el más influyente. El 68% de los jugadores que ganaron y aparecieron en el live ganaron su partida.
+
+![Efecto de ganar o perder el dado en el Premier de Hijos de Daana.](perder-dado.jpg){fig-alt="Efecto de ganar o perder el dado en el Premier de Hijos de Daana. El ganador del dado tiene un 68% de probabilidad de ganar el match." fig-align="center"}
+
+## ¿Qué más importa a parte del dado?
+
+![El segundo factor más importante es la fuerza del jugador. En tercer lugar, importa más qué raza juega el oponente a la raza que juega uno mismo.](arbol-decision.jpg){fig-alt="Árbol de las variables más importantes que definieron los matches en el Premier de Hijos de Daana. El segundo factor más importante es la fuerza del jugador. En tercer lugar, importa más qué raza juega el oponente a la raza que juega uno mismo." fig-align="center"}
+
+Después del dado, lo más importante es **la fuerza del oponente**. Si nuestro oponente es muy fuerte y perdimos el dado, la derrota es casi segura (89%). Si perdemos el dado y mi oponente no es muy fuerte, entonces depende de si éste **juega Druida o no**, después de todo, el burro no perdona 🍆.
+
+Si tenemos la suerte de **ganar el dado**, entonces ocurre algo curioso: Si el **oponente es débil** y **juega Druida** entonces **nuestras chances son mejores (67%)** a si juega Sombra o Desafiante. ¿Por qué? Presumimos que el mazo Druida tiene tal versatilidad que puede ser muy bueno en manos de un experto, a la vez que demasiado complejo de jugar bien en manos de un novato.
+
+## Palabras finales
+
+Es nuestra intención verificar el efecto del dado a lo largo de todos los matchups, pero nos falta data 😖. Si eres o conoces a algún organizador de torneos que se atreva a registrar quién gana el dado en cada match (aló Coliseo Mitero 😬), entonces no dudes en contactarnos!
