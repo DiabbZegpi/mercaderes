@@ -1,0 +1,11 @@
+---
+title: "Los mejores de los mejores"
+date: today
+categories: ["elo", "ranking"]
+description: "Quiénes fueron los mejores jugadores según Elo MyL"
+image: thumbnail.jpg
+---
+
+El año mitero de PB terminó y en Datos y Leyendas pensamos conmemorarlo honrando a los mejores jugadores de Elo MyL.
+
+<div class="flourish-embed flourish-bar-chart-race" data-src="visualisation/20963493"><script src="https://public.flourish.studio/resources/embed.js"></script><noscript><img src="https://public.flourish.studio/visualisation/20963493/thumbnail" width="100%" alt="bar-chart-race visualization" /></noscript></div>
