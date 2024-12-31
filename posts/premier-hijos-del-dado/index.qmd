@@ -1,6 +1,6 @@
 ---
 title: "Premier Hijos del Dado"
-date: today
+date: "2024-12-18"
 categories: ["premier", "competitivo", "hijos de daana"]
 description: '¿Cuánto afecta "el dado" al resultado de un match?'
 image: thumbnail.jpg

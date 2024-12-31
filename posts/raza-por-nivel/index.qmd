@@ -1,6 +1,6 @@
 ---
 title: "¿Qué raza me conviene jugar según mi nivel?"
-date: today
+date: "2024-12-08"
 categories: ["win rate", "competitivo", "meta"]
 description: "Soy un jugador intermedio, manqueo y a veces topeo en liga, ¿qué raza debería jugar?"
 image: thumbnail.jpg

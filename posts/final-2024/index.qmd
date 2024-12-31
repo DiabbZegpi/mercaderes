@@ -1,0 +1,37 @@
+---
+title: "Resumen competitivo año 2024"
+date: "2024-12-31"
+categories: ["elo", "ranking", "razas"]
+description: "Lo más jugado del año y dónde están los mejores jugadores"
+image: thumbnail.jpg
+---
+
+En este post de fin de año, mostraremos cómo fue variando la **popularidad de los mazos durante el 2024**. Además, veremos en **cuáles regiones se encuentran los mejores jugadores**, medido por Elo MyL.
+
+## ¿Cuáles fueron las razas más jugadas en Racial Edición durante el 2024?
+
+A continuación, mostramos la evolución de la popularidad de las razas durante el año 2024, destacando los lanzamientos de nuevos productos para **Primer Bloque Racial Edición**.
+
+![](dist%20razas.jpg){fig-align="center"}
+
+-   Lo primero que se destaca es el gran impacto que tuvieron los kits Raciales en **Olímpico** y **Titán**, ambas razas fueron de las más jugadas durante todo el año 2024.
+
+-   **Relatos de Helénica** fue el gran producto para la raza **Héroe**. Durante el Kit Racial, el Héroe no varió su popularidad, pero con la llegada de **Relatos de Helénica**, el mazo **Héroe** se volvió el más jugado durante varios meses.
+
+-   Como ya hemos mencionado en posts anteriores, el aniversario de **Hijos de Danna** trajo consigo la introducción del arquetipo **Druida**, que es el mazo a vencer actualmente. Si bien tiene una popularidad superior a las demás razas desde su salida, esta se ve mermada por la falta de stock que hubo de los displays de **Hijos de Danna**.
+
+## TOP 100 ELO MYL al final del año 2024
+
+Finalmente, mostramos la cantidad de jugadores por regiones que pertenecen al **TOP 100 ELO**.
+
+![](top100region.jpg){fig-align="center"}
+
+::: callout-tip
+## 🐧
+
+Esperemos que los **pingüinos miteros** de **Aysén** traigan representantes al **TOP 100 de ELO MYL** en el próximo año.
+:::
+
+## Palabras Finales
+
+Fue un año con hartos desafíos. La comunidad ha crecido, los mazos y el meta ha ido evolucionado. Esperamos un 2025 de más competiciones, nuevos arquetipos, nuevos jugadores y lo más **importante nuevos balances de razas**.
