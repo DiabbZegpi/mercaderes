@@ -1,0 +1,31 @@
+---
+title: "Cadena trófica con banlist actualizado"
+date: "2025-01-03"
+categories: ["win rate", "meta", "razas"]
+description: "Quién se come a quién en la selva de Racial Edición"
+image: thumbnail.jpg
+---
+
+Comenzamos el año con la primera parte de nuestra lectura *ya habitual* del meta 😎, esta vez con un enfoque naturalista: **¿quiénes son los depredadores y las presas en racial edición?**
+
+## Cómo se lee
+
+![En la cadena trófica del meta **el depredador** está en la base de la flecha, mientras que **la presa** está en la punta de la flecha.](como-leer-cadena-trofica.jpg){fig-align="center"}
+
+## Los depredadores y presas del meta
+
+::: callout-caution
+## ⚠️¡Sólo graficamos los matches más jugados desde el ban de Fergus x1!
+
+Dado que son 12 razas + Druida ¡en total son 156 flechas!, quedando una telaraña que confunde a cualquiera. Por ello limitamos el número de flechas a los 36 matches más jugados.
+:::
+
+![La ballena asesina del meta es Druida 🐳, aunque el Héroe intenta ser un caza-ballenas.](cadena-trofica.jpg){fig-align="center"}
+
+-   **Druida** casi es un depredador absoluto, pero el **Héroe** le incordia la existencia, tal como la mosca importuna al león 🦁.
+-   **Olímpico** cultivó el odio por muchos meses y ahora lo está pagando, pues sólo tiene ventaja contra **Dragón**.
+-   Ya casi nadie juega el viejo **Defensor**.
+
+## Palabras finales
+
+En un meta ideal se daría el fenómeno del cahipún: piedra gana a tijeras, tijeras derrota a papel y papel vence a piedra. En el meta actual de PB hay una piedra y todos los demás son tijeras, salvo uno. ¿Cuál otra raza continuaría dominando el meta después de que limitaren una carta del **calibre de Fergus**?
