@@ -1,5 +1,5 @@
 ---
-title: "Cadena trófica con banlist actualizado"
+title: "Depredadores y presas"
 date: "2025-01-03"
 categories: ["win rate", "meta", "razas"]
 description: "Quién se come a quién en la selva de Racial Edición"
@@ -12,7 +12,7 @@ Comenzamos el año con la primera parte de nuestra lectura *ya habitual* del met
 
 ![En la cadena trófica del meta **el depredador** está en la base de la flecha, mientras que **la presa** está en la punta de la flecha.](como-leer-cadena-trofica.jpg){fig-align="center"}
 
-## Los depredadores y presas del meta
+## Cadena trófica del meta
 
 ::: callout-caution
 ## ⚠️¡Sólo graficamos los matches más jugados desde el ban de Fergus x1!
