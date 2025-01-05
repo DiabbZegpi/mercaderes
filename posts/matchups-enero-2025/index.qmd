@@ -1,5 +1,5 @@
 ---
-title: "Matchups por Razas en Racial Edición Finales del 2024"
+title: "Conoce el meta de 2025"
 date: "2025-01-05"
 categories: ["win rate", "matchups", "meta"]
 description: "¿Cómo se ve el meta iniciando el año 2025?"

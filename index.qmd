@@ -18,8 +18,7 @@ comments: false
 toc: false
 ---
 
-::: {.grid}
-
+::::: grid
 ::: {.g-col-12 .g-col-md-4}
 [![](dyl-dark-elo-myl.jpg){height="150px" fig-align="center"}](https://datosyleyendas.com/elo-myl)
 :::
@@ -29,21 +28,28 @@ Somos ingenieros con experiencia en inteligencia artificial, estadística y orgu
 
 Nuestra misión es que El Juego #1 del Reino sea cada día más profesional.
 :::
-:::
+:::::
 
 <!-- :::::: columns -->
+
 <!-- ::: {.column width="30%"} -->
+
 <!-- [![](dyl-dark-elo-myl.jpg){height="150px" fig-align="right"}](https://datosyleyendas.com/elo-myl) -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="10%"} -->
+
 <!-- ::: -->
 
 <!-- ::: {.column width="60%"} -->
+
 <!-- Somos ingenieros con experiencia en inteligencia artificial, estadística y teoría de probabilidad, con magísteres en tratamiento de datos y creadores de Elo MyL. -->
 
 <!-- Nuestro propósito es que El Juego #1 del Reino sea cada día más profesional. -->
+
 <!-- ::: -->
+
 <!-- :::::: -->
 
 <hr>
