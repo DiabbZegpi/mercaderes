@@ -1,0 +1,41 @@
+---
+title: "Matchups por Razas en Racial Edición Finales del 2024"
+date: "2025-01-05"
+categories: ["win rate", "matchups", "meta"]
+description: "¿Cómo se ve el meta iniciando el año 2025?"
+image: merged_images.jpg
+---
+
+## ¿Cómo leer los matchups para una raza?
+
+A continuación, mostramos un ejemplo de cómo interpretar los **matchups** para la raza **Dragón**🐲:
+
+![Para leer los matchups escoge una raza y léela de izquierda a derecha.](ejemplo_dragon2.jpg){fig-align="center"}
+
+-   Contra **Caballero**⚔️, el color beige indica que el matchup es **"Neutro"**. Lo mismo ocurre con el matchup **Dragón vs Héroe**🦸‍♂️.
+
+-   Contra **Faerie**🦋, el color verde muestra que Dragón tiene un matchup **"Favorable"**.
+
+-   Finalmente, contra **Olímpico**🌩️ y **Titán**🦍, el color rosado señala que Dragón enfrenta un matchup **"Levemente Desfavorable"**.
+
+## Matchups para el **Banner Actual** (02/12/24 al 31/12/24)
+
+### Consideraciones:
+
+-   Somos conscientes de que algunas pocas tiendas **no hacen la correcta distinción** entre **Druida** y **Defensor**, pero los resultados mostrados nos permite afimar que **existe suficiente data "correcta"** para poder mostrarlos por separado. Desde ya, les damos las **gracias a las tiendas** que se toman el tiempo de subir correctamente los torneos👏.
+
+-   Aunque en **TOR** existen los arquetipos **Goblin / Faerie** y **Minotauro / Titán**, éstos fueron agregados a sus respectivas razas debido a la falta de datos suficientes para analizarlos de manera independiente.
+
+![](vs_y_leyenda.jpg){fig-align="center"}
+
+## Winrates por razas para el **Banner Actual** (02/12/24 al 31/12/24)
+
+![](merged_images.jpg){fig-align="center"}
+
+## Palabras finales
+
+Queda claro que **Druida** está arrasando con todo, con un **winrate del 60.6%**🥇. Es la opción a vencer si quieres estar en la cima. **Titán**, **Héroe** y **Sacerdote** también están dando pelea, manteniéndose **sobre el 50%**, ideales para quienes buscan algo fuerte, pero no han conseguido aún las 3 copias de **Averix el Sabio**. Por otro lado, las razas **Caballero**, **Desafiante**, **Faraón** y **Sombra** están pasando por un mal momento, con winrates por debajo de los recomendable, lo que significa que es muy difícil ganar con ellas.
+
+Por último, te invitamos a participar en nuestra encuesta [**(Click Aquí)**](https://forms.gle/V4WYmLdGTHAMPEnV6). Tu respuesta será utilizada en futuros posts.
+
+¡Nos encantaría conocer tu opinión sobre el estado actual del **meta** y los datos mostrados! 🚀
