@@ -1,14 +1,14 @@
 ---
-title: "Banlist con imagenes del Premier La Serena Racial Edición"
+title: "¿El banlist prometido?"
 date: "2025-01-09"
-categories: ["win rate", "matchups", "meta"]
-description: "¿Cómo se ve el meta iniciando el año 2025?"
+categories: ["banlist", "regional", "La Serena"]
+description: "Banlist del Regional de La Serena con imágenes"
 image: thumbnail.jpg
 ---
 
-El torneo **Regional Venganza de Temis Flexo's Games** del 18 de Enero 2025 cuenta con **su propia Banlist**, la información mostrada fue recopilada desde la pagina web de la tienda que organiza el premier [**(Click Aquí)**](https://www.flexogames.cl/collections/mitos-y-leyendas/products/regional-venganza-de-temis-flexo-s-games).
+El torneo **Regional Venganza de Temis Flexo's Games** del 18 de Enero 2025 cuenta con **su propia Banlist**, la información mostrada fue recopilada desde la página web de la tienda que organiza el certamen [**(Click Aquí)**](https://www.flexogames.cl/collections/mitos-y-leyendas/products/regional-venganza-de-temis-flexo-s-games).
 
-Si deseas descargar el banlist en formato pdf les dejamos el siguiente link [**banlist_premier.pdf**](https://drive.google.com/file/d/1B_YSvQdMbPdQzNPqJToA_RqO2KaLKYb5/view?usp=sharing).
+Para visualizar el banlist en formato PDF haz click en el siguiente link [**banlist_premier.pdf**](https://drive.google.com/file/d/1B_YSvQdMbPdQzNPqJToA_RqO2KaLKYb5/view?usp=sharing).
 
 ![](1es.png){fig-alt="Banlist Espada Sagrada - Torneo Regional La Serena" fig-align="center"}
 
