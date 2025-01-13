@@ -1,0 +1,37 @@
+---
+title: "Desigualdad racial"
+date: "2025-01-13"
+categories: ["popularidad", "indicadores", "meta"]
+description: "La dominación de pocos es un problema profundo en el meta de PB."
+image: thumbnail.jpg
+---
+
+La desigualdad racial de PB puede ser vista desde varias aritas:
+
+-   **Riqueza**🤑: existe mazos mucho más caros que otros.
+
+-   **Efectividad**🎯: algunas razas ganan muchos matches comparadas con otras.
+
+-   **Popularidad**👸: hay razas que son mucho más jugadas que otras.
+
+En este post analizaremos la desigualdad desde el punto de vista de **la popularidad** en ligas oficiales.
+
+## Lo más jugado y lo menos jugado
+
+![](mas_y_menos_jugado.jpeg){fig-alt="Razas más jugadas y menos jugadas del meta durante 2024" fig-align="center"}
+
+| Hito | Más popular | Menos popular |
+|----|----|----|
+| Banlist oficial - 31 de mayo | El rework de Goblin Stone junto con la liberación de Duque Godofredo y Guardia Gozosa (x2) facilitan que **Caballero** y **Dragón** dominen el meta. | Como consecuencia de la popularidad de Espada Sagrada, **Héroe** permanece en el fondo de la tabla de popularidad. |
+| Kits Raciales 2da parte - 15 de junio | El kit racial **Olímpico** inició una era de la que todos nos quejaríamos durante el año. **Dragón** y **Caballero** entregarían su dominio a las razas helénicas. | **Desafiante** comenzaría una racha de 2 meses de ser la raza menos atractiva del meta, siendo barrida con facilidad por **Olímpico** y **Titán**. |
+| Torneo Premier - 6 de julio | ¡Titanomaquia! La revancha entre Álvaro Pérez y Jean Valdivieso en el estadio helénico consolidaría al **Olímpico** como el rival a vencer. | Durante este período no hay cartas nuevas y **Desafiante** permance como la raza menos popular. |
+| Banlist oficial - 25 de julio | Muchas cartas son liberadas en todas las ediciones, mientras se le restringe al **Olímpico**, **Titán** y **Dragón**. Sin embardo, **Olímpico** y **Titán** siguen siendo las razas favoritas de la mayoría. | Hijos de Daana recibe 3 copias de Martillo Pesado y 2 copias de Red de Plata, agregando el tercer Linaje Celta al arsenal **Desafiante**, pero todo esto probó ser insuficiente. |
+| Relatos de Helénica - 30 de agosto | La edición más poderosa recibe mejores cartas, entre ellas: La Odisea y Nacimiento de Pegaso. Todos los helénicos mejoraron, pero fue **Héroe** quien obtuvo el máximo beneficio. | **Eterno** y **Sombra** interrumpen brevemente la miseria del **Desafiante**, todas razas en desventaja con los helénicos. |
+| Banlist oficial - 30 de septiembre | La dominación de **Héroe** es más absurda que todas las demás. Por ello, se le limitan Antorcha Olímpica y Aceite de Oliva a 1 copia. También se desarma el mazo Goblin, dejando a **Olímpico** con las manos libres para tomar el primer lugar. | En Hijos de Daana se libera Fragarach, causando poco impacto sobre la popularidad de **Desafiante**. Se anticipa la liberación de Daana para el aniversario de la edición. |
+| Aniversario Hijos de Daana - 18 de octubre | Se reparan 30 cartas clásicas de Hijos de Daana, creando la subraza **Druida**. Ante la incertidumbre de nuevas cartas, reina la vieja confiable: **Olímpico**. | La introducción de cartas nuevas entusiasma a los jugadores y **Desafiante** deja de ser lo menos jugado, cediendo el testimonio a **Faraón**. La subraza **Druida** aparece por pocos días como menos jugada, pero las tiendas adoptaron rápidamente la práctica de separarlo de **Defensor**. |
+| Banlist oficial - 5 de noviembre | Se liberan Kóbold a 2 copias y Papiros de Lahún a 3 copias. **Sacerdote** es una de las razas más jugadas, junto con **Héroe** y **Druida**. | **Faraón** es como un **Sacerdote** pero mucho peor, ocupando el último lugar entre las razas preferidas de los jugadores. |
+| Banlist oficial - 2 de diciembre | Fergus es limitado a 1 copia y lidera el meta la raza **Héroe**, seguida por **Sacerdote** y **Druida**. Éste último nunca fue el mazo con más popularidad. | **Faraón** se consolida como una raza agresiva que no tiene respuestas contra el bloqueo **Druida** ni contra el control/tempo **Héroe**, por ende, es la menos popular. |
+
+## Reflexiones finales
+
+Mucho se puede aprender de los hitos y sus consecuencias sobre la popularidad de las razas, por ejemplo, **Druida** no ha sido nunca la más popular de las razas, pero sí **es la más efectiva**, siendo la tercera más popular desde el banlist de diciembre, detrás de **Héroe** y **Sacerdote**. ¿Acaso el juego se ha vuelto demasiado costoso como para jugar la mejor baraja💸?
