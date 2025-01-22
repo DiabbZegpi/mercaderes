@@ -8,6 +8,7 @@ listing:
   contents: posts/**/*.qmd
   sort: "date desc"
   type: grid
+  page-size: 9
   categories: true
   sort-ui: false
   filter-ui: false
