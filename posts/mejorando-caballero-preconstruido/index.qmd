@@ -1,0 +1,50 @@
+---
+title: "Mejorando el Mazo Caballero Preconstruido de Lootbox por 25 lucas"
+date: "2025-01-22"
+categories: ["preconstruido", "lootbox", "economía", "mazo"]
+description: "La mejor manera de iniciar en Primer Bloque en 2025"
+image: thumbnail.jpg
+---
+
+Ante el reciente éxodo de jugadores desde **Primer Bloque** hacia **Primera Era**, causado por el descontento de la comunidad por lo ocurrido con el **Banlist de enero**, quizás sea un buen momento para **la inclusión de nuevos jugadores**. En este post se muestra el **Mazo Preconstruido Caballero** incluido en las **Lootbox de Primer Bloque**, donde daremos algunas opciones de mejora por solo **25 lucas**, aproximadamente.
+
+## ¿Qué trae el Mazo Caballero Preconstruido?
+
+A continuación, mostramos el **Mazo Caballero Preconstruido**. Esta información también se encuentra disponible en el [Blog Myl](https://blog.myl.cl/lootbox-pb-2024/).
+
+![](precon.jpg){fig-alt="Mazo Caballero preconstruido de Lottbox 2024." fig-align="center"}
+
+## Mazo Caballero agresivo por 25 lucas
+
+Nuestra propuesta es utilizar la mayor cantidad de cartas del preconstruido y crear un mazo con el que sea posible ganar sin gastar un dineral. Obviamente, este mazo **no está pensado para ganar ligas** de tu tienda local, sino **para divertirte de forma casual con amigos** que también estén empezando en este bloque.
+
+### Cartas que entran al mazo
+
+![](entran.jpg){fig-alt="Cartas que entran al mazo Caballero preconstruido" fig-align="center"}
+
+### Cartas que salen del mazo
+
+![](salen.jpg){fig-alt="Cartas que salen del mazo Caballero preconstruido" fig-align="center"}
+
+### Mazo Caballero agresivo mejorado por 25 lucas
+
+![](25.jpg){fig-alt="Mazo Caballero preconstruido y mejorado por 25 lucas" fig-align="center"}
+
+La mejor forma de hacerse con las cartas propuestas es comprar al menos otro **Mazo Preconstruido Caballero**. Los precios han sido estimados consultando tiendas online. Toda la información se muestra en la siguiente tabla:
+
+| **Cartas** | **Precio estimado** |
+|-------------------------------------------|-----------------------------|
+| Preconstruido Caballero (1 Guardia Real, 1 Espada larga, 1 Sir Persival, 1 Yvain del León, 1 Duque Godofredo, 1 Bola de Fuego, 1 Corona de Arturo, 1 Bec de Corbin, 1 Sir Galehaut, 1 ¡Desleal!) | 5.000 |
+| 2 Sir Gaheris | 10.000 (5.000 c/u) |
+| 2 Sir Erec | 6.000 (3.000 c/u) |
+| 1 Espada Larga | 3.500 |
+| 1 Fe sin Límites | 500 |
+| 1 Saladino | 1.000 |
+| **Total** | **26.000** |
+
+## Mazo Caballero Agresivo full equipo
+
+Finalmente, mostramos una versión **Full** del mazo, donde el dinero no es un problema.\
+**ADVERTENCIA:** la raza **Caballero** en la actualidad está pasando por su peor momento respecto al juego competitivo. Para mayor información, visita nuestro post de [**Winrates y Enfrentamientos**](https://datosyleyendas.com/posts/matchups-enero-2025/)**.**
+
+![](full.jpg){fig-alt="Mazo Caballero Agresivo con todas las cartas chanchas" fig-align="center"}
