@@ -33,7 +33,7 @@ Nuestra propuesta es utilizar la mayor cantidad de cartas del preconstruido y cr
 La mejor forma de hacerse con las cartas propuestas es comprar al menos otro **Mazo Preconstruido Caballero**. Los precios han sido estimados consultando tiendas online. Toda la información se muestra en la siguiente tabla:
 
 | **Cartas** | **Precio estimado** |
-|-------------------------------------------|-----------------------------|
+|----|----|
 | Preconstruido Caballero (1 Guardia Real, 1 Espada larga, 1 Sir Persival, 1 Yvain del León, 1 Duque Godofredo, 1 Bola de Fuego, 1 Corona de Arturo, 1 Bec de Corbin, 1 Sir Galehaut, 1 ¡Desleal!) | 5.000 |
 | 2 Sir Gaheris | 10.000 (5.000 c/u) |
 | 2 Sir Erec | 6.000 (3.000 c/u) |
