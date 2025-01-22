@@ -1,0 +1,19 @@
+---
+title: "Banlist Oficial Racial Edición con imagenes - Enero 2025"
+date: "2025-01-22"
+categories: ["banlist", "competitivo"]
+description: "Actualización oficial de Klu"
+image: thumbnail.jpg
+---
+
+El Banlist Oficial prometido finalmente ha llegado, el post oficial se encuentra en el siguiente link [**(Click Aquí)**](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/).
+
+Si deseas descargar el Banlist en formato pdf les dejamos el siguiente link [**banlist_enero.pdf**](https://drive.google.com/file/d/1u6oinqIbYNo_GY2fYcJfyPTnDkq9W0Dw/view?usp=sharing).
+
+![](enero_es.png){fig-alt="Banlist Espada Sagrada 2025" fig-align="center"}
+
+![](enero_he.png){fig-alt="Banlist Helénica enero 2025" fig-align="center"}
+
+![](enero_hdd.png){fig-alt="Banlist Hijos de Daana enero 2025" fig-align="center"}
+
+![](enero_ra.png){fig-alt="Banlist Dominios de Ra enero 2025"}
