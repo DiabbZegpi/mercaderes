@@ -1,0 +1,64 @@
+---
+title: "Análisis temporada Bestiarium - Imperio"
+date: "2025-02-06"
+categories: ["Imperio", "win rate", "razas", "meta"]
+description: "Metajuego Imperio entre diciembre 2024 y enero 2025"
+image: thumbnail.jpg
+author: Felipe Ravanal
+---
+
+La temporada Bestiarium de Imperio ha traído un cambio importante en el metajuego, si bien en esta ocasión no hubo rotación, aumentando de 4 a 5 ediciones vigentes en el formato, Bestiarium trajo cartas importantes para cada mazo o genéricas que permitieron disfrutar de un **formato muy dinámico y abierto**🚀 durante sus primeros dos meses.
+
+La percepción de los jugadores es que los mazos más sólidos y potentes eran **Sacerdote** y **Guerrero**, sin embargo, los resultados de ligas a lo largo del país y el Premier que se realizó hace poco más de una semana han demostrado que el metajuego está mucho más abierto de lo que muchos pensaban🤔.
+
+En este artículo revisaremos tendencias en las Ligas de todo el país y en paralelo **los resultados del torneo Premier**. Estos datos han sido tomados de todas las tiendas del país, con torneos reportados entre el 6 de diciembre y el 30 de enero, por lo que es lo más representativo del metajuego previo a la banlist de febrero.
+
+En primer lugar, veremos la **participación de cada mazo**, luego los resultados de **cada enfrentamiento** entre las razas, el **winrate general** de cada raza y finalmente **la efectividad**, medida por cantidad de Top 4 a los que llegó cada raza y en el Top 32 del Premier.
+
+## Participación de cada mazo
+
+![](tabla-1.jpg){fig-alt="Participación de cada raza en el meta de Bestiarium - Imperio" fig-align="center"}
+
+En términos de participación, observamos una tendencia muy similar en las Ligas y en el Premier, la mayor variación es que en el premier se jugó un poco más la raza **Sacerdote** y un poco menos la raza **Dragón**, pero la variación es marginal por lo que podemos decir que el metajuego en ligas es tan representativo como los torneos más competitivos. **El mazo más jugado es Guerrero** con 19%, **luego Dragón, Bestia y Eterno**.
+
+## Winrate general
+
+![](winrate.jpg){fig-alt="Winrate de las razas de Imperio en la temporada Bestiarum" fig-align="center"}
+
+Si observamos el winrate general de cada raza, tenemos que **el mazo con mejores resultados es la raza Bestia** con 55.3% de victorias, **seguido de cerca por Guerrero y Eterno**. Resulta interesante que Sacerdote ocupa el quinto puesto detrás de Faerie, lo que se puede explicar por lo técnico o complicado que puede ser dominar ese mazo a la perfección, haciendo que algunos jugadores tengan malos resultados y le bajen el ratio de victoria.
+
+Este Winrate cambia un poco respecto del rendimiento que observamos de cada raza en el torneo Premier, como veremos más adelante, pero da indicios de lo abierto y variado que puede estar el metajuego tanto en Ligas como en torneos grandes.
+
+## Efectividad de cada mazo
+
+Si hablamos de efectividad y buenos resultados de cada raza, primero veremos qué razas son las que más Top 4 han ganado en las ligas del país, resultando Guerrero, Dragón y Bestia las que se posicionan con más jugadores en Top 4, seguidas por Eterno, Faerie y Sacerdote.
+
+![](grafico-1.jpg){fig-alt="Participación de cada raza en top 4 de ligas - Imperio - Bestiarium" fig-align="center"}
+
+Es interesante hacer la comparación entre los porcentajes de participación y efectividad en las Ligas, porque uno podría pensar que mazos como Sacerdote o Tótem son muy buenos pero no hacen tanto Top 4 porque no son tan jugados, pero no es así. Si ese fuera el motivo, veríamos que los pocos jugadores que ocupan esos mazos ocupan una gran proporción de los Top 4, pero **la realidad es que los porcentajes se mantienen casi idénticos a la participación de cada raza**.
+
+![](tabla-2.jpg){fig-alt="Comparación entre participación racial en ligas y probabilidad de verle en top - Imperio - Bestiarium" fig-align="center"}
+
+Esto significa que el porcentaje de Top 4 tiene directa relación estadística con el porcentaje de participación de cada mazo, no a la potencia que tiene cada uno. Si bien Sacerdote y Bestia suben 1% la cantidad de Top 4 respecto a su participación inicial, es marginal para decir que son mazos tremendamente eficientes. Hoy en día **se puede jugar casi cualquier mazo y tener buenos resultados con él**.
+
+## Rendimiento en el Premier
+
+![](tabla-3.jpg){fig-alt="Participación y rendimiento racial en Premier Bestiarium - Imperio" fig-align="center"}
+
+En el Premier los datos de rendimiento de cada raza son un poco distintos, porque analizamos también el rendimiento promedio de cada mazo durante el torneo además de los resultados del Top 32. El primer dato que salta a la vista es que la cantidad de Top 32 es muy similar al porcentaje de participación de la raza, aumentando un poco en los casos de Eterno, Sacerdote y Guerrero, razas que obtuvieron buenos resultados en el Top 32. Estos son mazos que bien piloteados pueden dar excelentes resultados.
+
+Si analizamos el rendimiento general de cada mazo, medido según el standing promedio de cada jugador con la raza incluyendo los más de 150 jugadores que compitieron en el torneo premier, vemos que **las razas con mejor rendimiento general son Sacerdote**🥇 con 66% de rendimiento **y Tótem**🥈 con 60% de rendimiento a pesar de que sólo hubo 8 mazos Tótem en el torneo. Faerie también tuvo un rendimiento general positivo en el standing final.
+
+## Conclusiones
+
+Lo que nos deja este análisis del metajuego Bestiarium es que el formato está abierto para cualquier raza bien jugada💪, incluso las razas con peor winrate general pueden pilotearse hasta una final de Premier y ganar ligas, ya que en el winrate general influye mucho la cantidad de jugadores casuales o poco experimentados que eligen cada raza, bajando su porcentaje de victorias sin que sean malos mazos necesariamente. Mismo caso podríamos hablar de Héroe, que tuvo dos representantes en Top 16 del Premier y pasó en 1° lugar del standing al Top 8.
+
+Otro punto importante de destacar es que **los resultados en Ligas, Premier y Top** de cada mazo **están directamente relacionados con su porcentaje de participación**, es decir, que si se jugara mucho Faerie, por ejemplo un 20% de los jugadores, probablemente tendríamos cercano a un 20% de los Tops para esa raza. Esto significa que cualquier raza puede tener buenos resultados, sólo depende de cuántos y quiénes la jueguen.
+
+Finalmente, el que en el Premier y Ligas se vean los mismos porcentajes de participación y tops significa que **hay una buena y confiable base para sustentar las conclusiones** que se puedan extrapolar de estos datos, que son consistentes en distintos niveles de competencia.
+
+::: {.callout-note appearance="simple"}
+## El meta cambiará
+
+Pronto el meta de Imperio **cambiará con la Banlist febrero y el cambio en el mínimo de Aliados**, pero eso será materia de un próximo artículo de Datos y Leyendas.
+:::
