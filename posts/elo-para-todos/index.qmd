@@ -26,6 +26,10 @@ Desde octubre hasta hoy Elo MyL ha sufrido pequeñas transformaciones, algunas i
 
 El día de hoy (10 de febrero de 2025🗓️) anunciamos que Elo MyL abre sus fronteras para **incorporar los formatos Racial Libre y Full**. ¿Por qué? Porque el objetivo del ranking Elo es estimar la fuerza de los jugadores de PB💪, lo que no distingue entre formatos. Esta actualización facilita el ranking de torneos con banlist especiales y formatos mixtos, como el Torneo Nacional de PB que está a punto de celebrarse (¿cuándo?👀)
 
+## Jugadores inactivos
+
+Para premiar a los jugadores constantes, decidimos quitar visibilidad del ranking a los jugadores inactivos, quienes conservarán su rating pero no figurarán en la lista del Top 500. Un jugador pasa a ser inactivo si no registra torneos en los últimos 3 meses. Bastará que un jugador inactivo juegue 1 torneo para volver a ser activo durante 3 meses.
+
 ## No todo son buenas noticias
 
 Desde hace varios días que la web oficial de juego organizado, [torneos.myl.cl](https://torneos.myl.cl/tournaments), no muestra la raza escogida por los jugadores, ni en torneos nuevos ni en torneos pasados. Esto es muy grave para nosotros, porque estaremos inhabilitados de hacer los [análisis raciales](https://datosyleyendas.com/posts/matchups-enero-2025/) que tanto gustan a nuestros lectores. Por esta razón es que hemos ocultado el campo **raza favorita** del ranking.
