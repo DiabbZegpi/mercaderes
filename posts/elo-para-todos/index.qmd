@@ -1,0 +1,35 @@
+---
+title: "Elo para todos los formatos"
+date: "2025-02-10"
+categories: ["elo", "competitivo"]
+description: "El antes y el después del sistema Elo MyL"
+image: thumbnail.jpg
+---
+
+La primera versión de Elo MyL (7 de agosto de 2024🗓️) fue una adaptación del ranking de ajedrez para reconocer a los jugadores más fuertes del juego en el formato Racial Edición. Cada jugador **inicia con 1400 de Elo** y el ganador de una partida quita puntos al perdedor, independiente del resultado de un match al mejor de 3. La ventaja de este sistema es que cada partida cuenta, pero la desventaja es evidente👀: era posible **perder elo aún cuando se ganaba un match**.
+
+La segunda actualización relevante (16 de agosto🗓️) del sistema reparó🧰 el problema de matches, logrando que fuera imposible perder elo tras ganar un match, cambiando el sistema de puntos por partida a un sistema por match. Aunque buena reforma, por sí sola es insuficiente, porque no es justo que quien gana 2-1 obtenga la misma recompensa que quien gana 2-0. Por esta razón es que se implementó que **el resultado 2-1 otorga el 75% de los puntos de un resultado 2-0**. En la misma reforma se ajustaron los parámetros de la fórmula de Elo para imitar el ranking implementado en Magic con [MTG Elo Project](https://mtgeloproject.net/), fórmula que aún nos acompaña y que no vemos razones para cambiar.
+
+::: {callout-tip appearance="simple"}
+
+## Interpretación de Elo
+
+Una diferencia de 200 puntos de rating da odds 60/40 al jugador más fuerte; una diferencia de 400 puntos da odds 69/31.
+
+:::
+
+Una semana después (22 de agosto🗓️) nació el algoritmo de **raza favorita**, cuyo objetivo es ilustrar cuál es la raza más escogida por los jugadores en sus torneos recientes.
+
+Hasta entonces y durante un par de meses más, Elo MyL fue un proyecto piloto que funcionaba con datos de torneos en 2 regiones. Su lanzamiento oficial (4 de octubre🗓️) **incluyó los datos completos de torneos celebrados a los largo de todo el país**, rankeando a más de 3500 jugadores.
+
+Desde octubre hasta hoy Elo MyL ha sufrido pequeñas transformaciones, algunas imperceptibles para sus usuarios. Pero hoy anunciaremos una actualización de carácter mayor.
+
+## Elo unificado
+
+El día de hoy (10 de febrero de 2025🗓️) anunciamos que Elo MyL abre sus fronteras para **incorporar los formatos Racial Libre y Full**. ¿Por qué? Porque el objetivo del ranking Elo es estimar la fuerza de los jugadores de PB💪, lo que no distingue entre formatos. Esta actualización facilita el ranking de torneos con banlist especiales y formatos mixtos, como el Torneo Nacional de PB que está a punto de celebrarse (¿cuándo?👀)
+
+## No todo son buenas noticias
+
+Desde hace varios días que la web oficial de juego organizado, [torneos.myl.cl](https://torneos.myl.cl/tournaments), no muestra la raza escogida por los jugadores, ni en torneos nuevos ni en torneos pasados. Esto es muy grave para nosotros, porque estaremos inhabilitados de hacer los [análisis raciales](https://datosyleyendas.com/posts/matchups-enero-2025/) que tanto gustan a nuestros lectores. Por esta razón es que hemos ocultado el campo **raza favorita** del ranking.
+
+Esperamos que el estado de la web de torneos sea temporal y pronto podamos ver cuáles son las razas jugadas, por el bien de todos los jugadores recreativos y competitivos.
