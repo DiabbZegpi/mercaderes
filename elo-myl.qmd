@@ -248,7 +248,7 @@ tabla_ciudad <-
   select(tor, ciudad)
 ```
 
-#### [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque
+#### [Elo MyL v1.0.0](/posts/elo-para-todos/index.qmd) Primer Bloque
 
 ##### Lista actualizada con `r n_torneos` torneos entre `r ymd(versiones[length(versiones)]) |> format("%d de %B del %Y")` y `r ymd(version_actual) |> format("%d de %B del %Y")`
 
