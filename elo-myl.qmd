@@ -212,12 +212,12 @@ wr_teams <-
   filter(!is.na(team)) |> 
   select(team, wr)
 
-jugadores_activos <- 
+miembros_team <- 
   resultados_razas |> 
   left_join(jugadores |> select(tor, team), by = join_by(tor)) |> 
   mutate(team = str_to_title(team)) |> 
   distinct(team, tor) |> 
-  count(team, name = "jugadores_activos")
+  count(team, name = "miembros_team")
   
 elo_medio_team <- 
   ranking_actualizado |> 
@@ -231,11 +231,11 @@ tabla_teams <-
   select(nombre, elo_actual, team) |> 
   filter(team != "") |> 
   left_join(wr_teams, by = join_by(team)) |> 
-  left_join(jugadores_activos, by = join_by(team)) |> 
+  left_join(miembros_team, by = join_by(team)) |> 
   left_join(elo_medio_team, by = join_by(team)) |> 
-  arrange(desc(elo_medio), desc(jugadores_activos), desc(wr)) |> 
+  arrange(desc(elo_medio), desc(miembros_team), desc(wr)) |> 
   mutate(rank_actual = row_number()) |> 
-  relocate(rank_actual, team, elo_medio, jugadores_activos, wr, nombre, elo_actual)
+  relocate(rank_actual, team, elo_medio, miembros_team, wr, nombre, elo_actual)
 
 tabla_ciudad <- 
   resultados_longer |> 
@@ -270,14 +270,14 @@ ranking_actualizado |>
   ) |> 
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
-  cols_hide(c(ends_with("_anterior"), version_actual, rank_diff)) |> 
+  cols_hide(c(ends_with("_anterior"), version_actual, rank_diff, raza)) |> 
   cols_move(c(nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(890),
+    table.width = px(770),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -332,7 +332,7 @@ ranking_actualizado |>
     dir ~ px(20),
     tor ~ px(100),
     nombre ~ px(200),
-    raza ~ px(120),
+    # raza ~ px(120),
     team ~ px(115),
     ciudad ~ px(120),
     wr ~ px(70),
@@ -380,6 +380,7 @@ ranking_actualizado |>
 #| column: body-outset
 
 tabla_teams |> 
+  filter(miembros_team >= 4) |> 
   arrange(desc(elo_medio), desc(wr)) |> 
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
@@ -410,7 +411,7 @@ tabla_teams |>
     # rank_diff ~ "",
     # dir ~ "",
     team = md("**Nombre**"),
-    jugadores_activos = md("**Miembros**"),
+    miembros_team = md("**Miembros**"),
     elo_medio = md("**Elo medio**"),
     wr = md("**WR**"),
     nombre = md("**Mejor jugador**"),
@@ -421,7 +422,7 @@ tabla_teams |>
     # rank_diff ~ px(40),
     # dir ~ px(20),
     team ~ px(180),
-    jugadores_activos ~ px(95),
+    miembros_team ~ px(95),
     elo_medio ~ px(95),
     wr ~ px(70),
     nombre ~ px(260),
@@ -438,7 +439,7 @@ tabla_teams |>
     domain = c(0, 1)
   ) |> 
   cols_align("left", c(rank_actual, team, elo_medio, wr, elo_actual)) |>
-  cols_align("right", c(nombre, jugadores_activos)) |>
+  cols_align("right", c(nombre, miembros_team)) |>
   opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
     use_pagination = TRUE,
