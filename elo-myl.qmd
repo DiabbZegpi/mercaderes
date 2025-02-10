@@ -143,19 +143,6 @@ resultados_razas <-
     by = join_by(id_torneo, tor)
   )
 
-# wr_jugador <- 
-#   resultados_razas |>
-#   # Omitir mesas con bye
-#   group_by(id_torneo, ronda, mesa) |> 
-#   mutate(
-#     puntos = if_else(tor == "bye" | is.na(tor), NA, puntos),
-#     puntos_totales = sum(puntos)
-#   ) |>
-#   filter(!is.na(puntos_totales)) |> 
-#   ungroup() |> 
-#   group_by(tor) |> 
-#   summarize(wr = sum(puntos) / sum(puntos_totales), .groups = "drop")
-
 wr_jugador <- 
   resultados_razas |> 
   group_by(id_torneo, ronda, mesa) |> 
