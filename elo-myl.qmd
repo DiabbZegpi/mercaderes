@@ -76,6 +76,20 @@ version_anterior <- versiones[2]
 
 n_torneos <- length(unique(torneos$id_torneo))
 
+# Jugadores activos
+jugador_activo <- 
+  ranking |>
+  filter(version == version_actual) |>
+  left_join(
+    torneos |> slice_max(fecha, by = tor, n = 1, with_ties = FALSE) |> select(tor, fecha),
+    by = join_by(tor)
+  ) |>
+  mutate(
+    fecha_ultimo_torneo = today() - fecha,
+    jugador_activo = abs(fecha_ultimo_torneo) <= months(3)
+  ) |> 
+  select(tor, jugador_activo)
+
 posiciones_anteriores <- 
   ranking |> 
   filter(version == version_anterior) |> 
@@ -84,6 +98,11 @@ posiciones_anteriores <-
 posiciones_actuales <- 
   ranking |> 
   filter(version == version_actual) |> 
+  # Sólo mostrar jugadores activos
+  semi_join(
+    jugador_activo |> filter(jugador_activo),
+    by = join_by(tor)
+  ) |> 
   mutate(rank = min_rank(-elo))
 
 ranking_actualizado <- 
