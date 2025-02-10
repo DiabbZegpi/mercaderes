@@ -2,7 +2,7 @@
 title: "Elo para todos los formatos"
 date: "2025-02-10"
 categories: ["elo", "competitivo"]
-description: "El antes y el después del sistema Elo MyL"
+description: "El antes y el ahora del sistema Elo MyL"
 image: thumbnail.jpg
 ---
 
