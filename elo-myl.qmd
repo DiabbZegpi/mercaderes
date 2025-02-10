@@ -28,7 +28,7 @@ execute:
 </style>
 ```
 
-Ranking Elo de los 500 mejores jugadores de Mitos y Leyendas, formato Racial-Edición de Primer Bloque. Para ver o descargar la lista completa, visita [este link de google sheets](https://docs.google.com/spreadsheets/d/1kR45qa9CH3yiZpRMyTan1Hvmi3DgDkV-Uc2wrSGn1C4/edit?usp=sharing). Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
+Ranking Elo de los 500 mejores jugadores de Mitos y Leyendas - Primer Bloque, considerando todos sus formatos, ligas y torneos. Para ver o descargar la lista completa, visita [este link con todos los jugadores](https://docs.google.com/spreadsheets/d/1kR45qa9CH3yiZpRMyTan1Hvmi3DgDkV-Uc2wrSGn1C4/edit?gid=1629924851#gid=1629924851). Si quieres que tu equipo aparezca en el ranking, contáctame por [whatsapp](https://wa.me/56978020601) o email a [diabbluis\@gmail.com]{.secondary}.
 
 Si deseas aprender cómo funciona el ranking, visita mi [blog post sobre Elo](/posts/intro-a-elo).
 
@@ -234,6 +234,7 @@ tabla_teams <-
   left_join(miembros_team, by = join_by(team)) |> 
   left_join(elo_medio_team, by = join_by(team)) |> 
   arrange(desc(elo_medio), desc(miembros_team), desc(wr)) |> 
+  filter(miembros_team >= 4) |> 
   mutate(rank_actual = row_number()) |> 
   relocate(rank_actual, team, elo_medio, miembros_team, wr, nombre, elo_actual)
 
@@ -247,7 +248,7 @@ tabla_ciudad <-
   select(tor, ciudad)
 ```
 
-#### [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque formato Racial Edición
+#### [Elo MyL v0.2.0](/posts/elo-update-01/index.qmd) Primer Bloque
 
 ##### Lista actualizada con `r n_torneos` torneos entre `r ymd(versiones[length(versiones)]) |> format("%d de %B del %Y")` y `r ymd(version_actual) |> format("%d de %B del %Y")`
 
@@ -380,7 +381,6 @@ ranking_actualizado |>
 #| column: body-outset
 
 tabla_teams |> 
-  filter(miembros_team >= 4) |> 
   arrange(desc(elo_medio), desc(wr)) |> 
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
