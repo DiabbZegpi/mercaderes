@@ -10,12 +10,10 @@ La primera versión de Elo MyL (7 de agosto de 2024🗓️) fue una adaptación 
 
 La segunda actualización relevante (16 de agosto🗓️) del sistema reparó🧰 el problema de matches, logrando que fuera imposible perder elo tras ganar un match, cambiando el sistema de puntos por partida a un sistema por match. Aunque buena reforma, por sí sola es insuficiente, porque no es justo que quien gana 2-1 obtenga la misma recompensa que quien gana 2-0. Por esta razón es que se implementó que **el resultado 2-1 otorga el 75% de los puntos de un resultado 2-0**. En la misma reforma se ajustaron los parámetros de la fórmula de Elo para imitar el ranking implementado en Magic con [MTG Elo Project](https://mtgeloproject.net/), fórmula que aún nos acompaña y que no vemos razones para cambiar.
 
-::: {callout-tip appearance="simple"}
-
+::: {.callout-tip appearance="simple"}
 ## Interpretación de Elo
 
 Una diferencia de 200 puntos de rating da odds 60/40 al jugador más fuerte; una diferencia de 400 puntos da odds 69/31.
-
 :::
 
 Una semana después (22 de agosto🗓️) nació el algoritmo de **raza favorita**, cuyo objetivo es ilustrar cuál es la raza más escogida por los jugadores en sus torneos recientes.
