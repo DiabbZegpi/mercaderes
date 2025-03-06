@@ -1,0 +1,53 @@
+---
+title: "La caída del Héroe"
+date: "2025-03-06"
+categories: ["probabilidades", "banlist"]
+description: "Cuánto afectó al Héroe el banlist de marzo 2025"
+image: thumbnail.jpg
+---
+
+Los mazos *tempo* tienen una carta estrella que, si comienzan el duelo con ella en la mano, garantiza que tengan un inicio explosivo. Para los mazos Héroe ésta carta es 👑Rey Minos.
+
+![Rey Minos - la carta perfecta para jugar en turnos 1.](Rey-Minos.jpg){fig-alt="Rey Minos - carta de Mitos y Leyendas" fig-align="center"}
+
+::: column-margin
+**Tempo**: es un término que describe el ritmo al que se juegan amenazas ([MTG Fandom](https://mtg.fandom.com/wiki/Tempo)). En MyL, jugar a tempo se puede describir como jugar eficientemente los oros, desplegando amenazas cada turno y cada vez más poderosas.
+:::
+
+Como todos nuestros lectores sabrán, Rey Minos pasó de estar permitido por 3 copias✅ a estar limitado a 2 copias⚠️, **cambiando la probabilidad de comenzar con al menos 1 copia en turno 1**. Pero... ¿por cuánto?🤔 Lo descubriremos a continuación.
+
+## Ejemplo de mazo Héroe
+
+Comencemos con un mazo tipo: 25 aliados; 3 tótems; 5 talismanes; 17 oros.
+
+![Este es un ejemplo de mazo Héroe con 3 copias de Rey Minos y orientado a jugar a tempo.](mazo-tipo.jpg){fig-alt="Mazo Héroe tipo antes de la banlist de marzo 2025" fig-align="center"}
+
+La estrategia de este mazo es muy simple: tener el turno más fuerte posible jugando el/los aliado(s) más poderoso(s), es decir, jugar *a tempo*. Y para jugar a tempo, el mejor inicio es **bajar Rey Minos en turno 1**.
+
+Para el mazo post-banlist consideraremos cambiar 1 copia de Rey Minos por cualquier aliado insignificante para el turno 1, como Espartaco o Leónidas.
+
+## La caída del Héroe
+
+Previo a calcular probabilidades consideraremos dos supuestos:
+
+-   Una **buena mano** es aquella con al menos un aliado de turno 1 (Rey Minos, Orión, Perseo o Ganímides) y entre 2 y 4 oros.
+
+-   La tercera copia de Rey Minos es sustituida por una carta que **no es oro ni aliado de turno 1**, como Espartaco o Leónidas.
+
+![Esta tabla es calculada usando supuestos que definen lo que es una buena mano y cuál es la carta que sustituye a Rey Minos.](tabla.jpg){fig-alt="Tabla sobre la probabilidad de robar una buena mano con y sin Rey Minos" fig-align="center"}
+
+Antes del banlist de marzo Héroe obtenía buenas manos con 82.9% de probabilidad lo que es bastante alto. Este número cae a 73.4% cuando se hace mulligan, por lo que diríamos que el mazo Héroe es de buen mulligan. Con el cambio de banlist, Héroe tendrá buena mano a la primera en 8 de cada 10 juegos, y en 7 de cada 10 cuando haga mulligan, casi lo mismo😅.
+
+En cuando a comenzar con 👑Rey Minos el panorama cambió bastante, pues la probabilidad del inicio más potente pasó de 3 en 10 a **2 de cada 10 partidas**. ¡Los druidas ríen!
+
+El último dato es más difícil de digerir: **Héroe tendrá manos buenas sin Rey Minos más frecuentemente que con el Rey**. ¿Qué significa ésto? Que los jugadores de Héroe comenzarán su juego sin Minos el 58.6% de las veces que se queden con 8 cartas, a menos que hagan hardcore mulligan para buscar al Rey, en cuyo caso su intento será un poco mejor que lanzar un dado y adivinar qué número sale (17.6%).
+
+## Conclusiones
+
+Terminaremos este post con una serie de preguntas y respuestas:
+
+-   ¿Héroe hará más mulligan? **No**😎, solamente lo harán 2 de cada 10 partidas.
+
+-   ¿Me enfrentaré menos a Minos turno 1? **Sí**😹, ¡cerca de un 50% menos!
+
+-   Si juego Héroe, ¿debo buscar a Minos turno 1? **No**. El riesgo es bajo, porque probablemente termines con una mano buena de 7 cartas sin Rey Minos🙃.
