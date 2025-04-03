@@ -1,0 +1,19 @@
+---
+title: "Banlist Oficial Racial Edición con imágenes - Abril 2025"
+date: "2025-04-02"
+categories: ["banlist", "competitivo"]
+description: "Actualización oficial de Klu"
+image: thumbnail.jpg
+---
+
+El Banlist Oficial prometido finalmente ha llegado, el post oficial se encuentra en el siguiente link [**(Click Aquí)**](https://blog.myl.cl/banlist-racial-edicion-primer-bloque/).
+
+Si deseas descargar el Banlist en formato pdf les dejamos el siguiente link [**banlist_abril.pdf**](https://drive.google.com/file/d/1qECNOeADE4OkzzLSL-F2bT4pj_gghQKQ/view?usp=sharing).
+
+![](base_bl_esAbril 2025.jpg){fig-alt="Banlist oficial Klu - Abril 2025 - Espada Sagrada" fig-align="center"}
+
+![](base_bl_heAbril 2025.jpg){fig-alt="Banlist oficial Klu - Abril 2025 - Helénica" fig-align="center"}
+
+![](base_bl_hddAbril 2025.jpg){fig-alt="Banlist oficial Klu - Abril 2025 - Hijos de Daana" fig-align="center"}
+
+![](base_bl_raAbril 2025.jpg){fig-alt="Banlist oficial Klu - Abril 2025 - Dominios de Ra" fig-align="center"}
