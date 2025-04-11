@@ -77,7 +77,7 @@ La respuesta es no. Hemos encontrado una relación curiosa que indica que ser mu
 
 ## Palabras finales
 
-Como creadores de contenido, te invitamos a ver todos los canales que compartimos en esta lista, especialmente los que tienen menos suscriptores, como <a href='https://www.youtube.com/@TCG_Tactics_Boardgames' target="_blank">TCG Tactics</a> y <a href='https://www.youtube.com/@EscuelitaMyl target="_blank"'>Escuelita MyL</a>, porque también son los que cuentan con los mejores jugadores.
+Como creadores de contenido, te invitamos a ver todos los canales que compartimos en esta lista, especialmente los que tienen menos suscriptores, como <a href='https://www.youtube.com/@TCG_Tactics_Boardgames' target="_blank">TCG Tactics</a> y <a href='https://www.youtube.com/@EscuelitaMyl' target="_blank">Escuelita MyL</a>, porque también son los que cuentan con los mejores jugadores.
 
 ```{r}
 # theme_set(theme_light(18, "Roboto"))
