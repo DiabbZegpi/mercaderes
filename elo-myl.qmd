@@ -13,17 +13,17 @@ execute:
 
 ```{=html}
 <style>
-  .center {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  table {
-    width: 80%;
+.center {
+margin-left: auto;
+margin-right: auto;
 }
 
-  input.rt-search {
-  
+table {
+width: 80%;
+}
+
+input.rt-search {
+
 }
 </style>
 ```
@@ -135,7 +135,7 @@ resultados_longer <-
   pivot_longer(resultado_a:resultado_b, names_to = "posicion_p", values_to = "puntos") |> 
   filter(str_sub(posicion_j, -1) == str_sub(posicion_p, -1)) |>
   select(id_torneo, ronda, mesa, tor, puntos)
-  
+
 resultados_razas <- 
   resultados_longer |> 
   left_join(
@@ -165,7 +165,7 @@ wr_jugador <-
     .groups = "drop"
   ) |> 
   select(tor, wr)
- 
+
 raza_favorita <- 
   torneos |> 
   # mutate(
@@ -218,13 +218,13 @@ miembros_team <-
   mutate(team = str_to_title(team)) |> 
   distinct(team, tor) |> 
   count(team, name = "miembros_team")
-  
+
 elo_medio_team <- 
   ranking_actualizado |> 
   filter(team != "") |> 
   group_by(team) |> 
   summarize(elo_medio = mean(elo_actual, na.rm = TRUE), .groups = "drop")
-  
+
 tabla_teams <- 
   ranking_actualizado |> 
   slice_max(elo_actual, by = team) |> 
@@ -246,6 +246,13 @@ tabla_ciudad <-
   count(tor, ciudad, name = "n_tourneys") |> 
   slice_max(n_tourneys, by = tor, with_ties = FALSE) |> 
   select(tor, ciudad)
+
+titulos <- tribble(
+  ~tor, ~titulo,
+  "CL1949", "fas fa-chess-king",
+  "CL3418", "fas fa-chess-king",
+  "CL1428", "fas fa-shield-halved"
+)
 ```
 
 #### [Elo MyL v1.0.0](/posts/elo-para-todos/index.qmd) Primer Bloque
@@ -262,6 +269,7 @@ ranking_actualizado |>
   left_join(raza_favorita, by = join_by(tor)) |> 
   left_join(wr_jugador, by = join_by(tor)) |> 
   left_join(tabla_ciudad, by = join_by(tor)) |> 
+  left_join(titulos, by = join_by(tor)) |> 
   arrange(rank_actual, rank_anterior) |> 
   slice_max(elo_actual, n = 500, with_ties = FALSE) |> 
   mutate(
@@ -272,7 +280,7 @@ ranking_actualizado |>
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   cols_hide(c(ends_with("_anterior"), version_actual, rank_diff, raza)) |> 
-  cols_move(c(nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff), rank_actual) |>
+  cols_move(c(titulo, nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
     table.font.size = px(16),
@@ -301,7 +309,7 @@ ranking_actualizado |>
     sep_mark = "",
     force_sign = TRUE
   ) |> 
-  sub_missing(elo_diff, missing_text = "") |> 
+  sub_missing(elo_diff, missing_text = "") |>
   cols_add(dir = case_when(
     rank_diff == 0 | is.na(rank_diff) ~ "minus",
     rank_diff > 0 ~ "arrow-up",
@@ -311,14 +319,27 @@ ranking_actualizado |>
     "minus" = "gray40",
     "arrow-up" = "forestgreen",
     "arrow-down" = "red")
+  ) |>
+  fmt_icon(
+    titulo, 
+    fill_color = list(
+      "fas fa-chess-king" = "#C59E01",
+      "fas fa-shield-halved" = "#244855"
+    )
+  ) |>
+  cols_merge(columns = c(titulo, nombre)) |> 
+  text_transform(
+    \(x) str_remove(x, pattern = "^NA "), 
+    locations = cells_body(columns = titulo)
   ) |> 
   cols_label(
     rank_actual = gt::html(gtExtras::with_tooltip("#", "Ranking y puestos subidos o bajados desde la actualización anterior")),
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
+    titulo = md("**Nombre**"),
     tor = md("**TOR**"),
-    nombre = md("**Nombre**"),
+    # nombre = md("**Nombre**"),
     raza = gt::html(gtExtras::with_tooltip("Raza favorita", "Raza más jugada en los últimos 5 torneos o ligas del último mes")),
     team = md("**Team**"),
     ciudad = gt::html(gtExtras::with_tooltip("Comuna", "Comuna en la que más ha jugado")),
@@ -332,7 +353,8 @@ ranking_actualizado |>
     rank_diff_abs ~ px(55),
     dir ~ px(20),
     tor ~ px(100),
-    nombre ~ px(200),
+    titulo ~ px(200),
+    # nombre ~ px(220),
     # raza ~ px(120),
     team ~ px(115),
     ciudad ~ px(120),
@@ -361,7 +383,7 @@ ranking_actualizado |>
     quantiles = 8
   ) |> 
   cols_align("left", c(rank_diff_abs, elo_diff)) |> 
-  cols_align("right", dir) |> 
+  cols_align("right", c(dir)) |> 
   cols_hide(team) |> 
   # opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
