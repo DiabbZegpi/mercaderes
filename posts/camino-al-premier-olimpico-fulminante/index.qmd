@@ -1,0 +1,55 @@
+---
+title: "Camino al Premier: Olímpico Fulminante"
+date: "2025-04-23"
+categories: ["premier", "competitivo", "construido"]
+description: "Comienza la serie Camino al Premier de la mano de el jugador que más éxito ha tenido recientemente con la raza Olímpico: Miguel León."
+image: thumbnail.jpg
+---
+
+## Presentación
+
+Miguel León es un jugador antofagastino, con un **elo de 2107.6** puntos se ubica en el puesto #4 del [ranking Elo MyL](https://datosyleyendas.com/elo-myl). Entre sus logros más recientes se encuentran ser campeón🛡️ del Torneo Premier de La Serena y ser campeón🏆 del torneo online [Coliseo de Dioses](https://www.youtube.com/watch?v=VVOO8dG6_rM&ab_channel=ColiseoMitero), derrotando a Sergio Tapia (otro rockstar de las mitos) en una final de película. Fue en este último torneo que ganó jugando la raza Olímpico, por lo que le pedimos que recomendara un mazo para ir a jugar los próximos premier. Los dejo con el maestro.
+
+## Olímpico Fulminante \| Dificultad ⭐⭐⭐⭐⭐⭐⭐⭐[⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Olímpico Fulminante de Miguel León](olimpico-fulminante.png){fig-align="center"}
+
+Hola a todos, mi nombre es Miguel León, del Team Fulminante, y les vengo a presentar este mazo Olímpico Control pensado en el meta actual.
+
+Este mazo pocas veces se queda sin mano o removals, tiene un reciclaje/robo muy fuerte gracias a **Corona del Día** y **Gea**, por lo que en el late se va haciendo cada vez más fuerte, asi que no es una mala opción a día de hoy para jugar un torneo importante.
+
+Las razas más fuertes hoy en día son: **Titan**, **Olimpico**, **Sacerdote**, **Goblin**, **Faraón** y un poco por debajo **Dragón** y **Druida**. Existe una gran cantidad de mazos aggro en el meta por lo que decidí incluir 1 **Artemis** y 1 **Oscuro Hades** en lo que son los aliados más *tech*, y prescindir de **Ares** y **El Gran Zeus**. En los talismanes decidí incluir 2 **Traición de Bruto**, 2 **Ira Ígnea** y prescindir de **Velas Negras**, debido a que tienen mayor uso y efectividad en el meta actual, y agregando obviamente la nueva carta **Ataque Fulminante** por 2 copias. En cuanto a lo que son los oros, decidí apostar por 3 **Arcas del Imperio** ya que contra el aggro hay que extremar recursos para sobrevivir muchas veces y 3 **Trono Dorado**, que termina siendo un robo de emergencia en el late y un control de cementerio necesario.
+
+### Fortalezas💪
+
+-   Gran cantidad de cartas de robo.
+-   Gran cantidaad de removal, tanto en soporte como en aliados.
+-   Muy buen baraje.
+-   Fuerte en el *mid/late* game.
+
+### Debilidades💩
+
+-   Dificultad contra mazos demasiado aggro cuando se pierde el dado, sobretodo sin **Eros**.
+-   Lento en cerrar y ganar partidas, sobretodo contra otro mazo control.
+-   No es un mazo fácil de pilotear.
+
+### Mano ideal💡
+
+La mano ideal depende contra qué raza estemos jugando, pero en lo general sería:
+
+-   **Eros** (o por lo menos 1 **Dionisio Zagreo**)
+-   2 oros mínimo, ojalá **Ofrenda a los Dioses** o **Corona del Día**
+-   2 removal de coste 3: **Eter**/**Focea**/**Ira Ígnea**/**Expulsión de Titanes**
+-   1 **Zagreus**
+-   1 **Siete contra Tebas**
+-   1 carta adicional de robo: **Nacimiento de Pegaso**/**Gea**/**Focea**
+
+Las manos con las que recomiendo **no quedarse** son las que carecen de turno 1 **Eros** o **Dionisio Zagreo**, cuando tenemos como máximo 2 oros sin cartas de robo para asegurar el 4to oro.
+
+### Turnos fuertes💯
+
+El turno 1 por excelencia siempre será **Eros**, pero en su defecto lo es **Dionisio Zagreo**. El turno 2 dependerá mucho de la raza oponente, el dado y nuestra mano actual, pero estas cartas siempre son buenas: **Zagreus**, **Eter**, **Focea** e **Ira Ígnea**.
+
+### Cambios🔃
+
+Dependiendo del gusto personal, las cartas que podrían entrar son **Neptuno**, **Ares** y **Panteón**.
