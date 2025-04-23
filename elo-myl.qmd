@@ -81,7 +81,9 @@ jugador_activo <-
   ranking |>
   filter(version == version_actual) |>
   left_join(
-    torneos |> slice_max(fecha, by = tor, n = 1, with_ties = FALSE) |> select(tor, fecha),
+    torneos |> 
+      slice_max(fecha, by = tor, n = 1, with_ties = FALSE) |> 
+      select(tor, fecha),
     by = join_by(tor)
   ) |>
   mutate(
@@ -286,7 +288,7 @@ ranking_actualizado |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(770),
+    table.width = px(805),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -309,7 +311,7 @@ ranking_actualizado |>
     sep_mark = "",
     force_sign = TRUE
   ) |> 
-  sub_missing(elo_diff, missing_text = "") |>
+  sub_missing(c(elo_diff, titulo), missing_text = "") |>
   cols_add(dir = case_when(
     rank_diff == 0 | is.na(rank_diff) ~ "minus",
     rank_diff > 0 ~ "arrow-up",
@@ -327,17 +329,18 @@ ranking_actualizado |>
       "fas fa-shield-halved" = "#244855"
     )
   ) |>
-  cols_merge(columns = c(titulo, nombre)) |> 
-  text_transform(
-    \(x) str_remove(x, pattern = "^NA "), 
-    locations = cells_body(columns = titulo)
-  ) |> 
+  # cols_merge(columns = c(titulo, nombre)) |> 
+  # text_transform(
+  #   \(x) str_remove(x, pattern = "^NA "), 
+  #   locations = cells_body(columns = titulo)
+  # ) |> 
   cols_label(
     rank_actual = gt::html(gtExtras::with_tooltip("#", "Ranking y puestos subidos o bajados desde la actualización anterior")),
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
-    titulo = md("**Nombre**"),
+    titulo = "",
+    nombre = md("**Nombre**"),
     tor = md("**TOR**"),
     # nombre = md("**Nombre**"),
     raza = gt::html(gtExtras::with_tooltip("Raza favorita", "Raza más jugada en los últimos 5 torneos o ligas del último mes")),
@@ -353,7 +356,8 @@ ranking_actualizado |>
     rank_diff_abs ~ px(55),
     dir ~ px(20),
     tor ~ px(100),
-    titulo ~ px(200),
+    titulo ~ px(35),
+    nombre ~ px(200),
     # nombre ~ px(220),
     # raza ~ px(120),
     team ~ px(115),
@@ -383,7 +387,7 @@ ranking_actualizado |>
     quantiles = 8
   ) |> 
   cols_align("left", c(rank_diff_abs, elo_diff)) |> 
-  cols_align("right", c(dir)) |> 
+  cols_align("right", c(dir, titulo)) |> 
   cols_hide(team) |> 
   # opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
