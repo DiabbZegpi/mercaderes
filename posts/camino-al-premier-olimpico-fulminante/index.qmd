@@ -2,7 +2,7 @@
 title: "Camino al Premier: Olímpico Fulminante de Miguel León"
 date: "2025-04-23"
 categories: ["premier", "competitivo", "construido"]
-description: "Comienza la serie Camino al Premier de la mano de el jugador que más éxito ha tenido recientemente con la raza Olímpico."
+description: "Comienza la serie Camino al Premier de la mano del jugador que más éxito ha tenido recientemente con la raza Olímpico."
 image: thumbnail.jpg
 ---
 
@@ -22,16 +22,16 @@ Las razas más fuertes hoy en día son: **Titan**, **Olimpico**, **Sacerdote**, 
 
 ### Fortalezas💪
 
--   Gran cantidad de cartas de robo.
--   Gran cantidaad de removal, tanto en soporte como en aliados.
--   Muy buen baraje.
--   Fuerte en el *mid/late* game.
+-   Gran cantidad de cartas de robo
+-   Gran cantidaad de removal, tanto en soporte como en aliados
+-   Muy buen baraje
+-   Fuerte en el *mid/late* game
 
 ### Debilidades💩
 
--   Dificultad contra mazos demasiado aggro cuando se pierde el dado, sobretodo sin **Eros**.
--   Lento en cerrar y ganar partidas, sobretodo contra otro mazo control.
--   No es un mazo fácil de pilotear.
+-   Dificultad contra mazos demasiado aggro cuando se pierde el dado, sobretodo sin **Eros**
+-   Lento en cerrar y ganar partidas, sobretodo contra otro mazo control
+-   No es un mazo fácil de pilotear
 
 ### Mano ideal💡
 
