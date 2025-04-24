@@ -1,0 +1,52 @@
+---
+title: "Camino al Premier: Sacerdote Abrasador de Víctor Delgado"
+date: "2025-04-23"
+categories: ["premier", "competitivo", "construido"]
+description: "Segunda entrega de Camino al Premier con el profesor Víctor de Escuelita MyL, uno de los mejores exponentes del sur de Chile."
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Víctor Delgado es un fortísimo jugador del sur de Chile, actualmente radicado en Valdivia y representando al team Exilio. Actualmente ostenta un **elo de 1919.4 puntos**, ubicándose como el #28 mejor jugador de Chile, aunque en su época de grindeo llegó al puesto #6. Entre sus éxitos recientes se encuentra ser subcampeón🥈 del [Torneo Gori On Tour de Villarica](https://www.youtube.com/watch?v=PiXuCvUeVKs&t=33669s&ab_channel=TeamDojoMitero), cayendo sólo ante Leonardo Lizama, el indiscutido #1 del ranking elo. Víctor también es el profesor del canal de YouTube [Escuelita MyL](https://www.youtube.com/@EscuelitaMyl)▶️, un lugar en donde encontrarás material de primer nivel para ser un mejor jugador competitivo.
+
+## Sacerdote Azotador \| Dificultad ⭐⭐⭐⭐⭐⭐⭐[⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Sacerdote Abrasador de Víctor Delgado](sacerdote-abrasador.png){fig-align="center"}
+
+Les presento este mazo Sacerdote aggro, uno de los mazos más consistentes del formato. Permite finalizar duelos en poco tiempo y dejar tiempo libre para descansar, ver partidas de otros jugadores o comer un snack, algo muy importante en un torneo largo (*¡Premier!*). Además, la baraja cuenta con un **buen matchup contra Titán**, una de las razas más fuertes y populares del formato.
+
+La baraja es muy consistente porque propone un plan de juego lineal y activo desde turnos tempranos, por ende, depende más de las jugadas propias que de las del rival para ejecutar su estrategia.
+
+El plan de juego es tomar la iniciativa en los primeros turnos, causar mucho daño al Mazo Castillo oponente y cerrar el juego con los oros, que son muy poderosos. Para ejecutar este plan el Sacerdote tiene cartas poderosas, como **Nuh** y **Haquika**, y suma las herramientas de remate que son **Jinetes de Fuego**, **Papiros de Lahun** y **Ataud de Ramses**. También cuenta con complementos a la estrategia como **La Visión**, una carta nueva e interesante en etapas avanzadas del juego.
+
+### Fortalezas💪
+
+-   Es un mazo aggro que puede ganar rápido y es consistente
+-   Su plan de juego es lineal y puede ser ejecutado contra cualquier baraja
+-   Es fácil estudiar las jugadas clave porque no dependen tanto del juego del rival como del juego propio
+
+### Debilidades💩
+
+-   Tiene mal mulligan, porque necesita manos activas y no reactivas
+-   Puedes perder partidas por hacer mucho mulligan
+-   Un mal uso de los oros puede transformar una victoria en derrota
+-   Depende de tener la iniciativa y es malo bloqueando
+
+### Mano ideal💡
+
+-   2 oros, idealmente uno sea **Piedra Roseta**
+-   1 **Aton**, es una carta versátil que muchas veces busca **Piedra Roseta**
+-   1 **Tuthu** u **Oseye**
+-   **Nuh**
+-   1 **Djedefhor**
+-   1 **Forma de Lince**
+-   1 **Resplandor de Heka**
+
+### Turnos fuertes💯
+
+La salida más fuerte para tomar la iniciativa tras ganar el dado es un aliado en turno 1: **Tuthu**/**Oseye** y **Nuh** en el turno 2, para portar el arma en el primer aliado. De esta forma el oponente normalmente tendrá que escoger entre controlar a **Nuh** o al portador del arma. Al jugar contra la iniciativa del dado, el mazo debe intentar arrebatarla con cartas poderosas, como **Haquika**, **Acoris** o **Nuh**, siempre que haya otro aliado para portar armas.
+
+### Cambios🔃
+
+Si se espera mucho mirror se pueden incluir las *tech* **Tocador** y **Escudo Celestial**, ambas buenas contra el mirror y mantienen el espíritu ultra agresivo del mazo.
