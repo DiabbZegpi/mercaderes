@@ -1,0 +1,60 @@
+---
+title: "Camino al Premier:Caballero Armas de Sebastián Villablanca"
+date: "2025-04-25"
+categories: ["premier", "competitivo", "construido"]
+description: "Tercera entrega de Camino al Premier con una raza poco utilizada en la actualidad pero versátil y llena de sorpresas."
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Sebastián Villablanca es un fuerte jugador de la zona centro sur de Chile, quien vive en Mulchén y representa al team Mylchén. Su elo es 1637.2 puntos, ubicándose en el puesto #235 de [Elo MyL](https://datosyleyendas.com/elo-myl), pero no se dejen engañar, pues su ingenio y destreza le han permitido coronarse campeón🏆 de uno de los torneos más importantes del año 2023: El Torneo Maestro de Razas Caballero⚔️. Es más, si alguna vez jugaste la raza Caballero entonces es muy probable que tengas en tu mazo la carta que él creó: **Sir Gaheris**. Suficiente introducción, los dejo con Seba.
+
+## Caballero Armas \| Dificultad ⭐⭐[⭐⭐⭐⭐⭐⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Caballero Armas de Sebastián Villablanca](caballero-armas.png){fig-align="center"}
+
+¡Hola a todos los entusiastas de las Mitos! Sebastián Villablanca por acá con unas Decklist caballero, que espero les sean de utilidad. Sabemos que actualmente la raza no pasa por su mejor momento, pero gracias a su versatilidad en las manos correctas nunca se debe descartar su potencia🧨.
+
+Al jugar la estrategia de armas tu función es la propuesta, un turno sin propuesta es un turno perdido, debes tener eso claro. Busca siempre colar daño a tu oponente y mantenerlo en un rango de juego, donde, si se descuida puedas finiquitarlo con un solo ataque, aún así, el aggro no es tu única fortaleza sino también poseer removals de buen coste.
+
+### Fortalezas💪
+
+-   Buena curva de juego
+-   Gran explosividad en turnos tempranos
+-   Se enfrenta bien a mazos que necesitan la iniciativa, como **Goblin** y **Sacerdote**
+
+### Debilidades💩
+
+-   Vulnerable a limpiezas masivas
+-   Le cuesta rematar partidas porque carece de *finisher*
+-   Sufre contra mazos control, como **Titán**, **Druida** y **Olímpico**
+
+### Mano ideal💡
+
+-   3 oros, idealmente uno sea **Herrero**
+-   1 **Guardia Real**
+-   1 **Yvain del León**
+-   1 **Sir Gaheris**
+-   1 **Fe sin Límite**
+-   1 **Toque de Pérsival**
+
+### Turnos fuertes💯
+
+Para ganar la partida este mazo necesita ejercer presión y mantener aliados para portar armas, no puedes permitirte jugar reactivamente. Tanto **Guardia Real** como **Sir Erec** son buenas opciones para el turno 1, siendo **Sir Gaheris** la continuación lógica en turno 2. Si se es segundo, **Sir Pérsival** es buena opción para barajar aliados oponentes que sean desequilibrantes, como **Afrodita**. Entrando en el mediojuego, puedes intentar leer la mesa y conectar a **Sir Bedivere** para pinchar la carta que gane la partida, o si no conectare, el aliado también ejerce enorme presión. Entre las jugadas tácticas, puedes usar a **Sir Lamorak** para buscar **Códex Arturicus** contra mazos agresivos, **Cruz Templaria** para aumentar la presión o **Corona de Arturno**, para negar la activación de **Jeroglíficos** o **Ataud de Ramses**.
+
+### Cambios🔃
+
+**Favor de la Corte** juega a favor de la estrategia de **Sir Bedivere**, mientras que **Traficante de Esclavos** es buena carta para la estrategia agresiva.
+
+## Bonus: Caballero Control \| Dificultad ⭐⭐⭐⭐⭐⭐[⭐⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Caballero Control de Sebastián Villablanca](caballero-control.png){fig-align="center"}
+
+Una alternativa diametralmente opuesta basada en jugar a remover toda la mesa oponente. Este mazo juega alrededor de la respuesta al oponente. El Caballero Control se enfrenta bien a mazos control, aunque puede sufrir en el juego temprano contra estrategias aggro explosivas (por lo mismo la inclusión de **Sir Dagonet**).
+
+### ⚠️Lee esto antes de jugar este mazo
+
+Prioriza comprar tiempo por sobre plantear mesa. Para esto, utiliza **Capa de Invisibilidad** para responder al instante y los removals para evitar la explosividad de tu oponente. Tu juego gira en torno a conectar lo más pronto posible a **Sir Lamorak** y acelerar el juego de **Ma'arrat An-Numán** como amenaza.
+
+En el juego temprano intenta conectar **Sir Gaheris** + **Espada Larga** para filtrar tu mazo. Limpia la mesa oponente y posteriormente, cuando la cantidad de cartas en su mano haya sufrido un declive, comienza a dar vuelta la mesa a tu favor. El **Hacha de Batalla** idealmente debes guardarla para el final de la partida, es clave para dar vuelta la mesa. Con paciencia y un uso correcto de los tiempos de juego tienes la posibilidad de controlar bastante la partida, a la vez que te enfrentas de manera correcta a casi a cualquier estrategia.
