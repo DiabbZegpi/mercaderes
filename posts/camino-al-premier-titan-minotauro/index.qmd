@@ -1,0 +1,54 @@
+---
+title: "Camino al Premier: Titán Minotauro de Leonardo Lizama"
+date: "2025-04-27"
+categories: ["premier", "competitivo", "construido"]
+description: "Quinta edición de Camino al Premier con el jugador #1 del ranking, mostrando su baraja favorita"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+No se puede escribir Elo sin Leo, pues es el jugador que más tiempo ha mantenido el #1 del ranking (¡126 días corridos a la fecha\!😱). Actualmente, Leo tiene un elo de 2215.5 y es el único jugador en la historia de [Elo MyL](https://datosyleyendas.com/elo-myl) en cruzar los 2200 de elo, aunque está 22 puntos por debajo de su máximo de 2237.2. Otro de sus logros recientes es ser campeón🏆 del torneo Gori On Tour de Villarrica, en donde jugó la final contra Víctor Delgado, el profe de Escuelita MyL. Suficientes alabanzas, vamos con el mazo.
+
+## Titán Minotauro \| Dificultad ⭐⭐⭐⭐⭐⭐⭐[⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Titán Minotauro de Leonardo Lizama](titan-minotauro.png){fig-align="center"}
+
+El mazo Titán Minotauro es fácil de jugar en los primeros turnos, priorizando jugar **La Iliada** y plagar la mesa con **Minotauro**. Es en el final de la partida que el mazo es más complejo, porque depende de la buena administración de los pocos recursos que queden en la mano y el mazo, ya que Titán carece de baraje decente.
+
+La diferencia entre tener 2 copias de **La Iliada** en juego y no tener ninguna es tremenda, pero aún así el mazo tiene aliados muy poderosos que pueden finalizar la partida cuando falta **La Iliada**.
+
+**¿Por qué jugar este mazo en un Premier?** Cuenta con aliados fuertes y sinérgicos que aprovechan muy bien la plaga, no depende de una win condition específica para cerrar partidas, y tiene el mejor soporte racial de la edición, lo que le permite adaptarse a diferentes escenarios.
+
+### Fortalezas💪
+
+-   Capacidad de plagar el campo rápidamente
+-   Cuenta con cartas versátiles y poderosas
+-   Tiene muy buen matchup contra razas con aliados de baja fuerza
+
+### Debilidades💩
+
+-   Es (casi) imposible recilar cartas del cementerio al mazo castillo
+-   Si la partida se alarga puedes quedar con pocos recursos en mano, dificultando el cierre
+-   Pierde mucha agresividad si no tiene **La Iliada**
+
+### Mano ideal💡
+
+-   **La Iliada**
+-   2 oros cualesquiera
+-   1 **Temis**/**Minotauro**
+-   1 **Minotauro de Cartago**/**Medusa**/**Focea**
+-   **Titán Gorila**
+
+### Turnos fuertes💯
+
+Comenzar con **La Iliada** y cualquier aliado es la salida más fuerte. No hay que desestimar iniciar con **Minotauro**, porque plantea conectar **Minotauro de Cartago** al turno siguiente, armando una mesa que es fuerte incluso sin **La Iliada**. Una salida alternativa pero que apunta a mid/late es **Helénica** + **Luz de Prometeo**/**Nacimiento de Pegaso**.
+
+### Matchups
+
+Como bonus, Leo nos regala su conocimiento de matchups contra las raza más fuertes del meta.
+
+-   **Olímpico**: es crucial tomar el control del early o midgame; si la partida se alarga, los múltiples removals rivales suelen decantar el duelo en su favor.
+-   **Titán** (mirror): el jugador que logre sacar más copias de **La Iliada** y/o **Minotauros** tendrá ventaja. Sin embargo, si no se logra cerrar a tiempo, cualquier **Rea** en mesa puede terminar definiendo la partida.
+-   **Goblin**: **Minotauro de Cartago**, **Titán Gorila** o **Leucrota** curveando bien permiten controlar el ritmo y facilitan el enfrentamiento.
+-   **Sacerdote**: aunque **Minotauro de Cartago** y **Leucrota** ayudan a ganar la carrera de daño, suele ser un match difícil por el daño directo, **Nuh** y **Qadesh**.
