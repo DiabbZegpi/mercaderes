@@ -1,0 +1,50 @@
+---
+title: "Camino al Premier: Eterno Destrucción de Michel Bravo"
+date: "2025-04-26"
+categories: ["premier", "competitivo", "construido"]
+description: "Cuarta entrega de Camino al Premier con una raza milenaria y su máximo exponente a nivel nacional."
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Si hay algún jugador que se asocie como el que mejor domina una raza ése sería Michel Bravo, ganador del Torneo del Millón de Pesos, campeón🏆 y finalista de numerosos torneos online ([como este torneo de Norte Mitero](https://www.youtube.com/watch?v=vxRUnrUt4ck&ab_channel=NorteMitero)) y #2 del ranking [Elo MyL](https://datosyleyendas.com/elo-myl), ¡con la suma de 2197.2 puntos y subiendo!. En esta entrega Michel nos regala su mazo eterno optimizado para jugar torneos Premier😎.
+
+## Eterno Removal \| Dificultad ⭐⭐⭐⭐⭐⭐⭐⭐⭐⭐
+
+![Mazo Eterno Destrucción de Michel Bravo](eterno-destruccion.png){fig-align="center"}
+
+Eterno es una de las razas más complejas de todo PBX y en éste análisis hablaremos de sus fortalezas, debilidades y comportamiento del mazo.
+
+Este mazo Eterno es muy completo, porque cuenta con robo, buscadores, rampeo de oro, baraje, removals, masivos y con la capacidad de ciclar y barajar cartas desde el destierro. Todas estas cualidades se manifiestan cuando el eterno acumula muchos oros, es decir, en el juego tardío.
+
+La raza Eterno es difícil de dominar porque acumula ventajas escalonadamente; requiere mesa para ganar por daño; requiere control para acumular mesa; requiere baraje para reciclar control; requiere rampeo para que todo funcione; etc.
+
+Por último, el mazo se debe jugar a tempo, de manera eficiente y mecanizada. Es crucial saber cuándo alargar una partida y cuando no. Cada turno consiste en múltiples acciones, como activaciones de oro, **Heka** y talismanes, como **Osiris ha Muerto**.
+
+### Fortalezas💪
+
+-   Es un mazo completo
+-   Resiste mucho daño y suele tener ventaja en *late*
+-   Cuenta con el factor sorpresa y pocos jugadores saben cómo enfrentarlo
+-   Tiene buen match contra **Olímpico** y **Sacerdote**
+
+### Debilidades💩
+
+-   Es difícil de dominar
+-   Es un mazo de construcción, no tiene cartas que ganen por sí solas
+-   Es difícil ganar 1 partida y más aún lo es ganar un match.
+-   Tiene mal match contra **Titán**
+
+### Mano ideal💡
+
+-   3 oros, idealmente **Toro Apis**/**Biblioteca Eterna**/**Rito de Aton**
+-   1 **Mineros de Lapislázuli**
+-   1 **Heka**
+-   **Baal-Zaphon**
+-   1 **Resplandor de Heka**
+-   1 **Osiris ha Muerto**
+
+### Turnos fuertes💯
+
+El mazo eterno se caracteriza por acumular oros en sus primeros turnos y proteger su mazo castillo con blockers, como **Ptah** y **Ash**. Después de bajar un blocker, un excelente turno 2 es jugar **Mineros de Lapislázuli** y **Baal-Zaphón** con el oro rampeado. Así, el Eterno apuesta a la ventaja de oro. Desde el siguiente turno el Eterno comienza a tomar ventaja de cartas, con el robo explosivo de **Anhur**.
