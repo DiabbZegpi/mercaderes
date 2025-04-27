@@ -8,7 +8,7 @@ image: thumbnail.jpg
 
 ## Presentación del jugador
 
-No se puede escribir Elo sin Leo, pues es el jugador que más tiempo ha mantenido el #1 del ranking (¡126 días corridos a la fecha\!😱). Actualmente, Leo tiene un elo de 2215.5 y es el único jugador en la historia de [Elo MyL](https://datosyleyendas.com/elo-myl) en cruzar los 2200 de elo, aunque está 22 puntos por debajo de su máximo de 2237.2. Otro de sus logros recientes es ser campeón🏆 del torneo Gori On Tour de Villarrica, en donde jugó la final contra Víctor Delgado, el profe de Escuelita MyL. Suficientes alabanzas, vamos con el mazo.
+No se puede escribir Elo sin Leo, pues es el jugador que más tiempo ha mantenido el #1 del ranking (¡126 días corridos a la fecha\!😱). Actualmente, Leo tiene un elo de 2215.5 y es el único jugador en la historia de [Elo MyL](https://datosyleyendas.com/elo-myl) en cruzar los 2200 de elo, aunque está 22 puntos por debajo de su máximo de 2237.2. Otro de sus logros recientes es ser campeón🏆 del torneo Gori On Tour de Villarrica, en donde jugó la final contra Víctor Delgado, el profe de Escuelita MyL y compañero de Team Exilio. Suficientes alabanzas, vamos con el mazo.
 
 ## Titán Minotauro \| Dificultad ⭐⭐⭐⭐⭐⭐⭐[⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
 
