@@ -1,5 +1,5 @@
 ---
-title: "Camino al Premier:Caballero Armas de Sebastián Villablanca"
+title: "Camino al Premier: Caballero Armas de Sebastián Villablanca"
 date: "2025-04-25"
 categories: ["premier", "competitivo", "construido"]
 description: "Tercera entrega de Camino al Premier con una raza poco utilizada en la actualidad pero versátil y llena de sorpresas."

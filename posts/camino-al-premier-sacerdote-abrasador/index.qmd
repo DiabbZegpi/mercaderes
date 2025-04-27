@@ -1,6 +1,6 @@
 ---
 title: "Camino al Premier: Sacerdote Abrasador de Víctor Delgado"
-date: "2025-04-23"
+date: "2025-04-24"
 categories: ["premier", "competitivo", "construido"]
 description: "Segunda entrega de Camino al Premier con el profesor Víctor de Escuelita MyL, uno de los mejores exponentes del sur de Chile."
 image: thumbnail.jpg
