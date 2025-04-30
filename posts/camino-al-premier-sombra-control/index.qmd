@@ -1,0 +1,56 @@
+---
+title: "Camino al Premier: Sombra Abismal de Jorge Gutiérrez"
+date: "2025-04-30"
+categories: ["premier", "competitivo", "construido"]
+description: "Séptima edición de Camino al Premier junto al jugador que revolucionó la manera en que se juega titán después del Aniversario de Helénica"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Jorge es un fuerte jugador de Rancagua con **elo de 1704.8 puntos**, posicionándose en el puesto #145 del ranking. Pero su impacto en el juego es más profundo, pues fue el jugador que descubrió el amado u odiado combo **Homúnculus**-**Rea**😱. Esta creatividad da color a su estilo de creación de mazos, que son orientados hacia el control, cosa que nos demostrará con su baraja Sombra Abismal (control) con atisbos de agresividad.
+
+## Sombra Abismal \| Dificultad ⭐⭐⭐⭐⭐⭐⭐⭐⭐[⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Sombra Control de Jorge Gutiérrez](sombra-abismal.png){fig-align="center"}
+
+El Sombra Abismal es un mazo 100% control que se apalanca en la potencia de sus aliados de turno 2: **Sonriente** y **Conand**. Cualquiera de los dos aliados que entre en juego abren las posibilidades para llenar la mano del jugador Sombra y maximizar la probabilidad de llegar a su masivo, el temido **Gruagash**.
+
+El plan de juego del mazo consiste en planificar los turnos poderosos, que serían los turnos en que se pueda conectar un combo de robo, de baraje o de limpieza. Como herramienta, usa a **Irgoll** como un espía, prediciendo con bastante precisión las cartas de la mano de tu oponente.
+
+Si en el metajuego predomina el control, ésta es una excelente alternativa, porque su control responde muy bien al control de un Olímpico, Druida o Eterno. Si abundan los jugadores de aggro, como Sacerdote o Faraón, entonces no recomiendo esta baraja porque es muy frágil y es fácil perder tras una mala decisión o mal robo.
+
+### Fortalezas💪
+
+-   Tiene mecánicas de robo explosivo y es difícil que se quede sin mano
+-   Su cementerio es una extensión de la mano y puede reciclar sus cartas
+-   Aplasta a los mazos de tipo plaga con sus masivos
+
+### Debilidades💩
+
+-   Le cuesta estabilizar contra los mazos aggro con daño directo y aliados con furia, como Sacerdote
+-   Carece de un buen turno 1
+-   Su mecánica de baraje requiere tener muchos oros y control de mesa
+
+### Mano ideal💡
+
+-   2 oros, de preferencia **Árbol de Sangre** y **Gaitas**
+-   1 **Kóbold**
+-   1 **Oengus**
+-   1 **Conand**
+-   1 **Sonriente**
+-   1 **Las Tres Plagas**
+-   1 **Gruagash**
+
+### Turnos fuertes💯
+
+El inicio ideal es turno 1 con **Árbol de Sangre** y comenzar la estrategia de nicromancia. Con este mismo fin, se puede jugar **Kóbold** u **Oengus**. El turno 2 es de **Conand** o **Sonriente**, ambas cartas aseguran tener una mano ancha. Después de este inicio, el Sombra debe mantener el robo y controlar la mesa para ganar la partida.
+
+### Matchups ⚔️
+
+Como bonus, Jorge nos regala su conocimiento de matchups contra las raza más fuertes del meta.
+
+-   **Olímpico**: el Sombra Abismal puede acumular mucha ventaja si usa **Irgoll** para controlar **Siete contra Tebas**, y **Las Tres Plagas** para desterrar a **Zagreus.** Después, los Olímpicos no tienen manera de escapar el ciclo de **Gruagash**. Ojo, no es necesario desterrar las 3 copias de **Siete contra Tebas** antes de jugar **Gruagash**, pues basta con asegurar que no tenga ninguna en mano.
+-   **Titán**: homólogo a Olímpico, la clave es controlar **Siete contra Tebas** y resistir la plaga de **Minotauro**. El jugador Titán puede amasar mucha ventaja si tiene una salida agresiva apoyada por **La Iliada**, pero es posible contrarrestarla si se juegan las cartas poderosas de turno 2.
+-   **Sacerdote**: es un match muy complicado, porque el daño de los primeros turnos no da tiempo para estabilizar la mesa y el castillo al mismo tiempo. La jugada de comeback contra Sacerdote es setear 1 o 2 **Oengus** de turnos anteriores y jugar **Wyrm Abismal**.
+-   **Goblin**: no es un enfrentamiento difícil si se le pincha la **Fe sin Límite** con **Irgoll**. Después de eso, el Goblin se come todos los talismanes: **Las Tres Plagas**, **Bola de Energía** y **Levantar a los muertos**. Finalmente, el remate ocurre después de desterrar los **Goblin Maligno**.
