@@ -1,0 +1,46 @@
+---
+title: "Camino al Premier: Druida Cuchulain de Sergio Tapia"
+date: "2025-04-29"
+categories: ["premier", "competitivo", "construido"]
+description: "Sexta entrega de Camino al Premier de la mano de uno de los jugadores más reconocidos del bloque, tanto por su habilidad como por su sabiduría"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Sergio Tapia es "El Maestro" de muchos jugadores que ven la escena de mitos online, por sus innumerables éxitos en torneos de comunidades de internet y su carisma a la hora de explicar y enseñar el juego en el canal de Youtube del [Team Bastardos Sin Gloria](https://www.youtube.com/@teambastardos). Pero el juego de Sergio no se limita al online, también es un destacado jugador competitivo con un **elo de 2139.6 puntos**, consolidándose como #3 del ranking. Entre sus mayores logros competitivos del año pasado se encuentran llegar al top 4🏅 del Campeonato Nacional de PB, siendo eliminado por Álvaro Pérez en la semifinal. Dejamos con ustedes el análisis de Sergio.
+
+## Druida Cuchulain \| Dificultad ⭐⭐⭐⭐⭐[⭐⭐⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Druida Cuchulain de Sergio Tapia](druida-cuchulain.png){fig-align="center"}
+
+El Druida sigue siendo fuerte, pero pardió bastante potencia. Tanto **Fergus** como **Avalon** eran *win condition* para el mazo, porque tienen gran impacto cuando entran en juego y mucho más si permanecen en él por varios turnos. En mi opinión, su baneo fue excelente. En cambio, limitar **Marmita Druida** a 1 copia fue un golpe duro y quizás evitable, teniendo en cuenta que **Corona del Día** permanece a 2 copias; pensé que un baneo más probable era el de **Averix el Sabio** a 2 copias.
+
+La raza Defensor flaquea en aliados con remoción, teniendo como único exponente jugable a **Conla**, aliado que además no puede afectar a cartas de coste 4 o más. Confiar en **Averix el Sabio** para blanquear una carta de habilidad continua, como **Afrodita**, es demasiado riesgoso, más aún en un formato en que no es difícil remover aliados del juego. Este mazo recurre al soporte para tener habilidades de remoción que son versátiles.
+
+La propuesta de juego del mazo es aprovechar la potencia de robo de la raza para tener acceso a los recursos cuando se necesiten. Aunque **Marmita Druida** sólo esté permitida por 1 copia, los aliados de fuerza 4 ayudan a alargar el duelo, mejorando las posibilidades de reciclar las cartas poderosas. La inclusión más novedosa es **Anillos de Badbury**, una remoción con control de cementerio que puede otorgar ventaja en duelos de desgaste.
+
+### Fortalezas💪
+
+-   Robo constante de cartas
+-   Muy buena defensa con aliados de alta fuerza
+-   Si la partida se alarga tiene la capacidad de reciclar sus cartas y controlar cementerio
+
+### Debilidades💩
+
+-   Tiene poco baraje de cartas
+-   Si pierde la mesa la remueve con soporte, no con aliados, dejando espacio para que su oponente la recupere
+
+### Mano ideal💡
+
+-   2 oros
+-   **Caldero de la Abundancia**
+-   1 **Druida de Man**
+-   1 **Averix el Sabio**
+-   1 **Tadg el Druida**
+-   1 **Red de Plata**
+-   1 **Traición de Macalpin**
+
+### Turnos fuertes💯
+
+Jugar **Caldero de la Abundancia** en turno 1 para asegurar **Marmita Druida** es un buen inicio, mejor aún si se combina con **Tadg el Druida** para buscar a **Amergin el Druida** o, en caso que falte el caldero, un oro. En turno 2 lo mejor es conectar a **Averix el Sabio** e iniciar la maquinaria de robo del mazo, a la vez que puedes cambiar el enfoque del mazo, de defensivo a agresivo. En este punto de la partida, combinar **Gaitas** con **La Traición de Macalpin** o **Morir de Pie** asegura una ventaja duradera en mesa y mano. Desde este punto en adelante el druida puede controlar cómodamente la mesa, usando su soporte: **Anillos de Badbury**, **Martillo Pesado** y **Red de Plata**.
