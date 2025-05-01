@@ -1,0 +1,55 @@
+---
+title: "Camino al Premier: Faerie Goblin de Yerko Corvalán"
+date: "2025-05-01"
+categories: ["premier", "competitivo", "construido"]
+description: "Novena entrega de Camino al Premier con uno de los jugadores más laureleados de la escena Santiaguina"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Yerko es uno de los jugadores más reconocidos del competitivo en la capital, por sus éxitos y su fuerza de juego, que yace en **1719.9 puntos de elo**, ubicándolo en el lugar #132 del ranking. Entre sus logros se encuentran ser finalista del Torneo del Millón💸, donde cayó frente a Michel Bravo, y ser finalista en el Torneo Premier de Helénica Aniversario🌩️, final que disputó con Ignacio Iturra, flamante campeón del reciente Premier de Santiago 2025. Yerko también es un hombre de negocios y de la comunidad, pues es dueño de la tienda PACmania (🗺️Carlos Valdovino #2202) y representa al Team Pacmasacre.
+
+## Faerie Goblin \| Dificultad ⭐⭐⭐⭐⭐⭐[⭐⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Faerie Goblin de Yerko Corvalán](faerie-goblin.png){fig-align="center"}
+
+Veo a muchos jugadores diciendo que es súper fácil jugar Goblin, que sólo se trata de jugar 3 **Goblin Maligno** y pegar infinito. Están equivocados, existen otros mazos aggro más ofensivos que éste pero, ¿por qué la gente prioriza este mazo sobre el resto? La razón es que su estabilidad es única.
+
+En mi parecer, la dificultad justa es un 6, es un mazo que necesita adeptos con conocimientos de tempo, cálculo de daño y priorización de curva para poder extraer todo el potencial que los Goblin nos pueden otorgar.
+
+La estrategia de juego consiste en establecer una mesa fuerte con aliados de bajo coste, planteando amenazas de daño y de robo explosivo. Hay veces que esto es suficiente para ganar una partida. Cuando entremos el midgame, usaremos nuestros buscadores para acumular la artillería en la mano. Al alto powerup del core Goblin brinda estabilidad a la estrategia del mazo, pues nos ofrece la posibilidad de desintegrar el mazo oponente con un ataque de 3 **Goblin Maligno**.
+
+Cuando este mazo va segundo la estrategia es más difícil de ejecutar. ¿Qué pasa si nos enfrentamos a otro aggro?, ¿cuánto tiempo nos permitirán para armar nuestra estrategia? En estos casos, es crucial que el jugador Goblin administre sus removal con sabiduría sin interrumpir el tempo del mazo. Al carecer de aliados removal, los turnos de control con talismanes son turnos que nuestro juego se atrasa.
+
+### Fortalezas💪
+
+-   Fuerte early con aliados de coste bajo
+-   Robo explosivo
+-   Búsqueda selectiva de **cartas** **Goblin**
+-   Potencia agresiva cuando el juego ha avanzado
+
+### Debilidades💩
+
+-   Los aggro le imposibilitan imponer su estrategia
+-   No posee aliados removal
+
+### Mano ideal💡(jugando primero)
+
+-   1 **Corona de Arturo**
+-   **Cruz Templaria**
+-   1 **Tesoro de Mowa**
+-   2 **Tom Thumb**
+-   1 **Reina Merrow**
+-   1 **Duendes**
+-   1 **Goblin**
+
+### Mano ideal💡(jugando segundo)
+
+-   1 **Corona de Arturo**
+-   **Mercaderes**
+-   2 **Tom Thumb**
+-   1 **Bruja Anís**
+-   1 **Goblin**
+-   1 **Capa de Invisibilidad**
+-   1 **Bola de Fuego**
