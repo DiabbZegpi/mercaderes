@@ -1,0 +1,42 @@
+---
+title: "Camino al Premier: Desafiante Midrange de Sergio Avilés"
+date: "2025-05-01"
+categories: ["premier", "competitivo", "construido"]
+description: "Décima entrega de Camino al Premier y nos guía el jugador que dio la sorpresa en Santiago con la raza que nadie más supo llevar al top"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Sergio es un jugador de Santiago que logró la impresionante hazaña de llevar al Desafiante al top 32 del Torneo Premier de Santiago recién pasado. Esperamos que a este logo se sumen muchos más a su carrera competitiva. Sergio representa al Team YeaMami y tiene un **elo de 1459.8 puntos**, ubicándose en la posición #832 del ranking. Una cosa es segura, ese ranking subirá como la espuma, especialmente después de su actuación en el Premier.
+
+## Desafiante Midrange \| Dificultad ⭐⭐⭐⭐⭐⭐[⭐⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Desafiante Midrange de Sergio Avilés](desafiante-midrange.png){fig-align="center"}
+
+Jugar Desafiante en cualquier instancia representa un reto, pero llevarlo a un Premier eleva aún más el desafío. Aunque esta raza no posee un estilo de juego definido, sus aliados pueden robar, hacer daño directo, controlar, reclutar, entre otras mecánicas. La falta de una identidad rígida le permite adaptarse a cualquier situación de juego, ya sea para controlar la mesa rival o ejercer presión mediante daño sostenido.
+
+Entonces, ¿por qué elegir Desafiante para un Premier? Primero, por el factor sorpresa: muchos oponentes no estarán familiarizados con su funcionamiento, lo que puede otorgar una ventaja estratégica. Segundo, su sólido pool de cartas para los primeros turnos, tanto de soporte como aliados, aumenta la probabilidad de obtener manos fuertes frente al esperado meta aggro, o de encontrar respuestas clave ante mazos control. Y tercero y más importante, ¡porque es divertido!
+
+### Fortalezas💪
+
+-   Gran capacidad de control de ritmo de la partida
+-   Alta flexibilidad para adaptarse a distintas situaciones y estilos de juego
+
+### Debilidades💩
+
+-   Las manos no ofrecen líneas de juego claras
+-   Debes escoger entre robo y baraje, pero es difícil acceder a ambas
+
+### Mano ideal💡
+
+-   3 oros
+-   1 **Hijos de Plata** o **Caldero de la Abundancia**
+-   1 **Aine**
+-   1 **Rhiannon**
+-   1 **Anand**
+-   1 **Red de Plata**
+
+### Turnos fuertes💯
+
+Iniciar con **Caldero de la Abundancia**, ya sea jugando **Hijos de Plata** o no, asegura que la curva de oro no será una preocupación. **Rhiannon** también hace un turno 1 poderoso. En turno 2, se puede optar por el control con **Aine** o por el robo de cartas con **Anand**. El siguiente turno poderoso es el 4to, momento en que entra **Mogons** y con él los **Martillo Pesado**. Una táctica de daño directo para finalizar un duelo es portar **Martillo Pesado** en **Eriu** y activarlo sobre la misma, ejerciendo 5 de daño directo.
