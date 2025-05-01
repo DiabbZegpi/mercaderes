@@ -2,7 +2,7 @@
 title: "Camino al Premier: Héroe Tempo de Álvaro Pérez"
 date: "2025-05-01"
 categories: ["premier", "competitivo", "construido"]
-description: "Ovtava edición de Camino al Premier y el Campeón Nacional de PB nos muestra uno de los posibles mazos que llevará al próximo Premier"
+description: "Octava edición de Camino al Premier y el Campeón Nacional de PB nos muestra uno de los posibles mazos que llevará al próximo Premier"
 image: thumbnail.jpg
 ---
 
