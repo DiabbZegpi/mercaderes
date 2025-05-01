@@ -1,0 +1,52 @@
+---
+title: "Camino al Premier: Héroe Tempo de Álvaro Pérez"
+date: "2025-05-01"
+categories: ["premier", "competitivo", "construido"]
+description: "Ovtava edición de Camino al Premier y el Campeón Nacional de PB nos muestra uno de los posibles mazos que llevará al próximo Premier"
+image: thumbnail.jpg
+---
+
+## Presentación del jugador
+
+Álvaro es el jugador que necesita menos introducción, es el vigente Campeón Nacional de PB🏆y finalista del Premier de Santiago 2024🏅, torneos que lo convirtieron en leyenda junto con Jean Valdivieso, pues disputaron ambas finales de los dos torneos consecutivos más importantes del año. Álvaro representa al Team Exodia de Concepción y mantiene un **elo de 1994.9 puntos**, ocupando el puesto #11 del ranking. Suficiente palabrería, los dejo con el campeón.
+
+## Héroe Tempo \| Dificultad ⭐⭐⭐⭐⭐⭐⭐[⭐⭐⭐]{style="color: transparent; text-shadow: 0 0 0 gray;"}
+
+![Mazo Héroe Tempo de Álvaro Pérez](heroe-tempo.png){fig-align="center"}
+
+Hola a todos, soy Álvaro Pérez del Team Exodia/Ira eSports. En esta ocasión les presento una versión del mazo Héroe/Midrange pensado en el meta actual. Esta raza se destaca por su versatilidad y control de mesa, gracias a aliados como **Ganimedes** (3), **Perseo** (3), **Alejandro Magno** (1) y **Teseo de Atenas** (3), además del soporte de Helénica como **Focea** (3) y **Ataque Fulminante** (2) , por lo que en este meta actual necesitamos ir sacando la mesa del oponente desde el turno 1. Si bien no es un mazo que se esté utilizando mucho actualmente, no deja de ser una amenaza para mazos aggro/metas como Goblin, Faraón, Sombra o Sacerdote.
+
+Este mazo Héroe juega a tempo e intenta gastar la totalidad de sus oros en los primeros 3 turnos para hacer la jugada más poderosa posible. Por ello es que necesita mínimo 2 oros en su mano inicial y al menos 1 aliado de turno 1.
+
+La dificultad del mazo radica en que el tempo es primordial. Fallar el tempo en un sólo turno puede costarnos la partida. Por eso el mulligan es una herramienta delicada.
+
+### Fortalezas💪
+
+-   Buen turno 1, tiene 11 aliados de coste 2
+-   Tiene una jugada *autowin* con **Antorcha Olímpica**
+-   Puede limpiar mesa desde el primer turno, incluso contra dado
+-   Sus aliados de coste 4 le permiten luchar bien en late
+
+### Debilidades💩
+
+-   Es vulnerable a removal masivos
+-   Debe mantener la mesa para ejecutar su estrategia
+
+### Mano ideal💡
+
+-   **Antorcha Olímpica**
+-   **Aceite de Oliva** o 1 **Olímpicos**
+-   **Odisea**
+-   **Nacimiento de Pegaso**
+-   1 **Rey Minos**/**Orion**
+-   1 **Focea**
+-   1 **Idmon el Adivino**/**Leónidas**
+-   1 **Teseo de Atenas**/**Alejandro Magno**
+
+### Turnos fuertes💯
+
+La mejor carta de turno 1 es **Rey Minos**, o en su defecto, **Orion**. En turno 2, si el primer aliado sigue en juego, existe una jugada que puede ganar la partida en el acto, especialmente si ganamos el dado: bajar **Antorcha Olímpica** (o tener en juego desde el turno anterior), jugar un aliado de coste 3, como **Idmon el Adivino** o **Leónidas**, y gastar la antorcha para destruir un oro oponente. Desde aquí en adelante los turnos defensivos de tu oponente han sido atrasados y el robo de **Leónidas** promete que no fallaremos el tempo de la partida, tanto en oros como aliados. Si en lugar de **Leónidas** jugamos **Idmon el Adivino** y llegase a conectar aliado en turno 2, la partida está sentenciada. ⚠️Advertencia: aunque esta jugada sigue siendo poderosa si perdimos el dado, su riesgo aumenta considerablemente.
+
+### Cambios🔃
+
+Todas estas cartas son interesantes para agregar, manteniendo el espíritu tempo del mazo: tercer **Siete contra Tebas**, **Expulsión de Titanes**, **Mochuelo**, segunda **Arcas del Imperio.**
