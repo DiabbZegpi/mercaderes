@@ -253,7 +253,12 @@ titulos <- tribble(
   ~tor, ~titulo,
   "CL1949", "fas fa-chess-king",
   "CL3418", "fas fa-chess-king",
-  "CL1428", "fas fa-shield-halved"
+  "CL869", "fas fa-chess-king",
+  "CL1428", "fab fa-brave",
+  "CL2249", "fab fa-brave",
+  "CL1000", "fas fa-shield-halved,fas fa-shield-halved",
+  "CL5859", "fas fa-shield-halved",
+  "CL336",  "fas fa-shield-halved"
 )
 ```
 
@@ -288,7 +293,7 @@ ranking_actualizado |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(805),
+    table.width = px(825),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -326,7 +331,8 @@ ranking_actualizado |>
     titulo, 
     fill_color = list(
       "fas fa-chess-king" = "#C59E01",
-      "fas fa-shield-halved" = "#244855"
+      "fas fa-shield-halved" = "#244855",
+      "fab fa-brave" = "#E64833"
     )
   ) |>
   # cols_merge(columns = c(titulo, nombre)) |> 
@@ -356,7 +362,7 @@ ranking_actualizado |>
     rank_diff_abs ~ px(55),
     dir ~ px(20),
     tor ~ px(100),
-    titulo ~ px(35),
+    titulo ~ px(55),
     nombre ~ px(200),
     # nombre ~ px(220),
     # raza ~ px(120),
@@ -400,6 +406,12 @@ ranking_actualizado |>
     pagination_type = "numbers"
   )
 ```
+
+<span style="color:#E64833;">{{< fa brands brave >}}</span> es un jugador que cruzó la barrera de los 2200 de elo
+
+<span style="color:#244855;">{{< fa shield-halved >}}</span> es un campeón de premier
+
+<span style="color:#C59E01;">{{< fa chess-king >}}</span> es un campeón nacional
 
 ## Teams
 
