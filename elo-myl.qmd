@@ -258,7 +258,11 @@ titulos <- tribble(
   "CL2249", "fab fa-brave",
   "CL1000", "fas fa-shield-halved,fas fa-shield-halved",
   "CL5859", "fas fa-shield-halved",
-  "CL336",  "fas fa-shield-halved"
+  "CL336",  "fas fa-shield-halved",
+  "CL14340", "fas fa-shield-halved",
+  "CL5205", "fas fa-shield-halved",
+  "CL13213", "fas fa-shield-halved",
+  "CL2409", "fas fa-shield-halved"
 )
 ```
 
@@ -409,9 +413,9 @@ ranking_actualizado |>
 
 <span style="color:#E64833;">{{< fa brands brave >}}</span> es un jugador que cruzó la barrera de los 2200 de elo
 
-<span style="color:#244855;">{{< fa shield-halved >}}</span> es un campeón de premier
+<span style="color:#244855;">{{< fa shield-halved >}}</span> es un Campeón de Torneo Premier o Regional
 
-<span style="color:#C59E01;">{{< fa chess-king >}}</span> es un campeón nacional
+<span style="color:#C59E01;">{{< fa chess-king >}}</span> es un Campeón Nacional
 
 ## Teams
 
