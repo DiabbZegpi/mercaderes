@@ -262,7 +262,8 @@ titulos <- tribble(
   "CL14340", "fas fa-shield-halved",
   "CL5205", "fas fa-shield-halved",
   "CL13213", "fas fa-shield-halved",
-  "CL2409", "fas fa-shield-halved"
+  "CL2409", "fas fa-shield-halved",
+  "CL1405", "fas fa-shield-halved,fas fa-shield-halved",
 )
 ```
 
@@ -326,10 +327,12 @@ ranking_actualizado |>
     rank_diff > 0 ~ "arrow-up",
     rank_diff < 0 ~ "arrow-down"
   )) |>  
-  fmt_icon(dir, fill_color = list(
-    "minus" = "gray40",
-    "arrow-up" = "forestgreen",
-    "arrow-down" = "red")
+  fmt_icon(
+    dir, 
+    fill_color = list(
+      "minus" = "gray40",
+      "arrow-up" = "forestgreen",
+      "arrow-down" = "red")
   ) |>
   fmt_icon(
     titulo, 
@@ -337,7 +340,9 @@ ranking_actualizado |>
       "fas fa-chess-king" = "#C59E01",
       "fas fa-shield-halved" = "#244855",
       "fab fa-brave" = "#E64833"
-    )
+    ), 
+    margin_left = "-0.02em", 
+    margin_right = "-0.02em"
   ) |>
   # cols_merge(columns = c(titulo, nombre)) |> 
   # text_transform(
