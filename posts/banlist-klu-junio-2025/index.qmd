@@ -1,0 +1,19 @@
+---
+title: "Banlist Oficial Racial Edición con imágenes - Junio 2025"
+date: "2025-06-03"
+categories: ["banlist", "competitivo"]
+description: "Actualización oficial de Klu"
+image: thumbnail.jpg
+---
+
+El Banlist Oficial que nadie esperaba finalmente ha llegado, el post oficial se encuentra en el siguiente link [**(Click Aquí)**](https://blog.myl.cl/banlist-general-mitos-y-leyendas-03-06-2025/).
+
+Si deseas descargar el Banlist en formato pdf les dejamos el siguiente link [**banlist_junio.pdf**](https://drive.google.com/file/d/1JzCABhGKvZQFm4YE8KrktbAnBH-NV391/view?usp=sharing).
+
+![](base_bl_esJunio 2025.jpg){fig-alt="Banlist oficial Klu - junio 2025 - Espada Sagrada" fig-align="center"}
+
+![](base_bl_heJunio 2025.jpg){fig-alt="Banlist oficial Klu - junio 2025 - Helénica" fig-align="center"}
+
+![](base_bl_hddJunio 2025.jpg){fig-alt="Banlist oficial Klu - junio 2025 - Hijos de Daana" fig-align="center"}
+
+![](base_bl_raJunio 2025.jpg){fig-alt="Banlist oficial Klu - junio 2025 - Dominios de Ra" fig-align="center"}
