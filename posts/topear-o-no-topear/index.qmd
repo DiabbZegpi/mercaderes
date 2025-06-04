@@ -1,0 +1,27 @@
+---
+title: "Topear o no topear"
+date: "2025-06-03"
+categories: ["probabilidades", "competitivo", "Elo MyL"]
+description: "¿Quieres saber cuántos puntos necesitarás para topear en el premier de Santiago?"
+image: thumbnail.jpg
+---
+
+Se aproxima el [Torneo Premier de Santiago](https://blog.myl.cl/torneo-premier-pb-07-de-junio-2025/) del 7 de junio y recientemente se dio a conocer el formato de la competencia: **2 zonas de juego con 5 rondas suizas + top 32 por zona**. Esto significa que si llegan los 600 jugadores, habrán 300 jugadores por zona. Entonces, ¿cuántos puntos necesitaría para entrar al **top 32 en un torneo de 300 jugadores**?
+
+## Premios
+
+Según [el blog oficial sobre el Torneo Premier](https://blog.myl.cl/torneo-premier-pb-07-de-junio-2025/) se juega hasta el top 32 por cada zona, es decir, habría **premios para los 64 primeros!**🔥Pero no sólo eso, no señor, también se entragará un set de cartas promocionales para los **lugares 65°-128°**🤯, equivalente al top 64 por zona.
+
+## Simulación
+
+Para saber cuántos puntos debo ganar para ganar premios en el Premier consideraremos que cada zona es un torneo independiente de 300 personas.
+
+![](prob_plot.png){fig-alt="Probabilidad de topear una zona de 300 jugadores en el Torneo Premier de Santiago - 7 de junio de 2025" fig-align="center"}
+
+### ¿Te conformas con Top 64 y cartas promocionales?
+
+Será suficiente con 1 empate y 3 victorias, resultado que 1 de cada 5 jugadores puede alcanzar (22.2%).
+
+### ¿Vas modo berserk y top 32 es la única opción?
+
+Es muy probable que el corte se de en 11 puntos, lo que implica que el **60% de los jugadores con 11 puntos no pasará**💀. Es más, hay un 41% de probabilidad que el corte se de en 12 puntos, aunque sólo unos pocos jugadores con ese puntaje queadrían fuera del top.
