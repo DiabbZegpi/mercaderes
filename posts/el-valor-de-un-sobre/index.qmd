@@ -1,0 +1,51 @@
+---
+title: "El valor de Las Leyendas"
+date: "2025-06-18"
+categories: ["compra-venta", "mercado"]
+description: "Compro un sobre por $2500... ¿espero recuperar mi plata?"
+image: thumbnail.jpg
+---
+
+Debe ser poca la gente que aún compra sobres de Leyendas 3.0, pero somos muchos los que seguimos abriéndolos. ¿Por qué?🤨 Porque vienen en productos nuevos o los entregan como premio en torneos y ligas. El precio actual de cada sobre es de \$2500💸.
+
+![Precio actual de un sobre de Leyendas 3.0](precio-leyendas-3.jpg){fig-align="center"}
+
+## Por qué abrir un sobre
+
+Pese al sentimiento general de que los sobres a estas alturas son un desperdicio😞 siempre existe la **ilusión de abrir un cartonazo**, como una carta Legendaria o un Carmix Secreto🤩. En teoría, la frecuencia de abrir estas cartas es
+
+| Rareza                 | Frecuencia       | Cuántas son       |
+|------------------------|------------------|-------------------|
+| Secreta                | 1 en 1728 sobres | 1: Carmix secreto |
+| Legendaria             | 1 en 72 sobres   | 8                 |
+| Ultra Real             | 1 en 12 sobres   | 20                |
+| Cortesano/Vasallo foil | 1 en 8 sobres    | 6                 |
+| Real                   | 2 en cada sobre  | 144               |
+| Cortesano              | 3 en cada sobre  | 75                |
+| Vasallo                | 5 en cada sobre  | 53                |
+
+: Frecuencia de cartas en sobres de Leyendas 3.0 de PB
+
+Cada vez que sale una carta Secreta, viene acompañada por una Legendaria, Ultra Real y 2 Reales, ocupando los *slots* de los Vasallos. Análogamente, la Legendaria se acompaña por una Ultra Real y 2 Reales.
+
+La excepción es cuando sale una Ultra Real o una *challa* foil, porque sustituyen a una carta Real en lugar de a un Vasallo.
+
+## Valor de las cartas
+
+Para estimar el valor de un sobre tenemos en cuenta el comercio local (que pueden ser bajos) y los precios de las tiendas (que suelen ser altos). El valor de un **Vasallo y Cortesano lo fijaremos en \$0** porque son cartas que normalmente se regalan. La challa foil tampoco es valiosa porque ninguna de las 6 cartas ve juego competitivo.
+
+La mayoría de las **cartas Reales oscilan** **desde las promociones de 3x\$1000 hasta los \$1000**, con raras excepciones, como Zagreus, Ganímides, Sir Agravain y Resplandor de Heka.
+
+Las cartas **Ultra Reales tienen un rango más amplio, desde los \$1000** de una Fragarach o Minas de Gruash **hasta los \$8.000** de Siete contra Tebas💪. Un sobre puede ser rentable cuando sale una carta Ultra Real.
+
+Las **Legendarias** son un premio gordo, variando **desde los \$7000 hasta los** \$15000. Generalmente son los oros del juego las cartas más costosas. Por último, el loto acumulado: **Carmix Secreto vale \$120000 de media**🤑.
+
+## Valor de Leyendas 3.0
+
+El valor de cada rareza se obtiene ponderando el precio de la carta por su probabilidad de obtenerla, es decir, se calcula el **Valor Esperado (VE)**.
+
+![Valor de un sobre de Leyendas 3.0 PB](valor-sobre.jpg){fig-align="center"}
+
+## Palabras finales
+
+El valor percibido del sobre está casi \$1000 por debajo de su precio de venta, por lo que ya no conviene comprar sobres a su precio comercial para revender cartas. Cabe destacar que **los precios estimados de las cartas fueron un poco generosos**. Aún así, hay revendedores que ofrecen sobres desde \$750... ¿Será buena inversión?💰
