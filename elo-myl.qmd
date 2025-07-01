@@ -264,7 +264,8 @@ titulos <- tribble(
   "CL13213", "fas fa-shield-halved",
   "CL2409", "fas fa-shield-halved",
   "CL1405", "fas fa-shield-halved,fas fa-shield-halved",
-  "CL2717", "fas fa-shield-halved"
+  "CL2717", "fas fa-shield-halved",
+  "CL1559", "fas fa-shield-halved"
 )
 ```
 
