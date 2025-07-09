@@ -5,6 +5,9 @@ title-block-banner: false
 comments: false
 lang: es
 toc: false
+format: 
+  html:
+    include-after-body: footer.html
 execute:
   warning: false
   message: false
@@ -265,7 +268,8 @@ titulos <- tribble(
   "CL2409", "fas fa-shield-halved",
   "CL1405", "fas fa-shield-halved,fas fa-shield-halved",
   "CL2717", "fas fa-shield-halved",
-  "CL1559", "fas fa-shield-halved"
+  "CL1559", "fas fa-shield-halved",
+  "CL7106", "fas fa-chess-king,fas fa-shield-halved"
 )
 ```
 
@@ -420,7 +424,7 @@ ranking_actualizado |>
 
 <span style="color:#E64833;">{{< fa brands brave >}}</span> es un jugador que cruzó la barrera de los 2200 de elo
 
-<span style="color:#244855;">{{< fa shield-halved >}}</span> es un Campeón de Torneo Premier o Regional
+<span style="color:#244855;">{{< fa shield-halved >}}</span> es un Campeón de Torneo Premier, Regional o Maestros de Raza
 
 <span style="color:#C59E01;">{{< fa chess-king >}}</span> es un Campeón Nacional
 
