@@ -25,7 +25,7 @@ toc: false
 :::
 
 ::: {.g-col-12 .g-col-md-8}
-Somos ingenieros con experiencia en inteligencia artificial, estadística y orgullosos creadores de Elo MyL.
+Somos los orgullosos creadores de [Elo MyL](https://datosyleyendas.com/elo-myl) y [ElMeta.cl](https://elmeta.cl/).
 
 Nuestra misión es que El Juego #1 del Reino sea cada día más profesional.
 :::
