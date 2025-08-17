@@ -259,7 +259,7 @@ titulos <- tribble(
   "CL869", "fas fa-chess-king",
   "CL1428", "fab fa-brave",
   "CL2249", "fab fa-brave,fas fa-shield-halved",
-  "CL1000", "fas fa-shield-halved,fas fa-shield-halved",
+  "CL1000", "fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved",
   "CL5859", "fas fa-shield-halved",
   "CL336",  "fas fa-shield-halved,fas fa-shield-halved",
   "CL14340", "fas fa-shield-halved",
@@ -271,7 +271,8 @@ titulos <- tribble(
   "CL1559", "fas fa-shield-halved",
   "CL7106", "fas fa-chess-king,fas fa-shield-halved",
   "CL4361", "fas fa-shield-halved",
-  "CL10997", "fas fa-shield-halved"
+  "CL10997", "fas fa-shield-halved",
+  "CL889", "fas fa-shield-halved"
 )
 ```
 
@@ -300,13 +301,13 @@ ranking_actualizado |>
   gt(locale = "es-GT") |> 
   opt_table_font(font = "Roboto") |> 
   cols_hide(c(ends_with("_anterior"), version_actual, rank_diff, raza)) |> 
-  cols_move(c(titulo, nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff), rank_actual) |>
+  cols_move(c(nombre, tor, raza, team, ciudad, wr, elo_actual, elo_diff, titulo), rank_actual) |>
   tab_options(
     data_row.padding = px(6),
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(825),
+    table.width = px(875),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -362,7 +363,7 @@ ranking_actualizado |>
     rank_diff_abs = "",
     # dir ~ "",
     dir = "",
-    titulo = "",
+    titulo = md("**Trofeos**"),
     nombre = md("**Nombre**"),
     tor = md("**TOR**"),
     # nombre = md("**Nombre**"),
@@ -379,7 +380,7 @@ ranking_actualizado |>
     rank_diff_abs ~ px(55),
     dir ~ px(20),
     tor ~ px(100),
-    titulo ~ px(55),
+    titulo ~ px(105),
     nombre ~ px(200),
     # nombre ~ px(220),
     # raza ~ px(120),
@@ -409,8 +410,8 @@ ranking_actualizado |>
     method = "quantile", 
     quantiles = 8
   ) |> 
-  cols_align("left", c(rank_diff_abs, elo_diff)) |> 
-  cols_align("right", c(dir, titulo)) |> 
+  cols_align("left", c(rank_diff_abs, elo_diff, titulo)) |> 
+  cols_align("right", c(dir)) |> 
   cols_hide(team) |> 
   # opt_row_striping(row_striping = FALSE) |>
   opt_interactive(
