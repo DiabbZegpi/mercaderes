@@ -1,6 +1,6 @@
 ---
 title: "Highlights del Torneo Premier de Concepción"
-date: "16-08-2025"
+date: "08-16-2025"
 categories: ["relatos de daana", "competitivo", "premier"]
 description: "¿Daana topeó por inteligente o por linda?"
 image: thumbnail.jpg
