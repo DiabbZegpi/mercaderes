@@ -1,0 +1,107 @@
+---
+title: "Highlights del Torneo Premier de Concepción"
+date: "16-08-2025"
+categories: ["relatos de daana", "competitivo", "premier"]
+description: "¿Daana topeó por inteligente o por linda?"
+image: thumbnail.jpg
+---
+
+```{r data}
+
+library(tidyverse)
+library(gt)
+library(gtExtras)
+
+total <- tribble(
+  ~raza, ~n,
+  "Caballero", 14,
+  "Dragón", 4,
+  "Faerie", 1,
+  "Faerie/Goblin", 3,
+  "Olímpico", 8,
+  "Héroe", 28,
+  "Titán", 9,
+  "Titán/Minotaurio", 5,
+  "Desafiante", 43,
+  "Defensor", 3,
+  "Defensor/Druida", 24,
+  "Sombra", 43,
+  "Eterno", 4,
+  "Sacerdote", 20,
+  "Faraón", 0
+)
+
+top16 <- tribble(
+  ~raza, ~n,
+  "Sombra", 5,
+  "Sacerdote", 2,
+  "Defensor/Druida", 2,
+  "Desafiante", 5,
+  "Héroe", 1,
+  "Titán", 1
+)
+```
+
+El reciente [Torneo Premier de Concepción (16 de agosto de 2025)](https://blog.myl.cl/premier-pb-concepcion-16-de-agosto-2025/) se vio teñido de verde por la fiesta de los Kits de Relatos de Hijos de Daana🧨.Esta es la tabla inicial de razas del torneo:
+
+```{r tabla-total}
+
+total |> 
+  arrange(desc(n)) |> 
+  gt(rowname_col = "raza") |> 
+  cols_label(n = "") |> 
+  tab_header(
+    title = md("**Razas al comienzo del torneo**"),
+    subtitle = paste0("Participaron ", sum(total$n), " jugadores")
+  ) |> 
+  tab_source_note(source_note = "Fuente: grupo oficial de Whatsapp del torneo") |> 
+  gt_plt_bar(column = n, scale_type = "number", width = 35, color = "#577e68")
+```
+
+Naturalmente, las razas de Hijos de Daana son las más populares, acompañadas por Héroe y el buen Sacerdote, que siempre tiene acólitos. ¿Cómo se vio reflejada su popularidad en el top 16?
+
+```{r tabla-top16}
+
+top16 |> 
+  arrange(desc(n)) |> 
+  gt(rowname_col = "raza") |> 
+  cols_label(n = "") |> 
+  tab_header(
+    title = md("**Razas en el top 16**"),
+    subtitle = md("¿Estaba cantado que ganarían los *Hijos de Daana?*")
+  ) |> 
+  tab_source_note(source_note = "Fuente: grupo oficial de Whatsapp del torneo") |> 
+  gt_plt_bar(column = n, scale_type = "number", width = 35, color = "#ae4852")
+```
+
+A simple vista, Sombra y Desafiante son los que mejor rindieron, ¿será ésto cierto?
+
+## La verdad estadística
+
+```{r chisq_test}
+#| eval: false
+
+library(infer)
+
+total |> 
+  mutate(id = "total") |> 
+  bind_rows(top16 |> mutate(id = "top16")) |> 
+  complete(id, raza, fill = list(n = 0)) |> 
+  group_by(id) |> 
+  mutate(total = sum(n)) |> 
+  ungroup() |> 
+  mutate(otros = total - n) |> 
+  select(-total) |> 
+  nest(.by = raza) |> 
+  mutate(
+    test_data = map(data, function(data) data |> pivot_longer(n:otros) |> uncount(value)),
+    test = map(test_data, ~ chisq_test(x = .x, id ~ name)),
+    p_value = map_dbl(test, "p_value")
+  ) 
+```
+
+Tras aplicar una batería de pruebas estadísticas a la participación de razas en el torneo, **no se encontró evidencia de que Sombra, Desafiante** u otra de las razas que topearon **hayan tenido un desempeño mejor que el esperado**, en otras palabras, topearon las razas más jugadas y punto😑.
+
+## Palabras finales
+
+Topearon las razas más jugadas, no topearon las menos jugadas, ¿es sorpresa?🤔Sí. En general se esperaba que **Hijos de Daana** demostrara ser la edición más fuerte, pero solamente **ganó por ser la edición más popular**. ¿Está todo dicho respecto a Relatos de Hijos de Daana? No creo, aún no cumplimos 1 mes desde el último lanzamiento y tomará más tiempo hasta que los jugadores encuentren las variantes más poderosas de cada raza.
