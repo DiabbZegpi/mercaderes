@@ -1,0 +1,41 @@
+---
+title: "¿Y si banearan Kóbold?"
+date: "08-21-2025"
+categories: ["relatos de daana", "banlist"]
+description: "Qué pasaría con el mazo más fuerte del meta si banearan Kóbold"
+image: thumbnail.jpg
+---
+
+En todo Chile se está viviendo la llegada del Reino de las Sombras, en su pack especial de turno 1.
+
+![Pegasus y su encuentro con el mejor turno 1](shadows-kingdom.jpg){fig-align="center"}
+
+## El mejor turno 1
+
+El mejor turno 1 del juego es bajar oro y 4 aliados: **Kóbold** **x2** y 2 aliados de coste 1, que pueden ser **Crom Cruach** y/o **Corff**. Pregunta a cualquier jugador de sombra y te dirá que ésta salida casi nunca ocurre. De hecho, si tomamos como referencia el mazo que [Jean Valdivieso compartió en el live de Coliseo Mitero](https://www.youtube.com/watch?v=PhIhKM1fvVc&t=7290s&ab_channel=ColiseoMitero), la mano en cuestión **tiene probabilidad de 0.32%**, o sea que ocurre en 1 de cada 310 partidas, o en 1 de cada 649 si haces mulligan a 7.
+
+![Decklist de Jean Valdivieso - Imagen creada con ElMeta.cl](elmeta-decklist-jean.jpg){fig-align="center"}
+
+Aunque el inicio de 4 aliados casi nunca se de, el de 3 aliados sí es frecuente. De hecho, si juegas el mazo de Jean en una liga de 5 rondas, en promedio jugarías entre 12 y 13 partidas. Sin contar los mirror match, la probabilidad de ver la salida de 3 aliados en una liga es cercana a 60%🤯. Si sumamos 2 mirror match, la probabilidad aumenta a 72%.
+
+## Qué pasa si se banea Kóbold
+
+La salida de 4 aliados sería imposible (obvio). Lo que sí es interesante es **cómo afectaría a las salidas de 3 y 2 aliados**. Para eso tienes a DatosyLeyendas😉.
+
+::: callout-note
+## Sustitución de Kóbold
+
+Para los casos en que **Kóbold está baneado**, lo sustituimos por aliados de coste 2, como **Crom Rhogog** y **Oengus**. Recordar que la salida de 2 aliados se puede conseguir con **Kóbold + 1 coste 2**.
+:::
+
+![Probabilidad de sacar 4, 3 y 2 aliados en Turno 1 según las copias de Kóbold disponibles](tabla-ban-kobold.jpg){fig-align="center"}
+
+La baraja de Jean es tan consistente que espera comenzar con 2 aliados en todas sus rondas, al menos una vez. Ésto le garantiza ventaja casi ganadora en esos duelos. Pero no se detiene ahí, también ofrece comenzar con 3 aliados en una partida por liga, esto quiere decir que hay un *autowin* en cada liga que juega.
+
+La consistencia del mazo cae rápidamente al llegar a Kóbold ban, donde ni siquiera espera comenzar con 2 aliados en todas sus rondas.
+
+## Palabras finales
+
+Éste post sólo analiza el primer turno del Sombra cuando roba 8 cartas, pero es fácil darse cuenta que tener 1 autowin por liga y 1 *pseudo*-autowin por ronda es demasiada ventaja.
+
+Si se limita Kóbold a 1 copia todavía existiría la salida de 2 aliados 1 vez por ronda. En cambio, con Kóbold baneado la salida de 2 aliados es mucho menos frecuente, pero ¿seguirá siendo suficientemente atractiva para los jugadores? En fin, es un mazo muy difícil de equilibrar por la vía exclusiva de Kóbold.
