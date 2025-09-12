@@ -273,7 +273,9 @@ titulos <- tribble(
   "CL4361", "fas fa-shield-halved",
   "CL10997", "fas fa-shield-halved",
   "CL889", "fas fa-shield-halved",
-  "CL764", "fas fa-chess-king"
+  "CL764", "fas fa-chess-king",
+  "CL13481", "fas fa-shield-halved",
+  "CL888", "fas fa-shield-halved"
 )
 ```
 
@@ -510,6 +512,7 @@ tabla_teams |>
 ```
 
 :::
+
 
 
 
