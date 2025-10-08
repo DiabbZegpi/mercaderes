@@ -258,7 +258,7 @@ titulos <- tribble(
   "CL3418", "fas fa-chess-king",
   "CL869", "fas fa-chess-king",
   "CL1428", "fab fa-brave",
-  "CL2249", "fab fa-brave,fas fa-shield-halved",
+  "CL2249", "fab fa-brave,fas fa-shield-halved,fas fa-shield-halved",
   "CL1000", "fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved",
   "CL5859", "fas fa-shield-halved",
   "CL336",  "fas fa-shield-halved,fas fa-shield-halved",
@@ -278,7 +278,9 @@ titulos <- tribble(
   "CL888", "fas fa-shield-halved",
   "CL9937", "fas fa-shield-halved",
   "CL7722", "fas fa-shield-halved",
-  "CL4638", "fas fa-shield-halved"
+  "CL4638", "fas fa-shield-halved",
+  "CL8797", "fas fa-shield-halved",
+  "CL2737", "fas fa-shield-halved"
 )
 ```
 
@@ -336,7 +338,7 @@ ranking_actualizado |>
     sep_mark = "",
     force_sign = TRUE
   ) |> 
-  sub_missing(c(elo_diff, titulo), missing_text = "") |>
+  sub_missing(c(rank_diff_abs, elo_diff, titulo), missing_text = "") |>
   cols_add(dir = case_when(
     rank_diff == 0 | is.na(rank_diff) ~ "minus",
     rank_diff > 0 ~ "arrow-up",
@@ -515,6 +517,7 @@ tabla_teams |>
 ```
 
 :::
+
 
 
 
