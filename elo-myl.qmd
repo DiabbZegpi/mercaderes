@@ -281,7 +281,8 @@ titulos <- tribble(
   "CL4638", "fas fa-shield-halved",
   "CL8797", "fas fa-shield-halved",
   "CL2737", "fas fa-shield-halved",
-  "CL1405", "fas fa-shield-halved"
+  "CL1405", "fas fa-shield-halved",
+  "CL13851", "fas fa-shield-halved"
 )
 ```
 
@@ -339,7 +340,7 @@ ranking_actualizado |>
     sep_mark = "",
     force_sign = TRUE
   ) |> 
-  sub_missing(c(rank_diff_abs, elo_diff, titulo), missing_text = "") |>
+  sub_missing(c(rank_diff_abs, elo_diff, titulo, ciudad), missing_text = "") |>
   cols_add(dir = case_when(
     rank_diff == 0 | is.na(rank_diff) ~ "minus",
     rank_diff > 0 ~ "arrow-up",
