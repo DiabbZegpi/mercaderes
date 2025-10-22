@@ -26,9 +26,9 @@ El estadístico que usaremos para este post es *chi-cuadrado* $\chi^2$.
 
 ## Resultados
 
-Tras aplicar la prueba de chi-cuadrado a toads las razas, se obtiene que la mayoría se desvió muy poco de lo que se esperaba de ellas, con las excepciones de **Desafiante** y **Faraón**.
+Tras aplicar la prueba de chi-cuadrado a todas las razas, se obtiene que la mayoría se desvió muy poco de lo que se esperaba de ellas, con las excepciones de **Desafiante** y **Faraón**.
 
-![Desempeño de cada raza sin considerar subrazas](desempeño racial.jpg){fig-align="center"}
+![Desempeño de cada raza sin considerar subrazas](desempeño%20racial.jpg){fig-align="center"}
 
 Lo de **Faraón** es notable🤘, más que nada por su arquetipo **Guerrero**, el que aportó la mayor proporción de jugadores al top. El desempeño de los **Faraón sin Guerrero** fue ordinario😑.
 
@@ -36,7 +36,7 @@ La gran decepción de este Premier es la raza **Desafiante**💩, que con la seg
 
 Terminando con las razas, **Defensor/Druida💪** merece una mención honrosa, por tener un desempeño aceptable siendo la raza más baneada. También se debe mencionar a **Sacerdote** y **Olímpico**, pues ambos aportaron con 44 jugadores y 6 tops, con un desempeño justo dentro de lo esperado.
 
-Si agregamos los números a nivel de edición, el gran ganador es **Dominios de Ra**, superando en 45% la cantidad de jugadores esperada en top. Tanto **Helénica** como **Espada Sagrada** estuvieron por debajo de los esperado, aunque sin evidencia suficiente para asegurar que no fue por azar. El gran perdedor es **Hijos de Daana**, aunque aquí si hubo significancia estadística🤓 para afirmar que no estuvo al nivel de las demás ediciones.
+Si agregamos los números a nivel de edición, el gran ganador es **Dominios de Ra**, superando en 45% la cantidad de jugadores esperada en top. Tanto **Helénica** como **Espada Sagrada** estuvieron por debajo de lo esperado, aunque sin evidencia suficiente para asegurar que no fue por azar. El gran perdedor es **Hijos de Daana**, aunque aquí si hubo significancia estadística🤓 para afirmar que no estuvo al nivel de las demás ediciones.
 
 ## Palabras finales
 
