@@ -1,0 +1,45 @@
+---
+title: "Ganadores y Perdedores del Premier"
+date: "10-22-2025"
+categories: ["premier", "competitivo", "ra"]
+description: "¿Acaso es Faraón la raza que tuvo mejor desempeño?"
+image: thumbnail.jpg
+---
+
+Acaba de finalizar el [Torneo Premier Aniversario de Dominios de Ra](https://blog.myl.cl/premier-primer-bloque-18-de-octubre-2025/), coronando a Renzo Cotroneo🥇 (1945.7 de elo, #25 del ranking) sobre Lucas Godoy🥈 (1911.1 de elo, #40 del ranking) en una final de **Sacerdote contra Faraón/Guerrero**. Tal como se esperaba, muchos jugadores optaron por jugar los mazos de **Dominios de Ra**, seguidos por los mazos más fuertes de la temporada pasada, los de **Hijos de Daana**. Por la gran popularidad de estas ediciones, era de esperarse que llegaran al top con muchos representantes, especialmente **Faraón**, pero... **¿rindió más de lo esperado?**
+
+Estos resultados son importantes para el próximo [Torneo Premier de Concepción](https://blog.myl.cl/premier-primer-bloque-25-de-octubre-2025-concepcion/) del 25 de octubre, pero para nada más, porque desde noviembre circularán las cartas de [Colmillos](https://blog.myl.cl/productos-especiales-pb-colmillos-de-avalon-y-colmillos-del-inframundo/) y, si muchas de ellas fueren poderosas, el meta cambiaría radicalmente.
+
+![Distribución de razas por participación y top. Imagen compartida en instagram por \@12_25cl.](12_25cl.jpg){fig-align="center"}
+
+## El método
+
+Cuando se desea demostrar algo en estadística, se comienza por plantear una hipótesis, que usualmente es lo contrario a lo que se desea demostrar.
+
+::: {.callout-note appearance="simple"}
+## La hipótesis
+
+Como deseamos verificar si alguna de las razas performó mejor/peor que las demás, asumiremos que todas las razas son igual de fuertes y tienen la misma posibilidad de pasar al top. Entonces, si una raza hace más (o menos) top que lo esperado, encontraremos evidencia de que es más fuerte (o débil) que el resto.
+:::
+
+El estadístico que usaremos para este post es *chi-cuadrado* $\chi^2$.
+
+## Resultados
+
+Tras aplicar la prueba de chi-cuadrado a toads las razas, se obtiene que la mayoría se desvió muy poco de lo que se esperaba de ellas, con las excepciones de **Desafiante** y **Faraón**.
+
+![Desempeño de cada raza sin considerar subrazas](desempeño racial.jpg){fig-align="center"}
+
+Lo de **Faraón** es notable🤘, más que nada por su arquetipo **Guerrero**, el que aportó la mayor proporción de jugadores al top. El desempeño de los **Faraón sin Guerrero** fue ordinario😑.
+
+La gran decepción de este Premier es la raza **Desafiante**💩, que con la segunda mayor cuota de jugadores (70) sólo consiguió poner a 1 jugador en el top. Este es un resultado muy malo, porque se esperaba que al menos pasaran 9 jugadores al top, sin considerar que fue la raza más fuerte durante la última etapa del aniversario de Hijos de Daana.
+
+Terminando con las razas, **Defensor/Druida💪** merece una mención honrosa, por tener un desempeño aceptable siendo la raza más baneada. También se debe mencionar a **Sacerdote** y **Olímpico**, pues ambos aportaron con 44 jugadores y 6 tops, con un desempeño justo dentro de lo esperado.
+
+Si agregamos los números a nivel de edición, el gran ganador es **Dominios de Ra**, superando en 45% la cantidad de jugadores esperada en top. Tanto **Helénica** como **Espada Sagrada** estuvieron por debajo de los esperado, aunque sin evidencia suficiente para asegurar que no fue por azar. El gran perdedor es **Hijos de Daana**, aunque aquí si hubo significancia estadística🤓 para afirmar que no estuvo al nivel de las demás ediciones.
+
+## Palabras finales
+
+Durante los últimos 8 días de octubre no es arriesgado que el campeón a vencer es **Faraón/Guerrero**, tanto por su popularidad como su efectividad🎯. Compitiendo por el segundo lugar están **Defensor/Druida**, **Olímpico** y **Sacerdote**, razas consolidadas y con muchos adeptos.
+
+Ya saben, si están jugando **Faraón/Guerrero** y les toca contra un **Desafiante**, alégrense😆.
