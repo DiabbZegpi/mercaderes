@@ -254,7 +254,7 @@ tabla_ciudad <-
 
 titulos <- tribble(
   ~tor, ~titulo,
-  "CL1949", "fas fa-chess-king",
+  "CL1949", "fas fa-chess-king,fas fa-shield-halved",
   "CL3418", "fas fa-chess-king",
   "CL869", "fas fa-chess-king",
   "CL1428", "fab fa-brave",
