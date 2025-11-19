@@ -274,7 +274,7 @@ titulos <- tribble(
   "CL10997", "fas fa-shield-halved",
   "CL889", "fas fa-shield-halved",
   "CL764", "fas fa-chess-king",
-  "CL13481", "fas fa-shield-halved",
+  "CL13481", "fas fa-shield-halved,fas fa-shield-halved",
   "CL888", "fas fa-shield-halved",
   "CL9937", "fas fa-shield-halved",
   "CL7722", "fas fa-shield-halved",
