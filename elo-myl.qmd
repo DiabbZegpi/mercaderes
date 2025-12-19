@@ -259,7 +259,7 @@ titulos <- tribble(
   "CL869", "fas fa-chess-king",
   "CL1428", "fab fa-brave",
   "CL2249", "fab fa-brave,fas fa-shield-halved,fas fa-shield-halved",
-  "CL1000", "fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved",
+  "CL1000", "fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved,fas fa-shield-halved",
   "CL5859", "fas fa-shield-halved",
   "CL336",  "fas fa-shield-halved,fas fa-shield-halved",
   "CL14340", "fas fa-shield-halved",
@@ -317,7 +317,7 @@ ranking_actualizado |>
     table.font.size = px(16),
     heading.title.font.size = px(22),
     heading.subtitle.font.size = px(18),
-    table.width = px(875),
+    table.width = px(890),
     table.align = "center",
   ) |> 
   fmt_percent(
@@ -390,7 +390,7 @@ ranking_actualizado |>
     rank_diff_abs ~ px(55),
     dir ~ px(20),
     tor ~ px(100),
-    titulo ~ px(105),
+    titulo ~ px(120),
     nombre ~ px(200),
     # nombre ~ px(220),
     # raza ~ px(120),
